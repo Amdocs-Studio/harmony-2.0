@@ -1,0 +1,1632 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Branding new web architecture.">
+      
+      
+      
+        <link rel="canonical" href="https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/flow_manager_establishment/">
+      
+      
+        <link rel="prev" href="../requests/">
+      
+      
+        <link rel="next" href="../flow_manager/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Flow Manager installation - Amdocs Harmony 2.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flow-manager-installation-and-establishment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Amdocs Harmony 2.0" class="md-header__button md-logo" aria-label="Amdocs Harmony 2.0" data-md-component="logo">
+      
+  <img src="../../../assets/images/harmony-logo-white-small.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Amdocs Harmony 2.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flow Manager installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Amdocs-Studio/harmony-2.0" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Amdocs-Studio/harmony-2.0
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Amdocs Harmony 2.0" class="md-nav__button md-logo" aria-label="Amdocs Harmony 2.0" data-md-component="logo">
+      
+  <img src="../../../assets/images/harmony-logo-white-small.svg" alt="logo">
+
+    </a>
+    Amdocs Harmony 2.0
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Amdocs-Studio/harmony-2.0" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Amdocs-Studio/harmony-2.0
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Harmony
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop-with-harmony/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Harmony Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generate Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features & Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Features & Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Client Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Guards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Flow Manager installation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Flow Manager installation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-flow-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Flow Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Flow Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createflowmanagerapistore-slicename-flowsconfig-stepsconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateFlowManagerAPI(store, sliceName, flowsConfig, stepsConfig);
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateFlowManagerAPI(store, sliceName, flowsConfig, stepsConfig);">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-and-end-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start and End Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start and End Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#async-startflowflowtype-autoupdate-currentstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      async startFlow(flowType, autoUpdate, currentStep)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="async startFlow(flowType, autoUpdate, currentStep)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      endFlow()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#async-updateinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      async updateInformation()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextstepstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      nextStep(step?)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nextStep(step?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islaststep" class="md-nav__link">
+    <span class="md-ellipsis">
+      isLastStep()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flows-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flows Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      XState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmachineflowconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      getMachineFlowConfig()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow_manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RBA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error_handler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error Handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global_spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Spinner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilingual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi lingual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storybook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storybook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-flow-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Flow Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Flow Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createflowmanagerapistore-slicename-flowsconfig-stepsconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateFlowManagerAPI(store, sliceName, flowsConfig, stepsConfig);
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateFlowManagerAPI(store, sliceName, flowsConfig, stepsConfig);">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-and-end-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start and End Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start and End Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#async-startflowflowtype-autoupdate-currentstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      async startFlow(flowType, autoUpdate, currentStep)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="async startFlow(flowType, autoUpdate, currentStep)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      endFlow()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#async-updateinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      async updateInformation()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextstepstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      nextStep(step?)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nextStep(step?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      arguments:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islaststep" class="md-nav__link">
+    <span class="md-ellipsis">
+      isLastStep()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flows-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flows Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      XState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmachineflowconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      getMachineFlowConfig()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="flow-manager-installation-and-establishment">Flow Manager Installation and Establishment</h1>
+<p>Flow Manager help you to manage flow information by determine the current step, next step and define the set of conditions that satisfy the steps.
+<br/>
+Flow Manger using <a href="https://github.com/davidkpiano/xstate">XState</a> for state machine to calculate where are you currently in the flow and where you need to go.</p>
+<div class="admonition note">
+<p class="admonition-title">Harmony 2.0 Flow Manager</p>
+<p>Harmony 2.0 contains flow manager by default and is ready to use. <br/>
+Click <a href="../flow_manager/">Here</a> to check the usage guide.</p>
+</div>
+<h2 id="install">Install</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>--save<span class="w"> </span>redux-flow-manager
+</span></code></pre></div>
+<h2 id="usage">Usage</h2>
+<p>Check out the example in the files <code>app.ts</code> and <code>flowManger.browser.ts</code> in the <a href="https://github.com/refaelok/redux-flow-manager/tree/master/test">Test Folder</a>.</p>
+<p><strong>Step 1:</strong> Add the flow manager reducer to your project.</p>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">combineReducers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">flowManagerReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;redux-flow-manager&#39;</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">reducers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">...,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">flowManagerFlows</span><span class="o">:</span><span class="w"> </span><span class="kt">flowManagerReducer</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">};</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rootReducer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">combineReducers</span><span class="p">(</span><span class="nx">reducers</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Step 2:</strong> Create Steps Configuration file - steps config define the set of steps for each sub flow types.
+(config files properties are explained below. <a href="#steps-configuration">Steps Configuration</a></p>
+<p><strong>Step 3:</strong> Create Flows Configuration file - flow config file define the sub flow types name and the conditions that should be success to make this sub flow valid.
+(config files properties are explained below. <a href="#flows-configuration">Flows Configuration</a></p>
+<p><strong>Step 4:</strong> Call <code>CreateFlowManagerAPI</code> with your store, reducer slice name, flows configuration and steps configuration.
+( more details of how configuration should be look like will explain later )</p>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// sdk/store.ts</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CreateFlowManager</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./utils&#39;</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">flowManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CreateFlowManager</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Step 5:</strong> <code>CreateFlowManagerAPI</code> return an instance of Flow Manager with functionality that will help you manage flows in your app.</p>
+<div class="language-TS highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// ./store.flow.manager.utils.ts</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">CreateFlowManager</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">parseSubFlowsJSON</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;redux-flow-manager&#39;</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">subFlowsConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">flowsConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@config&#39;</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">flowsConditions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../hooks/flow-manager/index&#39;</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">(</span><span class="nx">Store</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">CreateFlowManager</span><span class="p">(</span><span class="nx">Store</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;flowManagerFlows&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">parseSubFlowsJSON</span><span class="p">(</span><span class="nx">subFlowsConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">flowsConditions</span><span class="p">),</span><span class="w"> </span><span class="nx">flowsConfig</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="store-structure">Store Structure</h2>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">FlowManagerState</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">flowType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">subFlowTypes</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">currentStep</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">nextStep</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="initial-flow-manager">Initial Flow Manager</h2>
+<h3 id="createflowmanagerapistore-slicename-flowsconfig-stepsconfig">CreateFlowManagerAPI(store, sliceName, flowsConfig, stepsConfig);</h3>
+<p>Create new instance of flow manager.
+All the API methods of flow manager describe below.</p>
+<h5 id="arguments">arguments:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>store</code></td>
+<td style="text-align: left;">object</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">Pass in the redux store.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sliceName</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">the name of the reducer slice</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>flowsConfig</code></td>
+<td style="text-align: left;">SubFlowsConfig</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;"><a href="#flows-configuration">Flows Configuration</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>stepsConfig</code></td>
+<td style="text-align: left;">StepsConfig</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;"><a href="#steps-configuration">Steps Configuration</a></td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<h2 id="start-and-end-flow">Start and End Flow</h2>
+<h3 id="async-startflowflowtype-autoupdate-currentstep">async startFlow(flowType, autoUpdate, currentStep)</h3>
+<p>Start flow is used when your app is init the main flow type in the store.
+That flow type represent a set of sub flow types in your <a href="#flows-configuration">Flows Configuration</a></p>
+<h5 id="arguments_1">arguments:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>flowType</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">The flow type that represent a set of sub flow types <a href="#flows-configuration">Flows Configuration</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>currentStep</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">Initial specific step by start the flow instead of the first step that define in steps array</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>autoUpdate</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">Optionally pass indicate to automatic run state machine calculator to calculate the flow information data for any change in store</td>
+</tr>
+</tbody>
+</table>
+<h3 id="endflow">endFlow()</h3>
+<p>End the flow. Clear all the data from flow manager.</p>
+<h2 id="steps-actions">Steps Actions</h2>
+<h3 id="async-updateinformation">async updateInformation()</h3>
+<p>Update Information running the state machine to calculate the sub flows condition and update the steps information and sub flows.</p>
+<p><strong>NOTE</strong>: If you call <code>startFlow</code> with <code>autoUpdate</code> true, this method invoke automatic for every change in store.
+This is very useful for auto calculation nd update your component automatic without worry when to call to updateInformation.</p>
+<h3 id="nextstepstep">nextStep(step?)</h3>
+<p>Next Step method update the current step with the next step and the next step with the new next step<br />
+return the next step value.</p>
+<p><strong>NOTE</strong>: To Promise last updated result, call to updateInformation before.</p>
+<h5 id="arguments_2">arguments:</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>step</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">currentStep</td>
+<td style="text-align: left;">Optional to pass the step move to. by default it move to the next step according to steps array.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="islaststep">isLastStep()</h3>
+<p>Return if the current step is the last step.</p>
+<p><strong>NOTE</strong>: To Promise last updated result, call to updateInformation before.</p>
+<h2 id="selectors">Selectors</h2>
+<p>Each Selector return the corresponding value from the store.</p>
+<p><strong>NOTE</strong> is not recommended to use directly with selector.<br />
+Use Step Actions async methods to get the most updated result before navigate to next step for example.</p>
+<ul>
+<li>getFlowType()</li>
+<li>getSubFlowTypes()</li>
+<li>getCurrentStep()</li>
+<li>getSteps()</li>
+<li>getNextStep()</li>
+</ul>
+<p><br /></p>
+<h3 id="flows-configuration">Flows Configuration</h3>
+<p>Flows Config is an array of object, that each object define the sub flow that may be in your entire application.<br />
+Each flow object have conditions array that each condition include callback.
+that callback can check anything related to the condition, if the condition you check is success then return resolve, if the condition is failed then return reject.</p>
+<p>If all conditions of a sub flow pass, then this sub flow added to the subFlowTypes array </p>
+<p>Flow Object Properties:</p>
+<ul>
+<li><code>flowName: string</code> - unique name of the sub flow type</li>
+<li><code>conditions: array</code> - an array of Condition Object</li>
+<li><code>conditionName: string</code> - the name of the condition</li>
+<li><code>onCheck: function</code> - a <code>promise</code> function that return <code>resolve</code> when the condition success and <code>reject</code> if the condition should be failed</li>
+<li><code>mandatory: boolean</code> - optional property. define if to remove that sub flow from the array if this condition failed. true by default.</li>
+</ul>
+<p><strong>NOTE</strong> The Order of the Flow Objects in the array are matter.
+The checks will run by that order.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">flowsConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="s2">&quot;flowName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;defaultScenario&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#9b9b9b&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="s2">&quot;conditions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">                </span><span class="s2">&quot;conditionName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;defaultSuccessCondition&quot;</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">                </span><span class="s2">&quot;onCheck&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;defaultSuccessCondition&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">                </span><span class="s2">&quot;displayName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Default Success&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">                </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Return Always Success to be used for every Flow as Default Scenario&quot;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="s2">&quot;flowName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;multipleDevices&quot;</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="s2">&quot;conditions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">                </span><span class="s2">&quot;conditionName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;multipleDevicesCondition&quot;</span><span class="p">,</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">                </span><span class="s2">&quot;onCheck&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;multipleDevicesCondition&quot;</span><span class="p">,</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">                </span><span class="s2">&quot;displayName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Multiple Devices COP&quot;</span><span class="p">,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">                </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Return success if there are multiple devices in the cart&quot;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="s2">&quot;runInFlowTypes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">            </span><span class="s2">&quot;COP&quot;</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#3133a4&quot;</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="p">];</span>
+</span></code></pre></div>
+<p><br /></p>
+<h3 id="steps-configuration">Steps Configuration</h3>
+<p>Steps configuration define for each flow and sub flow, the set of steps that the user need to complete in your application.</p>
+<p>Step Object Properties:</p>
+<ul>
+<li><code>key: flowType</code> (Example: <code>COP</code>) - the key represent the <code>flowType</code></li>
+<li><code>key: subFlowType</code> (Example: <code>planOnlyFlow</code>) - represent the <code>subFlowType</code></li>
+<li><code>stesp: array</code> - set of steps for this <code>flowType</code> and <code>subFlowType</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Sub-Flows Order</p>
+<p>The Order of the Sub flow Objects in the object matters, <strong>The checks will run by that order.</strong><br/>
+For example: if you put <code>defaultScenario</code> before <code>multipleDevices</code>, then <code>defaultScenario</code> always wil be set before <code>multipleDevices</code>.</p>
+</div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stepsConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="s2">&quot;COP&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="s2">&quot;multipleDevices&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">            </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;43da9488-07a0-4c36-aa76-587bc62707ff6&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">            </span><span class="s2">&quot;steps&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">                </span><span class="s2">&quot;DEVICE_GALLERY&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">                </span><span class="s2">&quot;DEVICE_DETAILS&quot;</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">                </span><span class="s2">&quot;REVIEW_BASKET&quot;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Generic COP flow for multiple devices in the cart&quot;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="s2">&quot;defaultScenario&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">            </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;374323dd-d091-4164-993a-3dcce359bca3&quot;</span><span class="p">,</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">            </span><span class="s2">&quot;steps&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">                </span><span class="s2">&quot;DEVICE_GALLERY&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">                </span><span class="s2">&quot;REVIEW_BASKET&quot;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Generic COP flow for one device in the cart&quot;</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">};</span>
+</span></code></pre></div>
+<h3 id="xstate">XState</h3>
+<h3 id="getmachineflowconfig">getMachineFlowConfig()</h3>
+<p>Return an XState config that can be set in XState visualizer to see your state machine created by your config.</p>
+<p><a href="https://xstate.js.org/viz/?gist=cebc9af156574bc7eea62b99292e3f56">XState Visualizer</a>
+<img alt="Alt text" src="../../../assets/images/state-machine.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+    <!-- Link to previous and/or next page -->
+    
+      
+        
+        <nav
+          class="md-footer__inner md-grid"
+          aria-label="Footer"
+          
+        >
+
+          <!-- Link to previous page -->
+          
+            
+            <a
+              href="../requests/"
+              class="md-footer__link md-footer__link--prev"
+              aria-label="Previous: Requests"
+            >
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              </div>
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                <div class="md-ellipsis">
+                  Requests
+                </div>
+              </div>
+            </a>
+          
+
+          <!-- Link to next page -->
+          
+            
+            <a
+              href="../flow_manager/"
+              class="md-footer__link md-footer__link--next"
+              aria-label="Next: Flow Manager"
+            >
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                <div class="md-ellipsis">
+                  Flow Manager
+                </div>
+              </div>
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      
+    
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <img src="../../../assets/images/harmony-logo-white-small.svg" alt="Harmony Logo" />
+        <div style="margin-left: 20px;">Harmony 2.0</div>
+        <!-- Social links -->
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [{"navigation.sections": false}, "navigation.instant", "navigation.instant.progress", "navigation.footer", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
