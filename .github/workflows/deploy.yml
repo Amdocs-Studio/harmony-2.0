@@ -22,8 +22,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install MkDocs
-        run: pip install mkdocs
+      - name: Install MkDocs and Material theme
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
 
       - name: Build MkDocs Site
         run: mkdocs build -f docs/mkdocs.yml
