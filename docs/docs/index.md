@@ -9,7 +9,7 @@ hide:
 <div id="main-content">
     <div class="intro-top-section">
         <div class="intro-top-section-left">
-            <h1 class="page-title">Harmony 2.0 Documentation Portal</h1>
+            <h1 class="page-title">Harmony 2.0 Documentation Portal.</h1>
             <div class="page-text-subtitle">Harmony Boilerplate gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, Redux TK, and more. No config needed.</div>
         </div>
         <div class="intro-top-section-right">
