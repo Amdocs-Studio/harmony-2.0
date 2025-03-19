@@ -4,9 +4,9 @@ import ModuleNameMain from './components/ModuleName.main';
 import './styles/index.css';
 
 export default function ModuleName(props: ModuleNameProps){
-  return (
-    <ModuleNameProvider {...props}>
-      <ModuleNameMain />
-    </ModuleNameProvider>
-  )
+	return (
+		<ModuleNameProvider {...props}>
+			<ModuleNameMain />
+		</ModuleNameProvider>
+	)
 }

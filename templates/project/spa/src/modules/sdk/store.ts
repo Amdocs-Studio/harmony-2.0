@@ -13,13 +13,11 @@ import {
 	REHYDRATE,
 	persistStore,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import { useDispatch, useSelector } from 'react-redux';
 import { PersistPartial } from 'redux-persist/es/persistReducer';
 import { flowManagerReducer } from 'redux-flow-manager';
 import { CreateFlowManager } from './utils';
 
-const { log } = console;
 const getDefaultMiddlewareOptions = {
 	serializableCheck: {
 		ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -36,8 +34,6 @@ const reducers = {
 	...feedbackHandlerReducers,
 	flowManagerFlows: flowManagerReducer
 };
-
-const persistSlices: string[] = [];
 
 const middlewares: Middleware[] = [];
 if (shoppingCartConfig.withApi) {
@@ -66,14 +62,9 @@ const resettableRootReducer = () => (
 	action: PayloadAction<any>,
 ): PersistedRootState => {
 	if (action.type === '@@RESET_STORE') {
-		const reducer = rootReducer({}, action);
+		const reducer = rootReducer(undefined, action);
 		setTimeout(() => {
-			Promise.all(
-				persistSlices.map(async (slice) => {
-					log(`Removing persist:${slice}`);
-					return storage.removeItem(`persist:${slice}`);
-				}),
-			).then(() => log('Store has been reset'));
+			persistor.purge();
 		}, 1000);
 		return reducer;
 	}

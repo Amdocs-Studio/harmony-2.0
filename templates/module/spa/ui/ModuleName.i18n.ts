@@ -1,5 +1,5 @@
 export const moduleNameDescriptor = {
-  en: {
-    'some-message': 'Some message',
-  }
+	en: {
+		'some-message': 'Some message',
+	}
 } as const;

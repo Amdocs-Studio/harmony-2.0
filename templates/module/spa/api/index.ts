@@ -6,6 +6,6 @@ export * from './ModuleNameApi';
 export type * from './ModuleNameTypes';
 export { useModuleName } from './useModuleName';
 export const moduleNameReducers = {
-  moduleNameApi: moduleNameApiReducer,
+	moduleNameApi: moduleNameApiReducer,
   moduleName: moduleNameReducer
 }

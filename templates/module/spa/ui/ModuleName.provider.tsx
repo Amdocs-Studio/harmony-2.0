@@ -5,13 +5,13 @@ import { useAppNavigate } from '@sdk';
 const ModuleNameContext = createContext<ModuleNameContextType | undefined>(undefined);
 
 export function ModuleNameProvider({children}: PropsWithChildren<ModuleNameProps>) {
-  const navigate = useAppNavigate();
+	const navigate = useAppNavigate();
 
-  const value = useMemo(() => ({
-    navigate,
-  }), [navigate]);
+	const value = useMemo(() => ({
+		navigate,
+	}), [navigate]);
 
-  return <ModuleNameContext.Provider value={value}>{children}</ModuleNameContext.Provider>;
+	return <ModuleNameContext.Provider value={value}>{children}</ModuleNameContext.Provider>;
 
 }
 
