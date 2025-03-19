@@ -1,0 +1,98 @@
+# Project information
+site_name: Amdocs Harmony 2.0
+site_description: Branding new web architecture.
+site_url: https://Amdocs-Studio.github.io/harmony-2.0/
+
+# Repository
+repo_name: Amdocs-Studio/harmony-2.0
+repo_url: https://github.com/Amdocs-Studio/harmony-2.0
+
+# Theme directory
+theme:
+  name: material
+  custom_dir: docs/overrides
+  font:
+    text: 'Montserrat'
+  logo: assets/images/harmony-logo-white-small.svg
+
+  palette:
+    - primary: custom
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/git-alt
+  features:
+    - navigation.sections: false
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+plugins:
+  - search
+  - tags:
+      tags_file: tags.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - admonition
+
+nav:
+  - Harmony: index.md
+  - Getting started: getting-started.md
+  - Harmony Architecture: develop-with-harmony.md
+  - Generate Modules: 'extensions/client/modules.md'
+  - Features & Guidelines:
+    - Main Features: 'extensions/client/main_features.md'
+    - Client Introduction: 'extensions/client/client.md'
+    - Code Guards: 'extensions/client/development.md'
+    - Features:
+      - Requests: extensions/client/requests.md
+      - Flow Manager installation: 'extensions/client/flow_manager_establishment.md'
+      - Flow Manager: 'extensions/client/flow_manager.md'
+      - RBA: 'extensions/client/rba.md'
+      - Error Handler: 'extensions/client/error_handler.md'
+      - Global Spinner: 'extensions/client/global_spinner.md'
+      - Multi lingual: 'extensions/client/multilingual.md'
+      - Storybook: 'extensions/client/storybook.md'
+  - License: license.md
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js

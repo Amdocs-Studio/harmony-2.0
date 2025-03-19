@@ -1,0 +1,13 @@
+{
+  "name": "project-name-vendors",
+  "private": false,
+  "version": "1.0.0",
+  "files": [
+    "dist/project-name-vendors.umd.js"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "watch": "vite build --watch --mode development"
+  }
+}

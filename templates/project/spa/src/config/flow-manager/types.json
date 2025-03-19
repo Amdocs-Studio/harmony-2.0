@@ -1,0 +1,40 @@
+{
+  "flowTypes": {
+    "COP": "COP"
+  },
+  "subFlowTypes": {
+    "defaultScenario": "defaultScenario",
+    "twoDevicesFlow": "twoDevicesFlow"
+  },
+  "stepTypes": {
+    "DEVICE_GALLERY": {
+      "displayName": "Device Gallery",
+      "name": "DEVICE_GALLERY",
+      "path": "/shop/device-gallery"
+    },
+    "DEVICE_DETAILS": {
+      "displayName": "Device Details",
+      "name": "DEVICE_DETAILS",
+      "path": "/shop/device-details"
+    },
+    "REVIEW_BASKET": {
+      "name": "REVIEW_BASKET",
+      "displayName": "Review basket",
+      "path": "/shop/review-basket"
+    }
+  },
+  "conditions": [
+    {
+      "conditionName": "defaultSuccessCondition",
+      "onCheck": "defaultSuccessCondition",
+      "displayName": "Default Success",
+      "description": "Return Always Success to be used for every Flow as Default Scenario"
+    },
+    {
+      "conditionName": "multipleDevicesCondition",
+      "onCheck": "multipleDevicesCondition",
+      "displayName": "Multiple Devices",
+      "description": "Return success if there are multiple devices in the cart"
+    }
+  ]
+}

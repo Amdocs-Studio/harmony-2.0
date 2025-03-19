@@ -1,0 +1,26 @@
+{
+  "name": "project-name-common-components",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/project-name-common-components.umd.js",
+  "module": "./dist/project-name-common-components.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/project-name-common-components.js",
+      "require": "./dist/project-name-common-components.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "watch": "vite build --watch --mode development"
+  },
+  "dependencies": {
+    "project-name-sdk": "^1.0.0"
+  }
+}

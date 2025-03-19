@@ -1,0 +1,23 @@
+{
+  "name": "project-name-base-styles",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/project-name-base-styles.umd.js",
+  "module": "./dist/project-name-base-styles.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/project-name-base-styles.js",
+      "require": "./dist/project-name-base-styles.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "watch": "vite build --watch --mode development"
+  }
+}
