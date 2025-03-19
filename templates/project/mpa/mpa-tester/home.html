@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="some aem test page">
+    <title>Home Page</title>
+
+    <script>
+        window.harmony = {
+            ...window.harmony,
+            useMocks: true,
+            isMPA: true
+        };
+    </script>
+
+    <!--  STYLES  -->
+    <link rel="stylesheet" crossorigin href="../src/modules/project-name-base-styles/dist/project-name-base-styles.css">
+
+    <!--  MANDATORY SCRIPTS  -->
+    <script type="module" crossorigin src="../src/modules/project-name-vendors/dist/project-name-vendors.umd.js"></script>
+    <script type="module" crossorigin src="../src/modules/project-name-sdk/dist/project-name-sdk.umd.js"></script>
+    <script type="module" crossorigin src="../src/modules/project-name-common-components/dist/project-name-common-components.umd.js"></script>
+    <script type="module" crossorigin src="../src/modules/project-name-feedback-handler/dist/project-name-feedback-handler.umd.js"></script>
+
+    <!--  page widgets  -->
+    <script type="module" crossorigin src="../src/modules/project-name-navbar/dist/project-name-navbar.umd.js"></script>
+    <script type="module" crossorigin src="../src/modules/project-name-home/dist/project-name-home.umd.js"></script>
+
+    <!--  load widget scripts  -->
+    <script type="module">
+        window.ProjectNameSDK.loadWidget('ProjectNameNavbar','Navbar', 'project-name-navbar');
+        window.ProjectNameSDK.loadWidget('ProjectNameHome','Home', 'project-name-home');
+        window.ProjectNameSDK.loadWidget('ProjectNameFeedbackHandler','FeedbackHandler', 'project-name-feedback-handler')
+    </script>
+    <link rel="stylesheet" crossorigin href="../src/modules/project-name-common-components/dist/project-name-common-components.css">
+
+</head>
+<body>
+<div class="page-wrapper">
+    <!--  mandatory placeholder for header  -->
+    <div id="project-name-navbar"></div>
+    <main>
+        <div class="page-container">
+            <!--  mandatory placeholder for select account  -->
+            <div id="project-name-home"></div>
+        </div>
+    </main>
+    <!--  mandatory placeholder for footer  -->
+    <div id="project-name-feedback-handler"></div>
+</div>
+</body>
+</html>

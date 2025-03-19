@@ -1,0 +1,17 @@
+{
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [ "prebuild", "^build"],
+      "cache": false
+    },
+    "storybook": {
+      "cache": false
+    },
+    "build-storybook": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  }
+}
