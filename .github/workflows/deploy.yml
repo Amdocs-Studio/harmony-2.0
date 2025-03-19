@@ -34,5 +34,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_dir: ./
+          publish_dir: ./docs/site
           keep_files: false
