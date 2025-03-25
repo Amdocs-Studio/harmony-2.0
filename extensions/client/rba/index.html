@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rba-to-align-to-new-architecture" class="md-skip">
+        <a href="#rba" class="md-skip">
           Skip to content
         </a>
       
@@ -849,24 +849,21 @@
   
 
 
-<h1 id="rba-to-align-to-new-architecture">RBA  - TO ALIGN TO NEW ARCHITECTURE</h1>
+<h1 id="rba">RBA</h1>
 <h2 id="rba-concept">RBA Concept</h2>
 <p>RBA is built-in feature in harmony that give you the option to store in redux store the <code>permissions</code> list to the store after login.</p>
 <h2 id="rba-actions">RBA Actions</h2>
-<p>RBA is a base feature that not import automatic to harmony project.
-you can find and use RBA feature if you need under:
-<code>src\base\features\base-rba</code></p>
+<p>RBA is a base feature that not import automatic to harmony project.</p>
 <ul>
 <li><code>RBAStatus</code> - enum of the all the possible status of each permission<ul>
 <li><code>hidden</code></li>
 <li><code>disabled</code></li>
-<li><code>secured</code></li>
+<li><code>visible</code></li>
 </ul>
 </li>
-<li><code>loadRBAData</code> - async call to the RBA api and store it in rba slice in store.
+<li><code>policies</code> - async call to the RBA api and store it in rba slice in store.
 basically you call it once user login.</li>
-<li><code>cleanRBAData</code> - clear the rba permissions from cart. basically you call it when user perform logout.</li>
-<li><code>getPermissions</code> - selector to return the permission object from store.</li>
+<li><code>setPermissions</code> - set the rba permissions. basically you call it when user perform logout to clear or set by any other value.</li>
 </ul>
 <p>What is the structure of the permissions object after the mapping process?</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
@@ -881,7 +878,7 @@ basically you call it once user login.</li>
 </span></code></pre></div>
 <h2 id="rbac-component">RBAC Component</h2>
 <p>To use the RBAC component that will wrap your ui component you need to do the following:</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">RBAC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@base/features/base-rba/components/RBAC&#39;</span><span class="p">;</span>
+<div class="language-typescript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RBAC</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@common-components&#39;</span><span class="p">;</span>
 </span></code></pre></div>
 <p>In your render you will need to use it as following:</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&lt;</span><span class="nx">RBAC</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;searchInput&quot;</span><span class="o">&gt;</span>
