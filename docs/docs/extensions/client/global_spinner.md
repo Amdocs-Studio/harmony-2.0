@@ -9,4 +9,4 @@ Any time there is "pending" request in the network, global spinner will be displ
 That mean in redux speak - any time we have network task, we will have value greater than 1 in store under `feedbackHandler` slice.
 
 If we have an api call that we don't want a spinner for, we can remove it. 
-For more info, see [Api calls](#api-calls) section.
+For more info, see [API Call Options](api.md#api-call-options) section.
