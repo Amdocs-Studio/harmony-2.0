@@ -66,6 +66,5 @@ In api call you can send in options some props to define some handling. This wil
 });
 ```
 
-
 For more info, checkout the full documentation:
-https://redux-toolkit.js.org/rtk-query/api/createApi 
+[redux-toolkit createApi](https://redux-toolkit.js.org/rtk-query/api/createApi)
