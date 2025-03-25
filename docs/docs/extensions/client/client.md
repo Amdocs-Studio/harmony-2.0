@@ -63,12 +63,12 @@ The SDK layer houses all business logic and API calls while providing shared cod
 
   <div class="tools">        
         <div style="gap: 82px !important;" class="tools-start">
-            <div class="tools-logos"><a href="https://facebook.github.io/react/" target="_blank"><img src="/../../../assets/images/icon-react.svg"/><h6 class="page-title">React</h6></a></div>
-            <div class="tools-logos"><a href="http://redux.js.org/" target="_blank"><img src="/../../../assets/images/icon-redux.svg"><h6 class="page-title">Redux</h6></a></div>
-            <div class="tools-logos"><a href="https://redux-toolkit.js.org/" target="_blank"><img src="/../../../assets/images/icon-redux.svg"><h6 class="page-title">Redux Toolkit</h6></a></div>    
-            <div class="tools-logos"><a href="https://vite.dev/" target="_blank"><img src="/../../../assets/images/icon-vite.svg"><h6 class="page-title">Vite</h6></a></div>
-            <div class="tools-logos"><a href="https://nodejs.org/en/" target="_blank"><img src="/../../../assets/images/icon-node.svg"><h6 class="page-title">Node JS</h6></a></div>
-            <div class="tools-logos"><a href="https://www.typescriptlang.org/" target="_blank"><img src="/../../../assets/images/icon-ts.svg"><h6 class="page-title">TypeScript</h6></a></div>
-            <div class="tools-logos"><a href="https://tailwindcss.com/" target="_blank"><img src="/../../../assets/images/icon-tailwind.svg"><h6 class="page-title">TailwindCSS</h6></a></div>
+            <div class="tools-logos"><a href="https://facebook.github.io/react/" target="_blank"><img src="./../../../assets/images/icon-react.svg"/><h6 class="page-title">React</h6></a></div>
+            <div class="tools-logos"><a href="http://redux.js.org/" target="_blank"><img src="./../../../assets/images/icon-redux.svg"><h6 class="page-title">Redux</h6></a></div>
+            <div class="tools-logos"><a href="https://redux-toolkit.js.org/" target="_blank"><img src="./../../../assets/images/icon-redux.svg"><h6 class="page-title">Redux Toolkit</h6></a></div>    
+            <div class="tools-logos"><a href="https://vite.dev/" target="_blank"><img src="./../../../assets/images/icon-vite.svg"><h6 class="page-title">Vite</h6></a></div>
+            <div class="tools-logos"><a href="https://nodejs.org/en/" target="_blank"><img src="./../../../assets/images/icon-node.svg"><h6 class="page-title">Node JS</h6></a></div>
+            <div class="tools-logos"><a href="https://www.typescriptlang.org/" target="_blank"><img src="./../../../assets/images/icon-ts.svg"><h6 class="page-title">TypeScript</h6></a></div>
+            <div class="tools-logos"><a href="https://tailwindcss.com/" target="_blank"><img src="./../../../assets/images/icon-tailwind.svg"><h6 class="page-title">TailwindCSS</h6></a></div>
         </div>
     </div>

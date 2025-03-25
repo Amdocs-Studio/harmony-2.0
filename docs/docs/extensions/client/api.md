@@ -1,4 +1,4 @@
-# Requests - TO ALIGN TO NEW ARCHITECTURE
+# Api calls
 
 
 API Requests is one of the features coming from Harmony 2.0.<br/>
