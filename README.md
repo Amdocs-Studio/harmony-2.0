@@ -31,7 +31,6 @@ Easy to add and support multiple languages with `react-intl`.
 React
 Redux
 Redux Toolkit
-MongoDB
 Vite
 Node JS
 TypeScript
