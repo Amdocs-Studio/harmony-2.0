@@ -1,116 +1,62 @@
-# Storybook - TO ALIGN TO NEW ARCHITECTURE
+# Storybook
 
-Harmony include Storybook built-in, although most of the usage is related to the official documentation 
-<a href="https://storybook.js.org/" target="_blank">Storybook</a>, 
-There are few things you may need to know with Storybook inside Harmony to make your life easier<br/>
+Harmony includes Storybook built-in, providing a powerful tool for developing and testing UI components in isolation. Storybook allows you to create and showcase components independently, making it easier to develop, test, and document your UI.
 
-## Generate Story
+## Benefits of Using Storybook in Harmony
 
-Each time you create Component you can also generate the story for it.<br />
-<br />
-> **Note:** TBD - code generator ?
+- **Isolated Development**: Develop components in isolation without running your entire application.
+- **Interactive Documentation**: Create interactive documentation for your components, making it easier for other developers to understand and use them.
+- **Visual Testing**: Visually test components to ensure they look and behave as expected.
+- **Component Libraries**: Build and maintain a library of reusable components.
+- **Integration with Testing Tools**: Integrate with various testing tools to automate visual regression testing.
 
-## Base Story Decorator
+## Getting Started with Storybook
 
-Harmony Provide by default Base Decorator, what make the story to be connected to the store and then you can test more Components, 
-and even container that required data from store.
+To get started with Storybook in Harmony, follow these steps:
 
-## Create Story for Component by cli
+1. **Install Storybook**: Storybook is included in Harmony, so you don't need to install it separately.
+2. **Create Stories**: Create stories for your components to showcase different states and variations.
+3. **Run Storybook**: Use the command `npm run storybook` to start the Storybook server and view your components in the browser.
 
-Each time you create Component with the generator `createComponent` it automatic will generate to you `.stories.tsx` file.<br />
-But if you wish you can create Component Story everywhere with cli command <br />
-<br />
-Most the time the only what you left to do is to insert the data under `Default.args` object.
+## Creating Stories
 
-```
-$ gulp createStory --name MyComponentName --storyTitle Business Components/MyComponentName
-```
+Each time you create a component, you can also generate a story for it. This allows you to document and test the component in isolation.
 
-### Example Code
+### Example Story
 
-```TS
-// MyComponentName.stories.ts
+```typescript
+// MyComponent.stories.ts
 import React from 'react';
-import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { ComponentStory, Meta } from '@storybook/react';
-import DeviceCard, { Props as DeviceCardProps } from './index';
+import MyComponent from './MyComponent';
 
 export default {
-	title: 'Design System/Business Components/Device Card',
-	component: DeviceCard,
-	argTypes: {
-		quantity: {
-			description: 'The numbers of this Item in Cart. Once bigger then one button become to disable and title become remove.'
-		}
-	},
-	decorators: [BaseStorybookDecorator],
-	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
+  title: 'Components/MyComponent',
+  component: MyComponent,
 } as Meta;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof DeviceCard> = (args) => <DeviceCard {...args} />;
+const Template: ComponentStory<typeof MyComponent> = (args) => <MyComponent {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-
-} as DeviceCardProps;
-
-
-```
-
-## Create Story for Container by cli
-
-Story Container is the same as normal story, but it connected to the store.<br />
-Then with same way with normal story, you can insert your args as it was the data from the store, and the 
-container will work with this args injected via the `mapStateToProps`.
-
-
-```
-$ gulp createStoryContainer --name MyComponentName --storyTitle Business Components/MyComponentName
-```
-
-### Example Code
-
-```TS
-// MyComponentName.stories.ts
-import React from 'react';
-import { BaseStorybookDecorator } from '@base/features/base-decorator';
-import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ComponentStory, Meta } from '@storybook/react';
-import { ErrorPage, Props as ErrorPageProps } from './index';
-
-export default {
-	title: 'Design System/Containers/ErrorPage',
-	component: (props: ErrorPageProps) => (<ErrorPage {...props as any} />),
-	argTypes: {
-
-	},
-	decorators: [BaseStorybookDecorator],
-	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as Meta;
-
-const Template: ComponentStory<typeof ErrorPage> = (args) => {
-	const ErrorPageContainer = baseConnect<any, any, ErrorPageProps>(
-		ErrorPage,
-		() => ({
-			...args
-		})
-	);
-
-	return <ErrorPageContainer {...args} />;
+  // Add default args here
 };
 
-export const Default = Template.bind({});
-Default.args = {
-
-} as ErrorPageProps;
-
-
 ```
 
-!!! tip Big Data Required from Store
+### Advanced Storybook Features
+Storybook offers a range of advanced features to enhance your development workflow:
 
-    The best practice is to keep your component with small requirments of Props.<br/>
-    But if you face a situation that Container required tones of data from the store, you always can copy
-    the store for real enviroment where your container should be runing and put it in sepreate file of mock.<br />
-    Then you can import it and spread it into your `args`.
+
+- **Addons**: Extend Storybook's functionality with addons for accessibility, actions, backgrounds, controls, and more.
+- **Docs**: Automatically generate documentation for your components using the @storybook/addon-docs addon.
+- **Controls**: Create interactive controls for your component props to dynamically change their values in the Storybook UI.
+- **Actions**: Log actions and events triggered by your components to debug and test their behavior.
+<br/><br/>
+For more information, check out the official Storybook documentation.
+
+
+### Conclusion
+Storybook is a powerful tool that enhances the development and testing of UI components in Harmony. By leveraging Storybook's features, you can create robust, well-documented, and visually tested components that improve the overall quality of your application.
+
+For more detailed information and advanced usage, refer to the [Storybook documentation](https://storybook.js.org/docs).
