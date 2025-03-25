@@ -81,7 +81,7 @@ nav:
     - Client Introduction: 'extensions/client/client.md'
     - Code Guards: 'extensions/client/development.md'
     - Features:
-      - Requests: extensions/client/requests.md
+      - Api calls: extensions/client/api.md
       - Flow Manager installation: 'extensions/client/flow_manager_establishment.md'
       - Flow Manager: 'extensions/client/flow_manager.md'
       - RBA: 'extensions/client/rba.md'
