@@ -1,4 +1,4 @@
-# RBA  - TO ALIGN TO NEW ARCHITECTURE
+# RBA
 
 ## RBA Concept
 RBA is built-in feature in harmony that give you the option to store in redux store the `permissions` list to the store after login.
@@ -6,17 +6,14 @@ RBA is built-in feature in harmony that give you the option to store in redux st
 ## RBA Actions
 
 RBA is a base feature that not import automatic to harmony project.
-you can find and use RBA feature if you need under:
-`src\base\features\base-rba`
 
 - `RBAStatus` - enum of the all the possible status of each permission
     - `hidden`
     - `disabled`
-    - `secured`
-- `loadRBAData` - async call to the RBA api and store it in rba slice in store.
+    - `visible`
+- `policies` - async call to the RBA api and store it in rba slice in store.
 basically you call it once user login.
-- `cleanRBAData` - clear the rba permissions from cart. basically you call it when user perform logout.
-- `getPermissions` - selector to return the permission object from store.
+- `setPermissions` - set the rba permissions. basically you call it when user perform logout to clear or set by any other value.
 
 What is the structure of the permissions object after the mapping process?
 
@@ -37,8 +34,8 @@ What is the structure of the permissions object after the mapping process?
 
 To use the RBAC component that will wrap your ui component you need to do the following:
 
-```js
-import RBAC from '@base/features/base-rba/components/RBAC';
+```typescript
+import { RBAC } from '@common-components';
 ```
 
 In your render you will need to use it as following:

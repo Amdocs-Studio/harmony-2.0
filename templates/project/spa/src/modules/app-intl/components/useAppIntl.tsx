@@ -13,4 +13,5 @@ export const useAppIntl = () => {
 	return {
 		...rest,
 		formatMessage: typedFormatMessage,
+	}
 };
