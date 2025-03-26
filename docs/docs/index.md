@@ -21,7 +21,7 @@ hide:
             <h2 class="title">Quick start 🚀</h2>
         </div>
         <div class="page-title">
-            Download The Harmony project
+            Install The Harmony project
         </div>
         <div class="quick-start">
             <div class="quick-start-part">
