@@ -1,6 +1,6 @@
 {
   "name": "@amdocs-studio/harmony-project-creator",
-  "version": "2.0.0",
+  "version": "2.0.001",
   "type": "commonjs",
   "bin": {
     "harmony": "./scripts/index.js"
