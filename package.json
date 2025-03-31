@@ -1,6 +1,6 @@
 {
   "name": "@amdocs-studio/harmony-project-creator",
-  "version": "2.0.001",
+  "version": "2.0.002",
   "type": "commonjs",
   "bin": {
     "harmony": "./scripts/index.js"
@@ -10,6 +10,9 @@
     "url": "https://github.com/Amdocs-Studio/harmony-2.0"
   },
   "homepage": "https://amdocs-studio.github.io/harmony-2.0/",
+  "alias": {
+    "harmony": "@amdocs-studio/harmony-project-creator"
+  },
   "dependencies": {
     "@inquirer/prompts": "^7.3.1",
     "chalk": "^4.1.2",
