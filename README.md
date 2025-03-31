@@ -18,7 +18,7 @@ This will present a menu to select if you want a Single Page Application (SPA), 
 ##### Create project:
 ```$ npx harmony2 create```
 ##### Create new component/moudle
-```$ npx harmony2 add```:
+```$ npx harmony2 add```
 
 
 ### Speeds up development
