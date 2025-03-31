@@ -1,12 +1,12 @@
 # Harmony 2.0
 
 Harmony 2.0 gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, Redux TK, and more. No config needed.
-######  This project was inspired by [harmony-framework](https://github.com/harmony-framework/harmony-boilerplate), but most of the technologies are different and the project is built from scratch.
 
 Harmony is a starter-kit to enable fast on-boarding when it comes to developing web applications with the focus on React Redux and NodeJS.
 Harmony suggest new features and improve your flexibility by adding your customized features.
 
 Harmony Boilerplate focus on performance and Best Practices to build the most updated web application
+######  This project was inspired by [harmony-framework](https://github.com/harmony-framework/harmony-boilerplate), but most of the technologies are different and the project is built from scratch.
 
 ## Creation
 This project is a npx based, CLI project, which means you can create a new project without installing any dependencies.
