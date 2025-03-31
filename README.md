@@ -3,41 +3,54 @@
 Harmony 2.0 gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, Redux TK, and more. No config needed.
 ######  This project was inspired by [harmony-framework](https://github.com/harmony-framework/harmony-boilerplate), but most of the technologies are different and the project is built from scratch.
 
-## Speeds up development
+Harmony is a starter-kit to enable fast on-boarding when it comes to developing web applications with the focus on React Redux and NodeJS.
+Harmony suggest new features and improve your flexibility by adding your customized features.
+
+Harmony Boilerplate focus on performance and Best Practices to build the most updated web application
+
+## Creation
+To create a Harmony based project, you can use the Harmony CLI to create a new project.
+This will present a menu to select if you want a Single Page Application (SPA), or a Multi Page Application (MPA) and some other info required for the project.
+
+| Description                                           | Command                    | Image                                                                                                                                                                            |
+|-------------------------------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Harmony CLI                                           | ```$ npx harmony2 ```       | ![Image](assets/images/harmony-cli-start.png)                                                                                                                                    |
+| Harmony CLI Create Project                            | ```$ npx harmony2 create``` | ![Image](assets/images/harmony-cli-create.png)                                                                                                                                   |
+| Harmony CLI - <br/> 1. Select SPA\MPA<br/> 2. Install |     | ![Image](assets/images/harmony-cli-spa-mpa-selection.png)<br/> ![Image](assets/images/harmony-cli-create-and-install.png)<br/> |
+
+
+### Speeds up development
 We did most of the heavy lifting for you to provide a better experience with boilerplates.
 
 
-## Best Practice
+### Best Practice
 Predefined scripts that let you deliver your app as fast as you can.
 
 
-## Static-Typing
+### Static-Typing
 The boilerplate comes with Typescript built-in provided with pre-defined rule-set for better writing and predective bad practices.
 
 
-## Real-Time Dispatching
+### Real-Time Dispatching
 Ability to dispatch actions on each client via Websockets.
 
-
-## User Authentication
+### User Authentication
 Ready-To-Use auth mechanism with high security.
 
-
-## Multilingual Support
+### Multilingual Support
 Easy to add and support multiple languages with `react-intl`.
 
-## Tools
+### Tools
 
 React
 Redux
 Redux Toolkit
-MongoDB
 Vite
 Node JS
 TypeScript
 TailwindCSS
 
-## Authors and acknowledgment
+### Authors and acknowledgment
 This Boilerplate is created by the Amdocs Experience & Digital Engineering Studio.
 Mainly by:
 - Amit Znati
@@ -45,7 +58,7 @@ Mainly by:
 - Moshe Hatab
 - Yehuda Huri
 
-## License
+### License
 #### MIT License
 Copyright © 2025 Amdocs Experience & Digital Engineering Studio
 
