@@ -1,6 +1,6 @@
 # Harmony 2.0
 
-Harmony Boilerplate2.0  gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, Redux TK, and more. No config needed.
+Harmony 2.0 gives you the best developer experience with all the features you need for production based react redux: react routers & mobile rendering, TypeScript support, smart bundling, Redux TK, and more. No config needed.
 ######  This project was inspired by [harmony-framework](https://github.com/harmony-framework/harmony-boilerplate), but most of the technologies are different and the project is built from scratch.
 
 ## Speeds up development

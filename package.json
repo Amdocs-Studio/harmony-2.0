@@ -1,5 +1,5 @@
 {
-  "name": "harmony-project-creator",
+  "name": "@amdocs-studio/harmony-project-creator",
   "version": "2.0.0",
   "type": "commonjs",
   "bin": {
