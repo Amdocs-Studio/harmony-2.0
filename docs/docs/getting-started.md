@@ -18,12 +18,12 @@ This will present a menu to select if you want a Single Page Application (SPA), 
 
 | Description                                           | Command                    | Image                                                                                                                                                                            |
 |-------------------------------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Harmony CLI                                           | ```$ npx harmony ```       | ![Image](assets/images/harmony-cli-start.png)                                                                                                                                    |
-| Harmony CLI Create Project                            | ```$ npx harmony create``` | ![Image](assets/images/harmony-cli-create.png)                                                                                                                                   |
+| Harmony CLI                                           | ```$ npx harmony2 ```       | ![Image](assets/images/harmony-cli-start.png)                                                                                                                                    |
+| Harmony CLI Create Project                            | ```$ npx harmony2 create``` | ![Image](assets/images/harmony-cli-create.png)                                                                                                                                   |
 | Harmony CLI - <br/> 1. Select SPA\MPA<br/> 2. Install |     | ![Image](assets/images/harmony-cli-spa-mpa-selection.png)<br/> ![Image](assets/images/harmony-cli-create-and-install.png)<br/> |
 
 ``` sh
-$ npx harmony create <my-app> <location>
+$ npx harmony2 create <my-app> <location>
 #<my-app> is the project name and is optional
 #<location> is the project location to create
 ``` 
