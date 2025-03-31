@@ -29,6 +29,6 @@ jobs:
           scope: '@amdocs-studio'
 
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
