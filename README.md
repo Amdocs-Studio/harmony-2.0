@@ -9,14 +9,16 @@ Harmony suggest new features and improve your flexibility by adding your customi
 Harmony Boilerplate focus on performance and Best Practices to build the most updated web application
 
 ## Creation
-To create a Harmony based project, you can use the Harmony CLI to create a new project.
+This project is a npx based, CLI project, which means you can create a new project without installing any dependencies.
+To create a new Harmony2 based project, you can use the Harmony CLI to create a new project.
 This will present a menu to select if you want a Single Page Application (SPA), or a Multi Page Application (MPA) and some other info required for the project.
 
-| Description                                           | Command                    | Image                                                                                                                                                                            |
-|-------------------------------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Harmony CLI                                           | ```$ npx harmony2 ```       | ![Image](assets/images/harmony-cli-start.png)                                                                                                                                    |
-| Harmony CLI Create Project                            | ```$ npx harmony2 create``` | ![Image](assets/images/harmony-cli-create.png)                                                                                                                                   |
-| Harmony CLI - <br/> 1. Select SPA\MPA<br/> 2. Install |     | ![Image](assets/images/harmony-cli-spa-mpa-selection.png)<br/> ![Image](assets/images/harmony-cli-create-and-install.png)<br/> |
+##### Install (once):
+```$ npx harmony2 ```
+##### Create project:
+```$ npx harmony2 create```
+##### Create new component/moudle
+```$ npx harmony2 add```:
 
 
 ### Speeds up development
