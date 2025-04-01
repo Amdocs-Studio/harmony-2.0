@@ -1,10 +1,28 @@
 import { defineConfig } from 'vite'
-import { resolve } from "path";
+import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
-import svgr from "vite-plugin-svgr";
-import tailwindcss from "@tailwindcss/vite";
+import svgr from 'vite-plugin-svgr';
+import tailwindcss from '@tailwindcss/vite';
+import checker from 'vite-plugin-checker';
+import { minify } from 'terser';
 
 const projectRootDir = resolve(__dirname);
+
+function minifyBundles() {
+  return {
+    name: 'minifyBundles',
+    async generateBundle(_unusedOptions: any, bundle: any) {
+      for (const key in bundle) {
+        if (bundle[key].type == 'chunk' && key.endsWith('.js')) {
+          console.log('start minify');
+          const minifyCode = await minify(bundle[key].code, { sourceMap: false })
+          bundle[key].code = minifyCode.code
+        }
+      }
+      return bundle
+    },
+  }
+}
 
 const ROLLUP_COMMON_MODULES = [
   'vite/preload-helper',
@@ -37,36 +55,50 @@ const manualChunks = (id: string) => {
   }
 }
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    react(),
-    svgr(),
-  ],
-  resolve: {
-    alias: [
-      {find: '@mini-cart-layout', replacement: resolve(projectRootDir, 'src/modules/mini-cart-layout')},
-      {find: '@shopping-cart', replacement: resolve(projectRootDir, 'src/modules/shopping-cart')},
-      {find: '@device-details', replacement: resolve(projectRootDir, 'src/modules/device-details')},
-      {find: '@device-gallery', replacement: resolve(projectRootDir, 'src/modules/device-gallery')},
-      {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/sdk')},
-      {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/modules/feedback-handler')},
-      {find: '@home', replacement: resolve(projectRootDir, 'src/modules/home')},
-      {find: '@navbar', replacement: resolve(projectRootDir, 'src/modules/navbar')},
-      {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/app-intl')},
-      {find: '@common-components', replacement: resolve('src/modules/common-components')},
-      {find: '@config', replacement: resolve(projectRootDir, 'src/config')},
-    ],
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks,
-      },
+export default defineConfig(({ mode }) => {
+  const isDev = mode === 'development';
+  const isProdEnv = process.env.NODE_ENV === 'production';
+	const isWatch = process.env.npm_lifecycle_event === 'watch';
+	console.log(`start build with mode: ${mode} and NODE_ENV: ${process.env.NODE_ENV}`);
+  return {
+    plugins: [
+      tailwindcss(),
+      react({
+				babel: {
+					plugins: [
+						['babel-plugin-react-compiler'],
+					],
+				},
+			}),
+			svgr(),
+	    checker({ typescript: { buildMode: isProdEnv || isWatch } }),
+      !isDev && minifyBundles(),
+    ].filter(Boolean),
+    resolve: {
+      alias: [
+        {find: '@mini-cart-layout', replacement: resolve(projectRootDir, 'src/modules/mini-cart-layout')},
+        {find: '@shopping-cart', replacement: resolve(projectRootDir, 'src/modules/shopping-cart')},
+        {find: '@device-details', replacement: resolve(projectRootDir, 'src/modules/device-details')},
+        {find: '@device-gallery', replacement: resolve(projectRootDir, 'src/modules/device-gallery')},
+        {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/sdk')},
+        {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/modules/feedback-handler')},
+        {find: '@home', replacement: resolve(projectRootDir, 'src/modules/home')},
+        {find: '@navbar', replacement: resolve(projectRootDir, 'src/modules/navbar')},
+        {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/app-intl')},
+        {find: '@common-components', replacement: resolve('src/modules/common-components')},
+        {find: '@config', replacement: resolve(projectRootDir, 'src/config')},
+      ],
+    },
+    build: {
+      sourcemap: isDev,
+      rollupOptions: {
+        output: {
+          manualChunks,
+        },
+      }
+    },
+    server: {
+      port: 5001,
     }
-  },
-  server: {
-    port: 5001,
-  }
-})
+  };
+});
