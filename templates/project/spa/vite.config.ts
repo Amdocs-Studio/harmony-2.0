@@ -76,6 +76,7 @@ export default defineConfig(({ mode }) => {
     ].filter(Boolean),
     resolve: {
       alias: [
+        {find: '@login', replacement: resolve(projectRootDir, 'src/modules/login')},
         {find: '@mini-cart-layout', replacement: resolve(projectRootDir, 'src/modules/mini-cart-layout')},
         {find: '@shopping-cart', replacement: resolve(projectRootDir, 'src/modules/shopping-cart')},
         {find: '@device-details', replacement: resolve(projectRootDir, 'src/modules/device-details')},

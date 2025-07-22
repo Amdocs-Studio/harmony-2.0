@@ -13,7 +13,7 @@ const render = () => {
 };
 
 async function enableMocking() {
-	if (!config.useMock) {
+	if (!config.useMocks) {
 		return;
 	}
 	return mockServer.start({

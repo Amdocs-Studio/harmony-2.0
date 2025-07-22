@@ -1,11 +1,10 @@
 import { SpinnerWidget } from './Spinner';
 import Snackbars from './Snackbars';
 import Modals from './Modals';
-import { useFeedbackHandlerContext } from '../FeedbackHandler.provider';
+import { feedbackHandlerApi } from '@sdk';
 
 export default function FeedbackHandlerMain() {
-	const { useLoadConfigQuery } = useFeedbackHandlerContext();
-	const { isLoading } = useLoadConfigQuery();
+	const { isLoading } = feedbackHandlerApi.useLoadConfigQuery();
 	if (isLoading) {
 		return <SpinnerWidget />;
 	}

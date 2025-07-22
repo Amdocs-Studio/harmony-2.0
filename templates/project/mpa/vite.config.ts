@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
-import tailwindcss from '@tailwindcss/vite';
 import checker from 'vite-plugin-checker';
 import { minify } from 'terser';
+import tailwindcss from '@tailwindcss/vite';
 
 const projectRootDir = resolve(__dirname);
 
@@ -76,10 +76,7 @@ export default defineConfig(({ mode }) => {
   ],
     resolve: {
       alias: [
-      {find: '@shopping-cart', replacement: resolve(projectRootDir, 'src/modules/project-name-shopping-cart/src/index.ts')},
-        {find: '@mini-cart-layout', replacement: resolve(projectRootDir, 'src/modules/project-name-mini-cart-layout/src/index.ts')},
-      {find: '@device-gallery', replacement: resolve(projectRootDir, 'src/modules/project-name-device-gallery/src/index.ts')},
-        {find: '@device-details', replacement: resolve(projectRootDir, 'src/modules/project-name-device-details/src/index.ts')},
+        {find: '@login', replacement: resolve(projectRootDir, 'src/modules/project-name-login/src/index.ts')},
         {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/project-name-sdk/src/index.ts')},
         {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/modules/project-name-feedback-handler/src/index.ts')},
         {find: '@home', replacement: resolve(projectRootDir, 'src/modules/project-name-home/src/index.ts')},
@@ -92,6 +89,7 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: isDev,
       rollupOptions: {
+        external: id => id.includes('mpa-tester'),
         output: {
           manualChunks,
         },

@@ -1,3 +1,4 @@
+import { loginDescriptor } from '../login/Login.i18n';
 import { shoppingCartDescriptor } from '../shopping-cart/ShoppingCart.i18n';
 import { miniCartLayoutDescriptor } from '../mini-cart-layout/MiniCartLayout.i18n';
 import { deviceGalleryDescriptor } from '../device-gallery/DeviceGallery.i18n';
@@ -8,6 +9,7 @@ import { homeDescriptor } from '../home/Home.i18n';
 import { navbarDescriptor } from '../navbar/Navbar.i18n';
 
 export const enMessages = {
+	login: loginDescriptor.en,
 	shoppingCart: shoppingCartDescriptor.en,
 	miniCartLayout: miniCartLayoutDescriptor.en,
 	deviceGallery: deviceGalleryDescriptor.en,

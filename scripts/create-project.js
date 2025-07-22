@@ -9,7 +9,7 @@ const {
     wait,
     dashToCamelCase,
     copyAndReplaceTokens,
-    copyFileAndReplaceTokens
+    copyFileAndReplaceTokens, dashToCapitalized
 } = require('./utils');
 
 const templatesDir = path.join(__dirname, '../templates'); // Assuming templates are in a 'templates' folder in the same directory as the script
@@ -58,6 +58,7 @@ async function createProject(argv) {
         'project-name': projectName,
         'module-prefix': modulePrefix,
         'ProjectName': dashToCamelCase(projectName),
+        'Project Name': dashToCapitalized(projectName)
     }
     const harmonyJsonTokens = {
         '#project-name#': projectName,

@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './bootstrap';
 import { config } from '@sdk';
-import { mockServer } from './mocks/browser';
+import { mockServer } from './modules/project-name-mocks/src';
 
 const render = () => {
 	createRoot(document.getElementById('root')!).render(
@@ -13,7 +13,7 @@ const render = () => {
 };
 
 async function enableMocking() {
-	if (!config.useMock) {
+	if (!config.useMocks) {
 		return;
 	}
 	return mockServer.start({
@@ -21,4 +21,8 @@ async function enableMocking() {
 	});
 }
 
-enableMocking().then(render);
+enableMocking().then(() => {
+	window.harmony = window.harmony || {};
+	window.harmony.mocksEnabled = true;
+	render();
+});

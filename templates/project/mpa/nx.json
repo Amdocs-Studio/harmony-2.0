@@ -8,7 +8,7 @@
       "cache": false
     },
     "build-storybook": {
-      "cache": true,
+      "cache": false,
       "dependsOn": [
         "^build"
       ]

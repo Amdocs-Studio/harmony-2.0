@@ -2,13 +2,16 @@ import path, {resolve} from "path";
 import { defineConfig } from 'vite'
 import { minify } from "terser";
 import svgr from 'vite-plugin-svgr';
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 const projectRootDir = resolve(__dirname);
 
 const isExternal = (id: string) => {
   return !id.startsWith(".") &&
     !id.includes('@app-intl') &&
+    !id.includes('@config') &&
+    !id.includes('redux-flow-manager') &&
+    !id.includes('xstate') &&
     !path.isAbsolute(id);
 }
 
@@ -28,6 +31,16 @@ function minifyBundles() {
   }
 }
 
+const styleBuildConfig = (input: string, output: string) => ({
+  emptyOutDir: true,
+  rollupOptions: {
+    input: input,
+    output: {
+      assetFileNames: `${output}[extname]`,
+    }
+  }
+})
+
 export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileName: string; name: string}) =>
   defineConfig(({ mode }) => {
     const isProduction = mode !== 'development';
@@ -41,9 +54,12 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
       resolve: {
         alias: [
           {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/project-name-app-intl/src/index.ts')},
+          {find: '@config', replacement: resolve(projectRootDir, 'src/config/index.ts')},
+          {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/project-name-sdk/src/index.ts')},
         ],
       },
-      build: {
+      build: name === 'BaseStyles' ? styleBuildConfig(entry, fileName) : {
+        emptyOutDir: true,
         minify: isProduction,
         sourcemap: !isProduction,
         target: ['ESNext'],
@@ -53,7 +69,7 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
           name
         },
         rollupOptions: {
-          external: isExternal,
+          external: name === 'ProjectNameMocks' ? (id: string) => id.includes('@sdk') : isExternal,
           output: {
             // manualChunks: false,
             assetFileNames: () => `${fileName}[extname]`, // Generates asset file names.

@@ -23,18 +23,16 @@
     "noUncheckedSideEffectImports": true,
     "types": ["vite/client","node", "vite-plugin-svgr/client", "@types/react"],
     "paths": {
-      "@shopping-cart": ["./src/modules/project-name-shopping-cart/src/index.ts"],
-      "@mini-cart-layout": ["./src/modules/project-name-mini-cart-layout/src/index.ts"],
-      "@device-gallery": ["./src/modules/project-name-device-gallery/src/index.ts"],
-      "@device-details": ["./src/modules/project-name-device-details/src/index.ts"],
+	  "@login": ["./src/modules/project-name-login/src/index.ts"],
       "@sdk": ["./src/modules/project-name-sdk/src/index.ts"],
       "@common-components": ["./src/modules/project-name-common-components/src/index.ts"],
       "@feedback-handler": ["./src/modules/project-name-feedback-handler/src/index.ts"],
       "@home": ["./src/modules/project-name-home/src/index.ts"],
       "@navbar": ["./src/modules/project-name-navbar/src/index.ts"],
-      "@app-intl": ["./src/modules/project-name-app-intl/src/index.ts"]
+      "@app-intl": ["./src/modules/project-name-app-intl/src/index.ts"],
+      "@config": ["./src/config/index.ts"],
     }
   },
   "include": ["./src"],
-  "exclude": ["./src/**/*.stories.tsx", "./src/**/*.test.tsx", "./node_modules"]
+  "exclude": ["./src/**/*.stories.tsx", "./src/**/*.test.tsx", "./node_modules", "./mpa-tester"]
 }

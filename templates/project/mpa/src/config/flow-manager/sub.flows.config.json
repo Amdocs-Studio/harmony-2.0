@@ -1,0 +1,29 @@
+[
+  {
+    "flowName": "defaultScenario",
+    "color": "#9b9b9b",
+    "conditions": [
+      {
+        "conditionName": "defaultSuccessCondition",
+        "onCheck": "defaultSuccessCondition",
+        "displayName": "Default Success",
+        "description": "Return Always Success to be used for every Flow as Default Scenario"
+      }
+    ]
+  },
+  {
+    "flowName": "multipleDevices",
+    "conditions": [
+      {
+        "conditionName": "multipleDevicesCondition",
+        "onCheck": "multipleDevicesCondition",
+        "displayName": "Multiple Devices COP",
+        "description": "Return success if there are multiple devices in the cart"
+      }
+    ],
+    "runInFlowTypes": [
+      "COP"
+    ],
+    "color": "#3133a4"
+  }
+]

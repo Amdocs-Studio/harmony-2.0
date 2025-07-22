@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { Navbar } from '@navbar';
 import { FeedbackHandler } from '@feedback-handler';
-import '../modules/base-styles/styles/style.css';
+import '../modules/base-styles/style.css';
 
 export default function MainLayout() {
 	return (

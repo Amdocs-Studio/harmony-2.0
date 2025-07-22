@@ -4,7 +4,7 @@ declare global {
 	}
 }
 const config = {
-	useMock: window.harmony?.useMock || false,
+	useMocks: window.harmony?.useMocks || false,
 	apiBaseUrl: 'https://jsonplaceholder.typicode.com',
 	navigationUrlPattern: window.harmony?.navigationBaseUrl || '',
 };
