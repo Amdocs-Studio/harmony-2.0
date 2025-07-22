@@ -17,7 +17,6 @@
   },
   "scripts": {
     "build": "vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "watch": "vite build --watch --mode development"
+    "watch": "vite build --watch"
   }
 }

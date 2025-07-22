@@ -1,11 +1,11 @@
-export { useShoppingCart } from './shopping-cart';
+export { useShoppingCart, shoppingCartApi } from './shopping-cart';
 export type * from './shopping-cart/ShoppingCartTypes';
-export { useRba } from './rba';
+export { useRba, rbaApi } from './rba';
 export type * from './rba/RbaTypes';
 export * as RbaConsts from './rba/RbaConsts';
-export { useApp } from './app';
+export { useApp, appApi } from './app';
 export type * from './app/AppTypes';
-export { useAuth } from './auth';
+export { useAuth, authApi } from './auth';
 export type * from './auth/AuthTypes';
-export { useFeedbackHandler } from './feedback-handler';
+export { useFeedbackHandler, feedbackHandlerApi } from './feedback-handler';
 export type * from './feedback-handler/FeedbackHandlerTypes';

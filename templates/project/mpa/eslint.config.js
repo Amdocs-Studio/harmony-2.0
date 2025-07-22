@@ -12,7 +12,7 @@ import reactCompiler from 'eslint-plugin-react-compiler'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
+    baseDirectory: path.join(__dirname, 'src'),
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
@@ -28,6 +28,7 @@ export default [{
         '**/dev-dist',
         '**/.storybook/**',
         '**/public/**',
+        '**/mpa-tester/**',
     ],
 }, ...fixupConfigRules(compat.extends(
     'eslint:recommended',

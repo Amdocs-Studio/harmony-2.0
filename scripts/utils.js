@@ -55,6 +55,10 @@ function dashToCamelCase(str) {
 	return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
 }
 
+function dashToCapitalized(str) {
+	return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 function replaceTokensInString(str, tokens) {
 	let result = str;
 	for (const [key, value] of Object.entries(tokens)) {
@@ -115,5 +119,6 @@ module.exports = {
 	addImportApi,
 	addModuleToStore,
 	wait,
-	copyFileAndReplaceTokens
+	copyFileAndReplaceTokens,
+	dashToCapitalized
 }

@@ -25,7 +25,7 @@ function addModuleJsonAliases(filePath, moduleNameDash){
 
 function addModuleViteAlias(filePath, moduleNameDash){
 	const data = fs.readFileSync(filePath, 'utf8');
-	const result = data.replace('alias: [', `alias: [\n      {find: '@${moduleNameDash}', replacement: resolve(projectRootDir, 'src/modules/${moduleNameDash}')},`);
+	const result = data.replace('alias: [', `alias: [\n        {find: '@${moduleNameDash}', replacement: resolve(projectRootDir, 'src/modules/${moduleNameDash}')},`);
 	fs.writeFileSync(filePath, result, 'utf8');
 }
 

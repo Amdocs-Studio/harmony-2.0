@@ -1,7 +1,7 @@
 import './button.css';
-import { PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   /**
    * Is this the principal call to action on the page?
    */
@@ -18,10 +18,6 @@ export interface ButtonProps {
    * Button contents
    */
   label?: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
 
   isDisabled?: boolean;
 }
@@ -37,7 +33,7 @@ export const Button = ({
 	children,
 	isDisabled,
 	...props
-}: PropsWithChildren<ButtonProps>) => {
+}: ButtonProps) => {
 	const mode = primary
 		? 'storybook-button--primary'
 		: 'storybook-button--secondary';

@@ -23,6 +23,7 @@
     "noUncheckedSideEffectImports": true,
     "types": ["vite/client","node", "vite-plugin-svgr/client", "@types/react"],
     "paths": {
+	  "@login": ["./src/modules/login"],
       "@mini-cart-layout": ["./src/modules/mini-cart-layout"],
       "@shopping-cart": ["./src/modules/shopping-cart"],
       "@device-details": ["./src/modules/device-details"],

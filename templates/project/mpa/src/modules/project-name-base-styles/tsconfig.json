@@ -1,8 +1,10 @@
 {
-  "extends": "../../../tsconfig.app.json",
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "./dist",
     "declarationDir": "./dist/types"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.stories.tsx"]
 }

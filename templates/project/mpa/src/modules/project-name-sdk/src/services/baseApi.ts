@@ -8,6 +8,20 @@ type BaseQueryOptions = {
   baseUrl?: string;
   headers?: Record<string, string>;
 }
+const waitForMocks = async () => {
+	return new Promise((resolve) => {
+		console.log('Waiting for mocks to be enabled...', config.useMocks, window.harmony.mocksEnabled);
+		if (!config.useMocks || window.harmony.mocksEnabled) {
+			resolve(true);
+		}
+		setInterval(() => {
+			if (window.harmony.mocksEnabled) {
+				resolve(true);
+			}
+		}, 500);
+	});
+};
+
 const baseQuery = (options?: BaseQueryOptions) => {
 	const { baseUrl = '', headers: headersImpl = {} } = options || { baseUrl: '', headers: {} };
 	return fetchBaseQuery({
@@ -37,6 +51,7 @@ type BaseQueryImplType = BaseQueryFn<
   FetchBaseQueryError
 >;
 export const baseQueryImpl = (baseQueryParams?: BaseQueryOptions): BaseQueryImplType  => async (args, api, extraOptions: ExtraOptionsType) => {
+	await waitForMocks();
 	log('baseQueryImpl', args, api, extraOptions);
 	if (!extraOptions?.ignoreSpinner) {
 		// start spinner
