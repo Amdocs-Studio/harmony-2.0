@@ -70,6 +70,8 @@ async function createProject(argv) {
         await copyAndReplaceTokens(templatePath, projectPath, tokens);
         await wait(500);
         copyFileAndReplaceTokens(path.join(templatesDir, 'harmony.json'), path.join(projectPath, 'harmony.json'), harmonyJsonTokens);
+        await wait(500);
+        fs.copyFileSync(path.join(templatesDir, 'gitignore-template'), path.join(projectPath, '.gitignore'));
 
         const installDeps = await inquirer.confirm({message: 'Install dependencies?'});
         if (installDeps) {
