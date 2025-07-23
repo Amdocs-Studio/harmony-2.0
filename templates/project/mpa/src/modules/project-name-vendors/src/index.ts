@@ -15,11 +15,15 @@ import { default as Clsx } from 'clsx';
 import * as ReactIntl from 'react-intl';
 import * as ReduxPersistReact from 'redux-persist/integration/react';
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
+import { createRoot } from 'react-dom/client';
 
 const ProjectNameVendors = {
 	React,
 	ReactDOM,
 	ReactRedux,
+	ReactDOMClient: {
+		createRoot,
+	},
 	jsxRuntime,
 	ReactDOMServer,
 	ReduxToolkit,
