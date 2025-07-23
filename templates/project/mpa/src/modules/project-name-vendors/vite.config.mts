@@ -1,5 +1,7 @@
 import { defineConfig, UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+import { minifyBundles } from '../../../vite.config.ts';
 
 export default defineConfig(({ mode }: UserConfig) => {
 	const isDev = mode === 'development';
@@ -8,6 +10,7 @@ export default defineConfig(({ mode }: UserConfig) => {
 	return {
 		plugins: [
 			react(),
+			!isDev && minifyBundles(),
 		],
 		define: !isDev ? {} : {
 			'process.env': { ENV_MODE: 'production' },
@@ -16,6 +19,7 @@ export default defineConfig(({ mode }: UserConfig) => {
 		build: {
 			minify: !isDev,
 			rollupOptions: {
+				input: resolve(__dirname, 'src/index.ts'),
 				output: {
 					chunkFileNames: `[name].js`,
 					entryFileNames: 'project-name-vendors.umd.js'

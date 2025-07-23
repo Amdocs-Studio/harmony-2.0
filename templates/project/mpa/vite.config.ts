@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 const projectRootDir = resolve(__dirname);
 
-function minifyBundles() {
+export function minifyBundles() {
   return {
     name: 'minifyBundles',
     async generateBundle(_unusedOptions: any, bundle: any) {
