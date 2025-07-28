@@ -104,7 +104,7 @@ function addImportApi(filePath, moduleNameDash, moduleNameCamelCase) {
 }
 function addModuleToStore(filePath, moduleName, moduleNameDash) {
 	const data = fs.readFileSync(filePath, 'utf8');
-	const result = `import { ${moduleName}Api, ${moduleName}Reducers, ${moduleName}Config } from "./modules/${moduleNameDash}";\n${data}`
+	const result = `import { ${moduleName}Api, ${moduleName}Reducers, ${moduleName}Config } from './modules/${moduleNameDash}';\n${data}`
 		.replace('const reducers = {', `const reducers = {\n	...${moduleName}Reducers,`)
 		.replace('const middlewares: Middleware[] = []', `const middlewares: Middleware[] = []\nif (${moduleName}Config.withApi) {\n	middlewares.push(${moduleName}Api.middleware);\n}`);
 	fs.writeFileSync(filePath, result, 'utf8');

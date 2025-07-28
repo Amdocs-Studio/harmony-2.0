@@ -7,6 +7,7 @@ export const useAuth = () => {
 	const dispatch = useDispatch();
 	const onLogout = async () => {
 		await logout();
+		await reset();
 		dispatch({ type: '@@RESET_STORE' });
 	};
 	return {
