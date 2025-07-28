@@ -1,3 +1,4 @@
+import { shoppingCartApi, shoppingCartReducers, shoppingCartConfig } from "./modules/shopping-cart";
 import { rbaApi, rbaReducers, rbaConfig } from './modules/rba';
 import { appApi, appReducers, appConfig } from './modules/app';
 import { authApi, authReducers, authConfig } from './modules/auth';
@@ -26,6 +27,7 @@ const getDefaultMiddlewareOptions = {
 	immutableCheck: false
 };
 const reducers = {
+	...shoppingCartReducers,
 	...rbaReducers,
 	...appReducers,
 	...authReducers,
@@ -33,7 +35,10 @@ const reducers = {
 	flowManagerFlows: flowManagerReducer
 };
 
-const middlewares: Middleware[] = [];
+const middlewares: Middleware[] = []
+if (shoppingCartConfig.withApi) {
+	middlewares.push(shoppingCartApi.middleware);
+};
 if (rbaConfig.withApi) {
 	middlewares.push(rbaApi.middleware);
 }

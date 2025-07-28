@@ -88,7 +88,13 @@ async function createProject(argv) {
         if (!installDeps) {
             console.log(`Install dependencies: ${chalk.yellow('npm install')}`);
         }
-        console.log(`Start the development server: ${chalk.yellow('npm start')}`);
+        if (template === 'mpa') {
+            console.log(`Run the build command (mandatory for mpa tester): ${chalk.yellow('npm run build')}`);
+            console.log(`Run the MPA tester: ${chalk.yellow('npm start')}`);
+            console.log(`Run the development server: ${chalk.yellow('npm run dev')}`);
+        } else {
+            console.log(`Start the development server: ${chalk.yellow('npm start')}`);
+        }
 
     } catch (error) {
         console.error('Error creating project:', error);
