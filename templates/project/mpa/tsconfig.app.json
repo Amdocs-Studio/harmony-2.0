@@ -30,9 +30,9 @@
       "@home": ["./src/modules/project-name-home/src/index.ts"],
       "@navbar": ["./src/modules/project-name-navbar/src/index.ts"],
       "@app-intl": ["./src/modules/project-name-app-intl/src/index.ts"],
-      "@config": ["./src/config/index.ts"],
+      "@config": ["./src/config/index.ts"]
     }
   },
-  "include": ["./src"],
-  "exclude": ["./src/**/*.stories.tsx", "./src/**/*.test.tsx", "./node_modules", "./mpa-tester"]
+  "include": ["./src", ".storybook", "./.storybook"],
+  "exclude": ["./src/**/*.test.tsx", "./node_modules", "./mpa-tester"]
 }
