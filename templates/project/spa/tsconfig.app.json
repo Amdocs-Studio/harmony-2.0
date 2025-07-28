@@ -23,7 +23,7 @@
     "noUncheckedSideEffectImports": true,
     "types": ["vite/client","node", "vite-plugin-svgr/client", "@types/react"],
     "paths": {
-	  "@login": ["./src/modules/login"],
+      "@login": ["./src/modules/login"],
       "@mini-cart-layout": ["./src/modules/mini-cart-layout"],
       "@shopping-cart": ["./src/modules/shopping-cart"],
       "@device-details": ["./src/modules/device-details"],
@@ -34,9 +34,9 @@
       "@home": ["./src/modules/home"],
       "@navbar": ["./src/modules/navbar"],
       "@app-intl": ["./src/modules/app-intl"],
-      "@config": ["./src/config"],
+      "@config": ["./src/config"]
     }
   },
-  "include": ["./src"],
-  "exclude": ["./src/**/*.stories.tsx", "./src/**/*.test.tsx", "./node_modules", "./.storybook"]
+  "include": ["./src", ".storybook"],
+  "exclude": ["./src/**/*.stories.tsx", "./src/**/*.test.tsx", "./node_modules"]
 }

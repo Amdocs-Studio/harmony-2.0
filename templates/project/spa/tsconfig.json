@@ -1,5 +1,5 @@
 {
-  "exclude": ["./.storybook", "./public"],
+  "exclude": ["./public"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
