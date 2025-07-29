@@ -1,6 +1,6 @@
 {
   "name": "harmony2",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "type": "commonjs",
   "bin": {
     "harmony": "./scripts/index.js"
