@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "types": ["vite/client","node", "vite-plugin-svgr/client", "@types/react"],
+    "paths": {
+	  "@login": ["./src/modules/project-name-login/src/index.ts"],
+      "@sdk": ["./src/modules/project-name-sdk/src/index.ts"],
+      "@common-components": ["./src/modules/project-name-common-components/src/index.ts"],
+      "@feedback-handler": ["./src/modules/project-name-feedback-handler/src/index.ts"],
+      "@home": ["./src/modules/project-name-home/src/index.ts"],
+      "@navbar": ["./src/modules/project-name-navbar/src/index.ts"],
+      "@app-intl": ["./src/modules/project-name-app-intl/src/index.ts"],
+      "@config": ["./src/config/index.ts"]
+    }
+  },
+  "include": ["./src", ".storybook", "./.storybook"],
+  "exclude": ["./src/**/*.test.tsx", "./node_modules", "./mpa-tester"]
+}

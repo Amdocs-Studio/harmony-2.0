@@ -7,7 +7,7 @@ const { addModule } = require('./add-module');
 const argv = yargs(hideBin(process.argv))
 	.command('create [name] [dir]', 'Create a new project', {
 		template: {
-			description: 'Template to use (spa | mpa)',
+			description: 'Template to use (spa | mpa | spa-light | mpa-light)',
 			alias: 't',
 			type: 'string',
 		},
