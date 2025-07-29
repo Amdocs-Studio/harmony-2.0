@@ -28,12 +28,22 @@ const questions = {
             {
                 name: 'Single Page Application (SPA)',
                 value: 'spa',
-                description: 'SPA template with React, Vite, and TypeScript',
+                description: 'SPA template with React, Vite, and TypeScript, Flow manager and example pages',
             },
             {
                 name: 'Multi Page Application (MPA)',
                 value: 'mpa',
-                description: 'MPA template with Lerna, Vite, React, and TypeScript',
+                description: 'MPA template with Lerna, Vite, React, and TypeScript, Flow manager and example pages',
+            },
+            {
+                name: 'Single Page Application - Light (SPA-Light)',
+                value: 'spa-light',
+                description: 'SPA template with React, Vite, and TypeScript minimal setup',
+            },
+            {
+                name: 'Multi Page Application - Light (MPA-Light)',
+                value: 'mpa-light',
+                description: 'MPA template with Lerna, Vite, React, and TypeScript minimal setup',
             },
         ],
     }

@@ -34,7 +34,7 @@ async function addModule(argv) {
 			],
 		}
 	}
-	if (harmonyJsonContent.template === 'spa') {
+	if (['spa', 'spa-light'].includes(harmonyJsonContent.template)) {
 		await addSpaModule(argv, harmonyJsonContent, questions);
 	} else {
 		await addMpaModule(argv, harmonyJsonContent, questions);
