@@ -1,0 +1,14 @@
+{
+  "home": {
+    "pageTitle": "Project Name - Home",
+    "widgets": [
+      {"library": "ProjectNameHome", "component": "Home", "package": "project-name-home"}
+    ]
+  },
+  "login": {
+    "pageTitle": "Project Name - Login",
+    "widgets": [
+        {"library": "ProjectNameLogin", "component": "Login",  "package": "project-name-login"}
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "project-name-app-intl",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/project-name-app-intl.umd.js",
+  "module": "./dist/project-name-app-intl.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/project-name-app-intl.js",
+      "require": "./dist/project-name-app-intl.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "watch": "vite build --watch --mode development",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "project-name-sdk": "^1.0.0"
+  }
+}
