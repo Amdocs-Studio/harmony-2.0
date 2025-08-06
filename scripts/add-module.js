@@ -17,8 +17,15 @@ async function addModule(argv) {
 	}
 	const questions = {
 		moduleName: {
-			message: 'Enter module name:',
-			validate: input => input.trim() !== '' || 'Module name cannot be empty.'
+			message: 'Enter module name (dash case, i.e. post-list):',
+			validate: input => {
+				if (!input || !input.trim()) {
+					return 'Module name cannot be empty.'
+				} else if (input.includes(' ')) {
+					return 'Module name cannot contain spaces.'
+				}
+				return true;
+			}
 		},
 		selectType: {
 			message: 'Select type to add:',

@@ -3,9 +3,8 @@ import {
 	createBrowserRouter,
 } from 'react-router';
 
-import { Home } from '@home';
+import { Home, Login } from '@pages';
 import MainLayout from './main-layout';
-import { Login } from '@login';
 
 export const router = createBrowserRouter([
 	{
@@ -18,6 +17,6 @@ export const router = createBrowserRouter([
 	},
 ]);
 
-export function Router() {
+export default function Router() {
 	return <RouterProvider router={router} />;
 }

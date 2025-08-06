@@ -1,0 +1,32 @@
+{
+  "home": {
+    "pageTitle": "Project Name - Home",
+    "widgets": [
+      {"library": "ProjectNameHomeHero", "component": "HomeHero", "package": "project-name-home-hero"}
+    ]
+  },
+  "login": {
+    "pageTitle": "Project Name - Login",
+    "widgets": [
+      {"library": "ProjectNameLoginForm", "component": "LoginForm",  "package": "project-name-login-form"}
+    ]
+  },
+  "shop/device-gallery": {
+    "pageTitle": "Project Name - Device Gallery",
+    "widgets": [
+      {"library": "ProjectNameDeviceGallery", "component": "DeviceGallery", "package": "project-name-device-gallery"}
+    ]
+  },
+  "shop/device-details": {
+    "pageTitle": "Project Name - Device Details",
+    "widgets": [
+      {"library": "ProjectNameDeviceDetails", "component": "DeviceDetails", "package": "project-name-device-details"}
+    ]
+  },
+  "shop/review-basket": {
+    "pageTitle": "Project Name - Review Basket",
+    "widgets": [
+      {"library": "ProjectNameShoppingCart", "component": "ShoppingCart", "package": "project-name-shopping-cart"}
+    ]
+  }
+}

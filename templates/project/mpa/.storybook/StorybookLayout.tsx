@@ -1,16 +1,15 @@
-import { SdkProvider } from '../src/modules/project-name-sdk/src';
-import { AppIntlProvider } from '../src/modules/project-name-app-intl/src';
+import { SdkProvider } from '@sdk';
+import { FeedbackHandler } from '@feedback-handler';
 
-import '../src/modules/project-name-base-styles/src/style.css';
+import '../src/base-modules/project-name-base-styles/src/style.css';
 
 import { PropsWithChildren } from 'react';
 
 export const StorybookLayout = ({ children }: PropsWithChildren<{}>) => {
 	return (
 		<SdkProvider >
-			<AppIntlProvider >
 				{children}
-			</AppIntlProvider>
+				<FeedbackHandler />
 		</SdkProvider>
 	);
 };

@@ -1,0 +1,27 @@
+{
+  "name": "project-name-mini-cart-layout",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/project-name-mini-cart-layout.umd.js",
+  "module": "./dist/project-name-mini-cart-layout.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/project-name-mini-cart-layout.js",
+      "require": "./dist/project-name-mini-cart-layout.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "watch": "vite build --watch --mode development"
+  },
+  "dependencies": {
+    "project-name-sdk": "^1.0.0",
+    "project-name-common-components": "^1.0.0"
+  }
+}

@@ -4,18 +4,20 @@
   "version": "1.0.0",
   "type": "module",
   "workspaces": [
-    "src/modules/*"
+    "src/ui-modules/*",
+    "src/base-modules/*"
   ],
   "scripts": {
     "dev": "vite",
-    "start": "node ./mpa-tester/mpa-server.js",
+    "start": "node ./.mpa-tester/mpa-server.js",
     "build": "npm run lint && lerna run build --no-private --stream",
     "build:dev": "npm run lint && lerna run build --no-private --stream --mode development",
     "build:spa": "npm run lint && vite build",
     "lint": "eslint --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "flowio": "flow-manager --p 6008 --c ./src/config/flow-manager --o"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -24,14 +26,13 @@
     "@mui/material": "^6.4.1",
     "@reduxjs/toolkit": "2.5.1",
     "clsx": "2.1.1",
-    "msw": "2.7.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-intl": "7.1.5",
     "react-redux": "9.2.0",
     "react-router": "7.7.1",
-    "redux-flow-manager": "^1.0.42",
-    "redux-persist": "6.0.0"
+    "redux-persist": "6.0.0",
+    "redux-flow-manager": "^1.0.42"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -51,13 +52,13 @@
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "babel-plugin-react-compiler": "^19.0.0-beta-e993439-20250328",
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "compression": "^1.8.1",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-compiler": "^19.0.0-beta-e993439-20250328",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "eslint-plugin-storybook": "^0.11.2",
@@ -65,6 +66,7 @@
     "express": "^4.21.2",
     "globals": "^15.15.0",
     "lerna": "^8.1.9",
+    "msw": "2.7.0",
     "sass-embedded": "^1.83.4",
     "storybook": "^8.5.7",
     "tailwindcss": "^4.1.3",

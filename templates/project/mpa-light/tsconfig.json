@@ -1,5 +1,5 @@
 {
-  "exclude": ["./public", "./mpa-tester"],
+  "exclude": ["./public", "./.mpa-tester"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

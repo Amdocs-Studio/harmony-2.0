@@ -1,0 +1,63 @@
+{
+  "displayName": "project-name-feedback-handler",
+  "widgetId": "project-name-feedback-handler",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "FeedbackHandler",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate to home",
+      "description": "User will navigate to home",
+      "actionId": "navigateToHome",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "feedback-handler-text",
+      "itemId": "feedbackHandlerTitle",
+      "displayName": "feedbackhandler title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Module Name"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "feedback-handler-text",
+      "displayName": "feedbackhandler text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-feedback-handler",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { AppIntlProvider } from '@app-intl';
 import { MemoryRouter } from 'react-router';
 import { FeedbackHandler } from '@feedback-handler';
 
-import '../src/modules/base-styles/style.css';
+import '../src/base-modules/base-styles/style.css';
 
 import { PropsWithChildren } from 'react';
 

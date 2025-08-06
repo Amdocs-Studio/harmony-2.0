@@ -23,17 +23,12 @@
     "noUncheckedSideEffectImports": true,
     "types": ["vite/client","node", "vite-plugin-svgr/client", "@types/react"],
     "paths": {
-      "@login": ["./src/modules/login"],
-      "@mini-cart-layout": ["./src/modules/mini-cart-layout"],
-      "@shopping-cart": ["./src/modules/shopping-cart"],
-      "@device-details": ["./src/modules/device-details"],
-      "@device-gallery": ["./src/modules/device-gallery"],
-      "@sdk": ["./src/modules/sdk"],
-      "@common-components": ["./src/modules/common-components"],
-      "@feedback-handler": ["./src/modules/feedback-handler"],
-      "@home": ["./src/modules/home"],
-      "@navbar": ["./src/modules/navbar"],
-      "@app-intl": ["./src/modules/app-intl"]
+      "@sdk": ["./src/base-modules/sdk"],
+      "@common-components": ["./src/base-modules/common-components"],
+      "@feedback-handler": ["./src/base-modules/feedback-handler"],
+      "@app-intl": ["./src/base-modules/app-intl"],
+      "@pages": ["./src/pages"],
+      "@ui-modules": ["./src/ui-modules"],
     }
   },
   "include": ["./src", ".storybook"],

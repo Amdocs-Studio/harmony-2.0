@@ -1,5 +1,5 @@
 import { ModuleConfigType } from '@sdk';
-import { ModuleNameStateType } from './ModuleNameTypes'
+import { ModuleNameStateType } from './ModuleNameTypes';
 import { Slice } from '@reduxjs/toolkit';
 
 export const config: ModuleConfigType<Slice<ModuleNameStateType>> = {

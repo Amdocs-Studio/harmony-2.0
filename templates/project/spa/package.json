@@ -3,9 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "workspaces": [
-    "src/modules/*"
-  ],
   "scripts": {
     "start": "vite",
     "build": "npm run lint && tsc -b && vite build",
@@ -21,6 +18,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "6.4.1",
     "@mui/material": "^6.4.1",
+    "redux-flow-manager": "^1.0.42",
     "@reduxjs/toolkit": "2.5.1",
     "clsx": "2.1.1",
     "react": "19.0.0",
@@ -28,7 +26,6 @@
     "react-intl": "7.1.5",
     "react-redux": "9.2.0",
     "react-router": "7.7.1",
-    "redux-flow-manager": "^1.0.42",
     "redux-persist": "6.0.0"
   },
   "devDependencies": {
@@ -48,18 +45,17 @@
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "babel-plugin-react-compiler": "^19.0.0-beta-e993439-20250328",
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-compiler": "^19.0.0-beta-e993439-20250328",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "eslint-plugin-storybook": "^0.11.2",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.15.0",
-    "lerna": "^8.1.9",
     "msw": "2.7.0",
     "sass-embedded": "^1.83.4",
     "storybook": "^8.5.7",

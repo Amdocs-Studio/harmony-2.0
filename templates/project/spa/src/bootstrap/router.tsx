@@ -4,13 +4,9 @@ import {
 	Outlet
 } from 'react-router';
 
-import { Home } from '@home';
-import { DeviceGallery  } from '@device-gallery';
-import { DeviceDetails } from '@device-details';
-import { ShoppingCart } from '@shopping-cart';
-import { Login } from '@login';
+import { Home, Login, DeviceDetailsPage, DeviceGalleryPage, ShoppingCartPage } from '@pages';
 import MainLayout from './main-layout';
-import { flowsTypes } from '@config';
+import { flowsTypes } from '@flow-manager-config';
 
 const router = createBrowserRouter([
 	{
@@ -20,9 +16,9 @@ const router = createBrowserRouter([
 			{ path: '/', element: <Home /> },
 			{ path: 'login', element: <Login /> },
 			{ path: 'shop', element: <Outlet />, children: [
-				{ path: flowsTypes.stepTypes.DEVICE_GALLERY.path, element: <DeviceGallery /> },
-				{ path: flowsTypes.stepTypes.DEVICE_DETAILS.path, element: <DeviceDetails /> },
-				{ path: flowsTypes.stepTypes.REVIEW_BASKET.path, element: <ShoppingCart /> },
+				{ path: flowsTypes.stepTypes.DEVICE_GALLERY.path, element: <DeviceGalleryPage /> },
+				{ path: flowsTypes.stepTypes.DEVICE_DETAILS.path, element: <DeviceDetailsPage /> },
+				{ path: flowsTypes.stepTypes.REVIEW_BASKET.path, element: <ShoppingCartPage /> },
 			]
 			}
 		],

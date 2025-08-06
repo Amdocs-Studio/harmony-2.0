@@ -1,0 +1,63 @@
+{
+  "displayName": "project-name-module-name",
+  "widgetId": "project-name-module-name",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "ModuleName",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate to home",
+      "description": "User will navigate to home",
+      "actionId": "navigateToHome",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "module-name-text",
+      "itemId": "moduleNameTitle",
+      "displayName": "module name title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Module Name"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "module-name-text",
+      "displayName": "module name text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-module-name",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

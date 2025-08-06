@@ -1,0 +1,63 @@
+{
+  "displayName": "project-name-login-form",
+  "widgetId": "project-name-login-form",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "LoginForm",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate to home",
+      "description": "User will navigate to home",
+      "actionId": "navigateToHome",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "login-form-text",
+      "itemId": "loginFormTitle",
+      "displayName": "loginform title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Module Name"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "login-form-text",
+      "displayName": "loginform text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-login-form",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

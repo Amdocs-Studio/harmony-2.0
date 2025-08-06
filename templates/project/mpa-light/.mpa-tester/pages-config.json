@@ -1,0 +1,14 @@
+{
+  "home": {
+    "pageTitle": "Project Name - Home",
+    "widgets": [
+      {"library": "ProjectNameHomeHero", "component": "HomeHero", "package": "project-name-home-hero"}
+    ]
+  },
+  "login": {
+    "pageTitle": "Project Name - Login",
+    "widgets": [
+        {"library": "ProjectNameLoginForm", "component": "LoginForm",  "package": "project-name-login-form"}
+    ]
+  }
+}

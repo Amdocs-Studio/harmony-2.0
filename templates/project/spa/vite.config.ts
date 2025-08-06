@@ -49,8 +49,8 @@ const manualChunks = (id: string) => {
     }
     return 'vendors';
   }
-  if (id.includes('/src/modules/') && !id.includes('app-intl')) {
-    const [, moduleName] = id.split('src/modules/');
+  if (id.includes('/src/ui-modules/') && !id.includes('app-intl')) {
+    const [, moduleName] = id.split('src/ui-modules/');
     return moduleName.split('/')[0];
   }
 }
@@ -76,18 +76,13 @@ export default defineConfig(({ mode }) => {
     ].filter(Boolean),
     resolve: {
       alias: [
-        {find: '@login', replacement: resolve(projectRootDir, 'src/modules/login')},
-        {find: '@mini-cart-layout', replacement: resolve(projectRootDir, 'src/modules/mini-cart-layout')},
-        {find: '@shopping-cart', replacement: resolve(projectRootDir, 'src/modules/shopping-cart')},
-        {find: '@device-details', replacement: resolve(projectRootDir, 'src/modules/device-details')},
-        {find: '@device-gallery', replacement: resolve(projectRootDir, 'src/modules/device-gallery')},
-        {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/sdk')},
-        {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/modules/feedback-handler')},
-        {find: '@home', replacement: resolve(projectRootDir, 'src/modules/home')},
-        {find: '@navbar', replacement: resolve(projectRootDir, 'src/modules/navbar')},
-        {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/app-intl')},
-        {find: '@common-components', replacement: resolve('src/modules/common-components')},
-        {find: '@config', replacement: resolve(projectRootDir, 'src/config')},
+        {find: '@sdk', replacement: resolve(projectRootDir, 'src/base-modules/sdk')},
+        {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/base-modules/feedback-handler')},
+        {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules')},
+        {find: '@pages', replacement: resolve(projectRootDir, 'src/pages')},
+        {find: '@app-intl', replacement: resolve(projectRootDir, 'src/base-modules/app-intl')},
+        {find: '@common-components', replacement: resolve('src/base-modules/common-components')},
+        {find: '@flow-manager-config', replacement: resolve('src/base-modules/flow-manager-config')}
       ],
     },
     build: {

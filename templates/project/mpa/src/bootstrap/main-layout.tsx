@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router';
-import { Navbar } from '@navbar';
+import { NavbarDecorator } from '@ui-modules';
 import { FeedbackHandler } from '@feedback-handler';
-import '../modules/project-name-base-styles/src/style.css';
+import '../base-modules/project-name-base-styles/src/style.css';
 
 export default function MainLayout() {
 	return (
 		<div>
-			<Navbar />
+			<NavbarDecorator />
 			<main>
 				<Outlet />
 			</main>

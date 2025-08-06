@@ -49,8 +49,12 @@ const manualChunks = (id: string) => {
     }
     return 'vendors';
   }
-  if (id.includes('/src/modules/') && !id.includes('project-name-app-intl')) {
-    const [, moduleName] = id.split('src/modules/');
+  if (id.includes('/src/ui-modules/')) {
+    const [, moduleName] = id.split('src/ui-modules/');
+    return moduleName.split('/')[0];
+  }
+  if (id.includes('/src/base-modules/')) {
+    const [, moduleName] = id.split('src/base-modules/');
     return moduleName.split('/')[0];
   }
 }
@@ -76,19 +80,17 @@ export default defineConfig(({ mode }) => {
   ],
     resolve: {
       alias: [
-        {find: '@login', replacement: resolve(projectRootDir, 'src/modules/project-name-login/src/index.ts')},
-        {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/project-name-sdk/src/index.ts')},
-        {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/modules/project-name-feedback-handler/src/index.ts')},
-        {find: '@home', replacement: resolve(projectRootDir, 'src/modules/project-name-home/src/index.ts')},
-        {find: '@navbar', replacement: resolve(projectRootDir, 'src/modules/project-name-navbar/src/index.ts')},
-        {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/project-name-app-intl/src/index.ts')},
-        {find: '@common-components', replacement: resolve(projectRootDir, 'src/modules/project-name-common-components/src/index.ts')},
+        {find: '@sdk', replacement: resolve(projectRootDir, 'src/base-modules/project-name-sdk/src/index.ts')},
+        {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/base-modules/project-name-feedback-handler/src/index.ts')},
+        {find: '@common-components', replacement: resolve(projectRootDir, 'src/base-modules/project-name-common-components/src/index.ts')},
+        {find: '@pages', replacement: resolve(projectRootDir, 'src/pages/index.ts')},
+        {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules/index.ts')},
     ],
     },
     build: {
       sourcemap: isDev,
       rollupOptions: {
-        external: id => id.includes('mpa-tester'),
+        external: id => id.includes('.mpa-tester'),
         output: {
           manualChunks,
         },

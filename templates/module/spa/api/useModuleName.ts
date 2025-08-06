@@ -5,5 +5,5 @@ export const useModuleName = () => {
 	const dispatchActions = useSliceActions(moduleNameSlice.actions);
 	return {
 		...dispatchActions,
-	}
-}
+	};
+};

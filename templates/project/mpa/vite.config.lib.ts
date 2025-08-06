@@ -8,11 +8,18 @@ const projectRootDir = resolve(__dirname);
 
 const isExternal = (id: string) => {
   return !id.startsWith(".") &&
-    !id.includes('@app-intl') &&
-    !id.includes('@config') &&
+    !id.includes('@flow-manager-config') &&
     !id.includes('redux-flow-manager') &&
+    !id.includes('@ui-modules') &&
     !id.includes('xstate') &&
     !path.isAbsolute(id);
+}
+
+const getIsExternal = (id: string, name: string) => {
+  if (name === 'ProjectNameMocks') {
+    return id.includes('@sdk');
+  }
+  return isExternal(id);
 }
 
 function minifyBundles() {
@@ -53,9 +60,9 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
       },
       resolve: {
         alias: [
-          {find: '@app-intl', replacement: resolve(projectRootDir, 'src/modules/project-name-app-intl/src/index.ts')},
-          {find: '@config', replacement: resolve(projectRootDir, 'src/config/index.ts')},
-          {find: '@sdk', replacement: resolve(projectRootDir, 'src/modules/project-name-sdk/src/index.ts')},
+          {find: '@sdk', replacement: resolve(projectRootDir, 'src/base-modules/project-name-sdk/src/index.ts')},
+          {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules/index.ts')},
+          {find: '@flow-manager-config', replacement: resolve(projectRootDir, 'src/base-modules/flow-manager-config/index.ts')},
         ],
       },
       build: name === 'BaseStyles' ? styleBuildConfig(entry, fileName) : {
@@ -69,7 +76,7 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
           name
         },
         rollupOptions: {
-          external: name === 'ProjectNameMocks' ? (id: string) => id.includes('@sdk') : isExternal,
+          external: (id) => getIsExternal(id, name),
           output: {
             // manualChunks: false,
             assetFileNames: () => `${fileName}[extname]`, // Generates asset file names.
@@ -96,6 +103,7 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
                 "tailwind-merge": "ProjectNameVendors.TailwindMerge",
                 "recharts": "ProjectNameVendors.Recharts",
                 "@reduxjs/toolkit/query/react": "ProjectNameVendors.ReduxToolkitQueryReact",
+                "lodash": "ProjectNameVendors.Lodash",
 
                 "@common-components": "ProjectNameCommonComponents",
                 "@sdk": "ProjectNameSDK",
