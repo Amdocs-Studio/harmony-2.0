@@ -6,7 +6,7 @@ const config: StorybookConfig = {
     enableCrashReports: false,
   },
   addons: [
-    "@storybook/addon-onboarding",
+    "@storybook/addon-storysource",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",

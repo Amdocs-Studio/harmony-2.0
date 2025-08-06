@@ -1,15 +1,7 @@
 import { baseQueryImpl } from '../../services';
 import { createApi } from '@reduxjs/toolkit/query/react';
 import config from './ModuleNameConfig';
-
-const POSTS_TAG = 'Posts';
-
-type Post = {
-	id: number;
-	title: string;
-	body: string;
-}
-type PostsResponse = Post[];
+import { Post, POSTS_TAG, PostsResponse } from './ModuleNameTypes.ts';
 
 export const moduleNameApi = createApi({
 	reducerPath: config.apiSliceName,
