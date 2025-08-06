@@ -16,13 +16,12 @@
     }
   },
   "scripts": {
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "watch": "vite build --watch --mode development"
   },
   "dependencies": {
     "project-name-sdk": "^1.0.0",
-    "project-name-app-intl": "^1.0.0",
     "project-name-common-components": "^1.0.0"
   }
 }

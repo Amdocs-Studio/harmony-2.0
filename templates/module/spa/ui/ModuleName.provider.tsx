@@ -4,7 +4,7 @@ import { useAppNavigate } from '@sdk';
 
 const ModuleNameContext = createContext<ModuleNameContextType | undefined>(undefined);
 
-export function ModuleNameProvider({children}: PropsWithChildren<ModuleNameProps>) {
+export function ModuleNameProvider({ children }: PropsWithChildren<ModuleNameProps>) {
 	const navigate = useAppNavigate();
 
 	const value = useMemo(() => ({

@@ -1,0 +1,71 @@
+{
+  "displayName": "project-name-navbar",
+  "widgetId": "project-name-navbar",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "Navbar",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate to home",
+      "description": "User will navigate to home",
+      "actionId": "navigateToHome",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/"
+    },
+    {
+      "displayName": "Navigate to login",
+      "description": "User will navigate to login page",
+      "actionId": "navigateToLogin",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "login"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "navbar-text",
+      "itemId": "navbarTitle",
+      "displayName": "navbar title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Module Name"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "navbar-text",
+      "displayName": "navbar text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-navbar",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

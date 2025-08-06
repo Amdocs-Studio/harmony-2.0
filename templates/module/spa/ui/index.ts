@@ -1,2 +1,2 @@
-export { moduleNameDescriptor as descriptor } from './ModuleName.i18n';
+export { moduleNameDescriptor } from './ModuleName.i18n';
 export { default as ModuleName } from './ModuleName';

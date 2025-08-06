@@ -1,0 +1,87 @@
+{
+  "displayName": "project-name-mini-cart-layout",
+  "widgetId": "project-name-mini-cart-layout",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "MiniCartLayout",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate to home",
+      "description": "User will navigate to home",
+      "actionId": "navigateToHome",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/"
+    },
+    {
+      "displayName": "Navigate to device gallery",
+      "description": "User will navigate to device gallery",
+      "actionId": "navigateToDeviceGallery",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/shop/device-gallery"
+    },
+    {
+      "displayName": "Navigate to device details",
+      "description": "User will navigate to device details",
+      "actionId": "navigateToDeviceDetails",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/shop/device-details"
+    },
+    {
+      "displayName": "Navigate to review basket",
+      "description": "User will navigate to review basket",
+      "actionId": "navigateToReviewBasket",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "/shop/review-basket"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "mini-cart-layout-text",
+      "itemId": "miniCartLayoutTitle",
+      "displayName": "minicartlayout title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Module Name"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "mini-cart-layout-text",
+      "displayName": "minicartlayout text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-mini-cart-layout",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

@@ -1,15 +1,23 @@
 import { SdkProvider } from '@sdk';
-import { Router, router } from './router';
-import { AppIntlProvider } from '@app-intl';
+import Router from './router';
+import { createRoot } from 'react-dom/client';
+import { StrictMode } from 'react';
+import { enableMocking } from '../base-modules/project-name-mocks/src';
 
 function App() {
 	return (
-		<SdkProvider router={router}>
-			<AppIntlProvider>
-				<Router />
-			</AppIntlProvider>
+		<SdkProvider>
+			<Router />
 		</SdkProvider>
 	);
 }
 
-export default App;
+const render = () => {
+	createRoot(document.getElementById('root')!).render(
+		<StrictMode>
+			<App />
+		</StrictMode>,
+	);
+};
+
+enableMocking().then(render);

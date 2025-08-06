@@ -28,7 +28,7 @@ export default [{
         '**/dev-dist',
         '**/.storybook/**',
         '**/public/**',
-        '**/mpa-tester/**',
+        '**/.mpa-tester/**',
     ],
 }, ...fixupConfigRules(compat.extends(
     'eslint:recommended',

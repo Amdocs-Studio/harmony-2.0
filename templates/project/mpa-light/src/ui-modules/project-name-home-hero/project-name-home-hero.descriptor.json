@@ -1,0 +1,78 @@
+{
+  "displayName": "project-name-home-hero",
+  "widgetId": "project-name-home-hero",
+  "widgetCategory": "Digital Experience",
+  "widgetDomain": "Application",
+  "widgetSalesChannel": "Base",
+  "widgetDescription": "None",
+  "topicName": "HomeHero",
+  "behaviorParams": [
+    {
+      "groupId": "",
+      "itemId": "displayComponent",
+      "displayName": "Show Component",
+      "type": "boolean",
+      "description": "Decide whether to show the component",
+      "defaultValue": true
+    }
+  ],
+  "outcomes": [
+    {
+      "displayName": "Navigate Back",
+      "description": "User will navigate to back page",
+      "actionId": "navigateToPreviousPage",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "-1"
+    },
+    {
+      "displayName": "Navigate to login",
+      "description": "User will navigate to login page",
+      "actionId": "navigateToLogin",
+      "groupId": "",
+      "actionType": "navigate",
+      "defaultValue": "login"
+    }
+  ],
+  "content": [
+    {
+      "groupId": "home-hero-text",
+      "itemId": "homeHeroGetStartedButtonText",
+      "displayName": "Get started button text",
+      "description": "Text to display on Get started button",
+      "defaultValue": "Get started"
+    },
+    {
+      "groupId": "home-hero-text",
+      "itemId": "homeHeroTitle",
+      "displayName": "Home title text",
+      "description": "Text to display on the title",
+      "defaultValue": "Scalable react boilerplate"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "home-hero-text",
+      "displayName": "home hero text"
+    }
+  ],
+  "initializationParams": [
+    {
+      "itemId": "componentId",
+      "displayName": "componentId",
+      "type": "String",
+      "description": "componentId",
+      "defaultValue": "project-name-home-hero",
+      "enableUrlInput": true
+    }
+  ],
+  "stateParams": [
+    {
+      "itemId": "",
+      "displayName": "",
+      "type": "boolean",
+      "description": "",
+      "defaultValue": true
+    }
+  ]
+}

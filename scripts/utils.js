@@ -98,15 +98,29 @@ function replaceTokensInDirectory(dir, tokens) {
 	});
 }
 function addImportApi(filePath, moduleNameDash, moduleNameCamelCase) {
+	const moduleNameApi = `${moduleNameCamelCase.charAt(0).toLowerCase()}${moduleNameCamelCase.slice(1)}Api`;
 	const data = fs.readFileSync(filePath, 'utf8');
-	const result = `export { use${moduleNameCamelCase} } from './${moduleNameDash}';\nexport type * from './${moduleNameDash}/${moduleNameCamelCase}Types';\n${data}`;
+	const result = `export { use${moduleNameCamelCase}, ${moduleNameApi} } from './${moduleNameDash}';\nexport type * from './${moduleNameDash}/${moduleNameCamelCase}Types';\n${data}`;
 	fs.writeFileSync(filePath, result, 'utf8');
 }
 function addModuleToStore(filePath, moduleName, moduleNameDash) {
 	const data = fs.readFileSync(filePath, 'utf8');
 	const result = `import { ${moduleName}Api, ${moduleName}Reducers, ${moduleName}Config } from './modules/${moduleNameDash}';\n${data}`
 		.replace('const reducers = {', `const reducers = {\n	...${moduleName}Reducers,`)
-		.replace('const middlewares: Middleware[] = []', `const middlewares: Middleware[] = []\nif (${moduleName}Config.withApi) {\n	middlewares.push(${moduleName}Api.middleware);\n}`);
+		.replace('const middlewares: Middleware[] = [];', `const middlewares: Middleware[] = [];\nif (${moduleName}Config.withApi) {\n	middlewares.push(${moduleName}Api.middleware);\n}`);
+	fs.writeFileSync(filePath, result, 'utf8');
+}
+
+function addModuleIntl(filePath, moduleName) {
+	const data = fs.readFileSync(filePath, 'utf8');
+	const result  = data.replace('} from \'@ui-modules\';', `\t${moduleName}Descriptor,\n} from '@ui-modules';`)
+		.replace('export const enMessages = {', `export const enMessages = {\n	${moduleName}: ${moduleName}Descriptor.en,`)
+	fs.writeFileSync(filePath, result, 'utf8');
+}
+
+function addModuleToModuleIndex(filePath, moduleNameDash){
+	const data = fs.readFileSync(filePath, 'utf8');
+	const result = `export * from './${moduleNameDash}';\n${data}`;
 	fs.writeFileSync(filePath, result, 'utf8');
 }
 
@@ -120,5 +134,7 @@ module.exports = {
 	addModuleToStore,
 	wait,
 	copyFileAndReplaceTokens,
-	dashToCapitalized
+	dashToCapitalized,
+	addModuleToModuleIndex,
+	addModuleIntl
 }
