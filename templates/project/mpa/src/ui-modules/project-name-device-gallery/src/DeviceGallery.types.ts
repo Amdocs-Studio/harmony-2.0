@@ -1,4 +1,4 @@
-import { User, NavigateFunction, useAppIntl, MessagesType, ConfigType, CartItem } from '@sdk';
+import { User, NavigateFunction, useAppIntl, MessagesType, ConfigType, Device } from '@sdk';
 
 export type DeviceGalleryContextType = {
 	navigate: NavigateFunction
@@ -6,16 +6,8 @@ export type DeviceGalleryContextType = {
 	formatMessage: ReturnType<typeof useAppIntl>['formatMessage']
 	messages: MessagesType;
 	config: ConfigType;
-	onDeviceSelect: (device: CartItem) => void
-}
-
-export interface Device {
-	brand: string;
-	description: string;
-	images: string[];
-	price: number;
-	title: string;
-	sku: string;
+	onDeviceSelect: (device: Device) => void
+	devices: Device[]
 }
 
 export type DeviceGalleryProps = object

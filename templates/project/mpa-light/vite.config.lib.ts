@@ -92,7 +92,7 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
                 "redux": "ProjectNameVendors.Redux",
                 "redux-persist": "ProjectNameVendors.ReduxPersist",
                 'redux-persist/integration/react': 'ProjectNameVendors.ReduxPersistReact',
-                "redux-persist/lib/storage": "ProjectNameVendors.ReduxPersistSessionStorage",
+                "redux-persist/lib/storage/session": "ProjectNameVendors.ReduxPersistSessionStorage",
                 "@mui/material/styles": "ProjectNameVendors.MaterialUIStyles",
                 "@mui/material": "ProjectNameVendors.MaterialUI",
                 "@mui/icons-material": "ProjectNameVendors.MaterialUIIcons",
@@ -103,6 +103,7 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
 
                 "@common-components": "ProjectNameCommonComponents",
                 "@sdk": "ProjectNameSDK",
+                '@mocks': "ProjectNameMocks"
               }
               if (Object.keys(globals).includes(id)) {
                 return globals[id];

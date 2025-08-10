@@ -12,18 +12,10 @@ export const appApi = createApi({
 });
 
 /*
-
 Uncomment this block if you want to use redux-persist
-import {persistReducer} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistApiReducer } from '../../utils';
 
-export const appApiReducer = persistReducer({
-	key: config.apiSliceName,
-	storage,
-	version: 1,
-	whitelist: ['queries', 'mutations']
-}, appApi.reducer)
-
- */
+export const appApiReducer = persistApiReducer(config.apiSliceName, appApi.reducer);
+*/
 
 export const appApiReducer = appApi.reducer;

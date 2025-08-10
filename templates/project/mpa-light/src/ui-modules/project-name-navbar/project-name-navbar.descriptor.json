@@ -31,7 +31,7 @@
       "actionId": "navigateToLogin",
       "groupId": "",
       "actionType": "navigate",
-      "defaultValue": "login"
+      "defaultValue": "/login"
     }
   ],
   "content": [

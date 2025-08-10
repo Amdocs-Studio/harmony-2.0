@@ -17,21 +17,12 @@ export const moduleNameSlice = createSlice({
 });
 
 /*
-
 Uncomment the following line to enable persisting the slice state
 
-import {persistReducer} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import {SlicePersistConfig} from '@sdk';
-const persistConfig: SlicePersistConfig<typeof moduleNameSlice> = {
-	key: config.sliceName,
-	storage,
-	whitelist: config.slicePersist?.whitelist || [],
-	version: 1
-};
-
-const reducer = persistReducer(persistConfig, moduleNameSlice.reducer)
+import { persistAppReducer } from '../../utils';
+const reducer = persistAppReducer<ModuleNameStateType>(moduleNameSlice, config.slicePersist?.whitelist || []);
 
 */
+
 const reducer = moduleNameSlice.reducer;
 export default reducer;

@@ -1,14 +1,12 @@
 import { createContext, PropsWithChildren, useContext, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 import { DeviceDetailsContextType, DeviceDetailsProps } from './DeviceDetails.types';
-import { useAppNavigate, useShoppingCart } from '@sdk';
+import { useAppNavigate, useAppSelector } from '@sdk';
 
 const DeviceDetailsContext = createContext<DeviceDetailsContextType | undefined>(undefined);
 
 export function DeviceDetailsProvider({ children }: PropsWithChildren<DeviceDetailsProps>) {
 	const navigate = useAppNavigate();
-	const { getCartItems } = useShoppingCart();
-	const cartItems = useSelector(getCartItems) ?? [];
+	const cartItems = useAppSelector(s => s.shoppingCart.cartItems) || [];
 	const value = useMemo(() => ({
 		navigate,
 		cartItems,

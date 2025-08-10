@@ -1,6 +1,8 @@
-import { createTransform } from 'redux-persist';
+import { createTransform, persistReducer } from 'redux-persist';
 import { DispatchActions, EndpointNames } from '@sdk';
-import { useAppDispatch } from '../store';
+import { useAppDispatch, persistor, store } from '../store';
+import { Reducer, Slice } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage/session';
 
 // transform persisted endpoint responses before reaching the store
 export const createPersistedEndpointsTransform = <T>(persistedEndpoints: EndpointNames<T>[]) => {
@@ -34,4 +36,31 @@ export const useSliceActions = <T extends Record<string, unknown>>(action: T): D
 			[actionKey]: (...args: any[]) => dispatch((action as any)[actionKey](...args)),
 		};
 	}, {} as DispatchActions<T>);
+};
+
+export const persistApiReducer = (key: string, reducer: Reducer) => persistReducer({
+	key,
+	storage,
+	version: 1,
+	whitelist: ['queries', 'mutations']
+}, reducer);
+
+export const persistAppReducer = <T>(slice: Slice, whitelist: string[]) => {
+	const config = {
+		key: slice.reducerPath,
+		storage,
+		version: 1,
+		whitelist,
+	};
+	return persistReducer<T>(config, slice.reducer);
+};
+
+export const handleClearStore = async () => {
+	try {
+		await persistor.purge();
+		store.dispatch({ type: '@@RESET_STORE' });
+		console.log('Persisted state cleared successfully.');
+	} catch (error) {
+		console.error('Error clearing persisted state:', error);
+	}
 };

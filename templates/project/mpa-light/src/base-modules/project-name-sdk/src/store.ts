@@ -54,11 +54,7 @@ const resettableRootReducer = () => (
 	action: PayloadAction<any>,
 ): PersistedRootState => {
 	if (action.type === '@@RESET_STORE') {
-		const reducer = rootReducer(undefined, action);
-		setTimeout(() => {
-			persistor.purge();
-		}, 1000);
-		return reducer;
+		return rootReducer(undefined, action);
 	}
 	return rootReducer(state, action);
 };

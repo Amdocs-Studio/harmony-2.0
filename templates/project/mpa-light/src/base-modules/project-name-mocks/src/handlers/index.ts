@@ -1,8 +1,8 @@
+import { delay as wait, http, HttpHandler } from 'msw';
 import { handlers as postHandlers } from './postsMockHandler.ts';
 import { handlers as userHandlers } from './authMockHandler.ts';
 import { handlers as rbaHandlers } from './rbaMockHandler.ts';
 import { handlers as feedbackHandler } from './feedbackMockHandler.ts';
-import { delay, http, HttpHandler } from 'msw';
 
 export const handlers: HttpHandler[] = [
 	...postHandlers,
@@ -10,9 +10,9 @@ export const handlers: HttpHandler[] = [
 	...feedbackHandler,
 	...rbaHandlers,
 ].map((handler) => {
-	const { url, method = 'GET', resolver } = handler;
+	const { url, method = 'GET', resolver, delay } = handler;
 	const delayedResponse = async (ctx: any) => {
-		await delay(1500);
+		await wait(delay || 1500);
 		return resolver(ctx);
 	};
 	switch (method) {

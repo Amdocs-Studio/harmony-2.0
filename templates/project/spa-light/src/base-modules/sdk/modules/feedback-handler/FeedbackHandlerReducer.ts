@@ -6,9 +6,7 @@ import {
 	FeedbackHandlerConfigType,
 	RESTCallAction
 } from './FeedbackHandlerTypes';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { SlicePersistConfig } from '@sdk';
+import { persistAppReducer } from '../../utils';
 
 const initialState: FeedbackHandlerStateType = {
 	feedbacks: [],
@@ -72,15 +70,6 @@ export const feedbackHandlerSlice = createSlice({
 	}
 });
 
-type FeedbackHandlerSlice = typeof feedbackHandlerSlice;
-
-const persistConfig: SlicePersistConfig<FeedbackHandlerSlice> = {
-	key: config.sliceName,
-	storage,
-	whitelist: config.slicePersist?.whitelist || [],
-	version: 1
-};
-
-const reducer = persistReducer(persistConfig, feedbackHandlerSlice.reducer);
+const reducer = persistAppReducer<FeedbackHandlerStateType>(feedbackHandlerSlice, config.slicePersist?.whitelist || []);
 
 export default reducer;

@@ -38,7 +38,7 @@ export const handlers: MockHandlerType[] = [
 			const mockUser = getMockUser(username);
 			const headers = new Headers();
 			headers.append('Content-Type', 'application/json');
-			headers.append('X-token', username === 'admin' ? 'T3heTaj24j4m58ajlAA' : 'T3heTaj24j4m58ajlakf1');
+			headers.append('X-token', username === 'admin@admin.com' ? 'T3heTaj24j4m58ajlAA' : 'T3heTaj24j4m58ajlakf1');
 			return HttpResponse.json(mockUser, { headers });
 		}
 	},

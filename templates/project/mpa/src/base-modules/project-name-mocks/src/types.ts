@@ -6,4 +6,5 @@ export type MockHandlerType = {
 	args?: any;
 	resolver: ResponseResolver<any>;
 	params?: any;
+	delay?: number;
 };

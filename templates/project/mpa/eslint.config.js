@@ -12,7 +12,7 @@ import reactCompiler from 'eslint-plugin-react-compiler'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: path.join(__dirname, 'src'),
+    baseDirectory: path.join(__dirname),
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
@@ -26,7 +26,6 @@ export default [{
         '**/vite.config.*',
         '**/*.config.js',
         '**/dev-dist',
-        '**/.storybook/**',
         '**/public/**',
         '**/.mpa-tester/**',
     ],

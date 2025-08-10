@@ -1,8 +1,9 @@
 import { useShoppingCartContext } from '../ShoppingCart.provider';
 import { Grid2, Typography } from '@mui/material';
+import { Button } from '@common-components';
 
 export default function ShoppingCartMain() {
-	const { cartItems } = useShoppingCartContext();
+	const { cartItems, onClearCart } = useShoppingCartContext();
 	const totalPrice = cartItems?.reduce((sum, item) => sum + item.price, 0) ?? 0;
 	return (
 		<div
@@ -31,6 +32,7 @@ export default function ShoppingCartMain() {
 							<Typography variant="h6">${totalPrice.toFixed(3)}</Typography>
 						</Grid2>
 					</Grid2>
+					<Button onClick={onClearCart}>Clear cart</Button>
 				</Grid2>
 			</div>
 		</div>

@@ -7,7 +7,7 @@ const DeviceDetailsContext = createContext<DeviceDetailsContextType | undefined>
 
 export function DeviceDetailsProvider({ children }: PropsWithChildren<DeviceDetailsProps>) {
 	const { formatMessage } = useAppIntl();
-	const cartItems = useAppSelector(s => s.shoppingCart.cartItems);
+	const cartItems = useAppSelector(s => s.shoppingCart.cartItems) || [];
 
 	const value = useMemo(() => ({
 		navigate,
@@ -15,7 +15,7 @@ export function DeviceDetailsProvider({ children }: PropsWithChildren<DeviceDeta
 		messages,
 		config: getConfig(),
 		cartItems
-	}), [navigate, formatMessage]);
+	}), [navigate, formatMessage, cartItems]);
 
 	return <DeviceDetailsContext.Provider value={value}>{children}</DeviceDetailsContext.Provider>;
 

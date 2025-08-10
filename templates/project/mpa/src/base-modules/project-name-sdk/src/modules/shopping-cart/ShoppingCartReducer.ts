@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import config from './ShoppingCartConfig';
 import { ShoppingCartStateType, CartAddItemActionPayloadType } from '@sdk';
+import { persistAppReducer } from '../../utils';
 
 const initialState: ShoppingCartStateType = {
 	cartItems: []
@@ -14,22 +15,19 @@ export const shoppingCartSlice = createSlice({
 			const { cartItem } = action.payload;
 			state.cartItems = [...state.cartItems, cartItem];
 		},
+		removeItemFromCart(state, action: PayloadAction<string>) {
+			const sku = action.payload;
+			state.cartItems = state.cartItems.filter(item => item.sku !== sku);
+		},
+		clearCart(state) {
+			state.cartItems = [];
+		},
 	},
 	selectors: {
 		getCartItems: state => state.cartItems,
 	}
 });
 
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { SlicePersistConfig } from '@sdk';
-const persistConfig: SlicePersistConfig<typeof shoppingCartSlice> = {
-	key: config.sliceName,
-	storage,
-	whitelist: config.slicePersist?.whitelist || [],
-	version: 1
-};
-
-const reducer = persistReducer(persistConfig, shoppingCartSlice.reducer);
+const reducer = persistAppReducer<ShoppingCartStateType>(shoppingCartSlice, config.slicePersist?.whitelist || []);
 
 export default reducer;

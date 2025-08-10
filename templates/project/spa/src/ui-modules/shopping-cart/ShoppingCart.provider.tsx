@@ -1,14 +1,12 @@
 import { createContext, PropsWithChildren, useContext, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 import { ShoppingCartContextType, ShoppingCartProps } from './ShoppingCart.types';
-import { useAppNavigate, useShoppingCart } from '@sdk';
+import { useAppNavigate, useAppSelector } from '@sdk';
 
 const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(undefined);
 
 export function ShoppingCartProvider({ children }: PropsWithChildren<ShoppingCartProps>) {
 	const navigate = useAppNavigate();
-	const { getCartItems } = useShoppingCart();
-	const cartItems = useSelector(getCartItems) ?? [];
+	const cartItems = useAppSelector(s => s.shoppingCart.cartItems) || [];
 	
 	const value = useMemo(() => ({
 		navigate,

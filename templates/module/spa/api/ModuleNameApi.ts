@@ -53,16 +53,8 @@ export const moduleNameApi = createApi({
 
 /*
 Uncomment this block if you want to use redux-persist
-import {persistReducer} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
-export const moduleNameApiReducer = persistReducer({
-		key: config.apiSliceName,
-		storage,
-		version: 1,
-		whitelist: ['queries', 'mutations']
-	}, moduleNameApi.reducer)
-
-	*/
+import { persistApiReducer } from '../../utils';
+export const moduleNameApiReducer = persistApiReducer(config.apiSliceName, moduleNameApi.reducer);
+*/
 
 export const moduleNameApiReducer = moduleNameApi.reducer;
