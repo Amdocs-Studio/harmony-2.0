@@ -10,10 +10,10 @@ const preview: Preview = {
 			},
 		},
 	},
-	tags: ['autodocs'],
+	// tags: ['autodocs'],
 	decorators: [
-		(Story) => (
-			<StorybookLayout >
+		(Story, { title, name }) => (
+			<StorybookLayout title={title} name={name} >
 				<Story />
 			</StorybookLayout>
 		),

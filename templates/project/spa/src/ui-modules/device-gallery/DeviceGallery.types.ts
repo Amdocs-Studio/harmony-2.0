@@ -1,16 +1,10 @@
-import { User, NavigateFunction, CartItem } from '@sdk';
+import { User, NavigateFunction, Device } from '@sdk';
 
 export type DeviceGalleryContextType = {
 	navigate: NavigateFunction
 	userInfo?: User
-	onDeviceSelect: (device: CartItem) => void
+	onDeviceSelect: (device: Device) => void
+	devices: Device[]
 }
-export interface Device {
-	brand: string;
-	description: string;
-	images: string[];
-	price: number;
-	title: string;
-	sku: string;
-}
+
 export type DeviceGalleryProps = object

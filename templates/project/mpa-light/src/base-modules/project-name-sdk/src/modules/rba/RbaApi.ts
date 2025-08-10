@@ -1,9 +1,8 @@
 import { baseQueryImpl } from '../../services';
 import { createApi } from '@reduxjs/toolkit/query/react';
 import config from './RbaConfig';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import { PoliciesType, RbaStateType } from './RbaTypes.ts';
+import { persistApiReducer } from '../../utils';
 
 export const rbaApi = createApi({
 	reducerPath: config.apiSliceName,
@@ -31,9 +30,5 @@ export const rbaApi = createApi({
 	})
 });
 
-export const rbaApiReducer = persistReducer({
-	key: config.apiSliceName,
-	storage,
-	version: 1,
-	whitelist: ['queries', 'mutations']
-}, rbaApi.reducer);
+export const rbaApiReducer = persistApiReducer(config.apiSliceName, rbaApi.reducer);
+

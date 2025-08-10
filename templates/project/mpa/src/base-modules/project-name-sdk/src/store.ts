@@ -16,7 +16,7 @@ import {
 } from 'redux-persist';
 import { useDispatch, useSelector } from 'react-redux';
 import { PersistPartial } from 'redux-persist/es/persistReducer';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage/session';
 import { flowManagerReducer } from 'redux-flow-manager';
 import { CreateFlowManager } from './utils';
 
@@ -69,11 +69,7 @@ const resettableRootReducer = () => (
 	action: PayloadAction<any>,
 ): PersistedRootState => {
 	if (action.type === '@@RESET_STORE') {
-		const reducer = rootReducer(undefined, action);
-		setTimeout(() => {
-			persistor.purge();
-		}, 1000);
-		return reducer;
+		return rootReducer(undefined, action);
 	}
 	return rootReducer(state, action);
 };

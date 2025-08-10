@@ -29,6 +29,7 @@
       "@app-intl": ["./src/base-modules/app-intl"],
       "@pages": ["./src/pages"],
       "@ui-modules": ["./src/ui-modules"],
+      "@mocks": ["./src/base-modules/mocks"],
     }
   },
   "include": ["./src", ".storybook"],

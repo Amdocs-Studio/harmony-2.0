@@ -1,10 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import config from './RbaConfig';
-import { RbaStateType, SlicePersistConfig } from '@sdk';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { RbaStateType } from '@sdk';
 import { rbaApi } from './RbaApi.ts';
 import { RBAStatus } from './RbaConsts.ts';
+import { persistAppReducer } from '../../utils';
 
 const initialState: RbaStateType = {};
 
@@ -30,12 +29,5 @@ export const rbaSlice = createSlice({
 	}
 });
 
-const persistConfig: SlicePersistConfig<typeof rbaSlice> = {
-	key: config.sliceName,
-	storage,
-	whitelist: config.slicePersist?.whitelist || [],
-	version: 1
-};
-
-const reducer = persistReducer(persistConfig, rbaSlice.reducer);
+const reducer = persistAppReducer<RbaStateType>(rbaSlice, config.slicePersist?.whitelist || []);
 export default reducer;

@@ -4,18 +4,19 @@ import { handlers } from './handlers';
 export const mockServer = setupWorker(...handlers);
 
 export const enableMocking = async () => {
+	const { log, error } = console;
 	if (window.harmony?.mocksEnabled) {
 		return;
 	}
-	console.log('Starting mock server...');
+	log('Starting mock server...');
 	await mockServer.start({
 		onUnhandledRequest: 'bypass',
 	}).then(() => {
-		console.log('Mock server started');
+		log('Mock server started');
 		window.harmony = window.harmony || {};
 		window.harmony.mocksEnabled = true;
 	}).catch(() => {
-		console.error('Failed to start mock server');
+		error('Failed to start mock server');
 		window.harmony = window.harmony || {};
 		window.harmony.mocksEnabled = false;
 	});

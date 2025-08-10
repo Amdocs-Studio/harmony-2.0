@@ -38,9 +38,10 @@ const mockPosts = [
 export const handlers: MockHandlerType[] = [
 	{
 		url: config.apiBaseUrl + '/posts',
+		delay: 2000,
 		resolver: () => {
 			return HttpResponse.json({
-				posts: mockPosts,
+				posts: [...mockPosts],
 			});
 		}
 	},

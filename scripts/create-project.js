@@ -52,16 +52,17 @@ const questions = {
 async function createProject(argv) {
     const projectName = argv.name || await inquirer.input(questions.createProject);
     const template = argv.template || await inquirer.select(questions.selectTemplate);
+    const projectDir = argv.dir || projectName;
     let modulePrefix = '';
     // if (template === 'mpa') {
     //     modulePrefix = argv.prefix || await inquirer.input({message: 'Enter module prefix:', default: projectName});
     // }
 
     console.log(`Creating project '${chalk.blue(projectName)}' with template '${chalk.green(template)}'...`);
-    const projectPath = path.join(process.cwd(), argv.dir || projectName); // Project created in current working directory
+    const projectPath = path.join(process.cwd(), projectDir); // Project created in current working directory
 
     if (fs.existsSync(projectPath)) {
-        console.error(`Directory '${projectName}' already exists.`);
+        console.error(`Directory '${projectDir}' already exists.`);
         process.exit(1);
     }
     const tokens = {
@@ -98,10 +99,10 @@ async function createProject(argv) {
         if (!installDeps) {
             console.log(`Install dependencies: ${chalk.yellow('npm install')}`);
         }
-        if (template === 'mpa') {
+        if (template === 'mpa' || template === 'mpa-light') {
             console.log(`Run the build command (mandatory for mpa tester): ${chalk.yellow('npm run build')}`);
             console.log(`Run the MPA tester: ${chalk.yellow('npm start')}`);
-            console.log(`Run the development server: ${chalk.yellow('npm run dev')}`);
+            console.log(`Run the development server (spa mode): ${chalk.yellow('npm run dev')}`);
         } else {
             console.log(`Start the development server: ${chalk.yellow('npm start')}`);
         }

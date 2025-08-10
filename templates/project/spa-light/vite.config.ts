@@ -81,7 +81,8 @@ export default defineConfig(({ mode }) => {
         {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules')},
         {find: '@pages', replacement: resolve(projectRootDir, 'src/pages')},
         {find: '@app-intl', replacement: resolve(projectRootDir, 'src/base-modules/app-intl')},
-        {find: '@common-components', replacement: resolve('src/base-modules/common-components')}
+        {find: '@common-components', replacement: resolve('src/base-modules/common-components')},
+        {find: '@mocks', replacement: resolve('src/base-modules/mocks')},
       ],
     },
     build: {

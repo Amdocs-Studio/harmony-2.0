@@ -28,9 +28,14 @@
       "@feedback-handler": ["./src/base-modules/project-name-feedback-handler/src/index.ts"],
       "@pages": ["./src/pages/index.ts"],
       "@ui-modules": ["./src/ui-modules/index.ts"],
-      "@flow-manager-config": ["./src/base-modules/flow-manager-config/index.ts"]
+      "@mocks": ["./src/base-modules/project-name-mocks/src/index.ts"],
+      "@flow-manager-config": ["./src/base-modules/flow-manager-config/index.ts"],
     }
   },
-  "include": ["./src", ".storybook", "./.storybook"],
+  "include": [
+    "src",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
   "exclude": ["./src/**/*.test.tsx", "./node_modules", "./.mpa-tester"]
 }

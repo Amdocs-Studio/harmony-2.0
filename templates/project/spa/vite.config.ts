@@ -82,7 +82,8 @@ export default defineConfig(({ mode }) => {
         {find: '@pages', replacement: resolve(projectRootDir, 'src/pages')},
         {find: '@app-intl', replacement: resolve(projectRootDir, 'src/base-modules/app-intl')},
         {find: '@common-components', replacement: resolve('src/base-modules/common-components')},
-        {find: '@flow-manager-config', replacement: resolve('src/base-modules/flow-manager-config')}
+        {find: '@mocks', replacement: resolve('src/base-modules/mocks')},
+        {find: '@flow-manager-config', replacement: resolve('src/base-modules/flow-manager-config')},
       ],
     },
     build: {

@@ -1,15 +1,13 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import { MiniCartLayoutContextType, MiniCartLayoutProps } from './MiniCartLayout.types';
 import MiniCartLayoutMain from './components/MiniCartLayout.main';
-import { useAppNavigate, useFlowManagerApi, useShoppingCart } from '@sdk';
-import { useSelector } from 'react-redux';
+import { useAppNavigate, useFlowManagerApi, useAppSelector } from '@sdk';
 
 const MiniCartLayoutContext = createContext<MiniCartLayoutContextType | undefined>(undefined);
 
 export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProps) {
 	const navigate = useAppNavigate();
-	const { getCartItems } = useShoppingCart();
-	const cartItems = useSelector(getCartItems) ?? [];
+	const cartItems = useAppSelector(s => s.shoppingCart.cartItems) || [];
 	const { moveToNextStep } = useFlowManagerApi(navigate);
 	
 	const value = useMemo(() => {

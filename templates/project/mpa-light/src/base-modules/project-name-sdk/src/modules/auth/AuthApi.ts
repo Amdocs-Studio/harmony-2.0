@@ -2,8 +2,7 @@ import { createApi, FetchBaseQueryMeta } from '@reduxjs/toolkit/query/react';
 import { baseQueryImpl } from '../../services';
 import { LoginPayload, User, AUTH_TAG_TYPES } from './AuthTypes';
 import config from './AuthConfig';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { persistApiReducer } from '../../utils';
 
 export const authApi = createApi({
 	reducerPath: config.apiSliceName,
@@ -37,16 +36,4 @@ export const authApi = createApi({
 	}),
 });
 
-export const authApiReducer = persistReducer({
-	key: config.apiSliceName,
-	storage,
-	version: 1,
-	whitelist: ['queries', 'mutations']
-}, authApi.reducer);
-/*
-
-Uncomment this block if you don't need to persist the API reducer
-
-export const authApiReducer = authApi.reducer;
-
- */
+export const authApiReducer = persistApiReducer(config.apiSliceName, authApi.reducer);

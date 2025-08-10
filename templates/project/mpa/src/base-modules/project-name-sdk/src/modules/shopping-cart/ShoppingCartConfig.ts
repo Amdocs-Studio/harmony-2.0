@@ -8,8 +8,8 @@ export const config: ModuleConfigType<Slice<ShoppingCartStateType>> = {
 	slicePersist: {
 		whitelist: ['cartItems'],
 	},
-	// apiPersist: true,
-	withApi: false,
+	apiPersist: true,
+	withApi: true,
 	withReducer: true,
 };
 

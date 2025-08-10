@@ -5,17 +5,27 @@ import { RootState, config } from '@sdk';
 
 const { log } = console;
 type BaseQueryOptions = {
-  baseUrl?: string;
-  headers?: Record<string, string>;
+	baseUrl?: string;
+	headers?: Record<string, string>;
 }
+
+type ExtraOptionsType = {
+	ignoreSpinner?: boolean
+}
+type BaseQueryImplType = BaseQueryFn<
+	string | FetchArgs,
+	unknown,
+	FetchBaseQueryError
+>;
+
 const waitForMocks = async () => {
 	return new Promise((resolve) => {
-		console.log('Waiting for mocks to be enabled...', config.useMocks, window.harmony.mocksEnabled);
-		if (!config.useMocks || window.harmony.mocksEnabled) {
+		console.log('Waiting for mocks to be enabled...', config.useMocks, window.harmony?.mocksEnabled);
+		if (!config.useMocks || window.harmony?.mocksEnabled) {
 			resolve(true);
 		}
 		setInterval(() => {
-			if (window.harmony.mocksEnabled) {
+			if (window.harmony?.mocksEnabled) {
 				resolve(true);
 			}
 		}, 500);
@@ -38,18 +48,9 @@ const baseQuery = (options?: BaseQueryOptions) => {
 			}
 			return headers;
 		},
-
 	});
 };
 
-type ExtraOptionsType = {
-  ignoreSpinner?: boolean
-}
-type BaseQueryImplType = BaseQueryFn<
-  string | FetchArgs,
-  unknown,
-  FetchBaseQueryError
->;
 export const baseQueryImpl = (baseQueryParams?: BaseQueryOptions): BaseQueryImplType  => async (args, api, extraOptions: ExtraOptionsType) => {
 	await waitForMocks();
 	log('baseQueryImpl', args, api, extraOptions);

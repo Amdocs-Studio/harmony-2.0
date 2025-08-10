@@ -6,7 +6,6 @@ import { PropsWithChildren } from 'react';
 
 export default function MiniCartLayoutMain({ children }: PropsWithChildren<{}>) {
 	const { pageSubTitle, pageTitle, onMiniCartContinue, cartItems } = useMiniCartLayoutContext();
-	console.log({ children });
 	return (
 		<div className="hero bg-base-200 pb-[50px] pl-[20px] min-h-[calc(100vh-4rem)]">
 			<div className="hero-content w-full flex-col">
@@ -19,9 +18,8 @@ export default function MiniCartLayoutMain({ children }: PropsWithChildren<{}>) 
 					<Grid2 container size={4} className="flex !flex-col !max-w-[310px]">
 						<MiniCart/>
 						<Grid2 className=" mt-[25px] flex justify-end" >
-							<Button onClick={() => onMiniCartContinue()} label="Checkout" isDisabled={!cartItems?.length}/>
+							<Button onClick={() => onMiniCartContinue()} label="Checkout" disabled={!cartItems?.length}/>
 						</Grid2>
-
 					</Grid2>
 				</Grid2>
 			</div>

@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
 @source "../../";
 
 @theme {
-    --color-primary: #5c6ac4;
+    --color-primary: #46508d;
     --color-primary-50: #f1f6fc;
     --color-primary-100: #e6eef9;
     --color-primary-200: #d1dff4;
@@ -27,4 +29,8 @@
     --color-secondary-700: #808080;
     --color-secondary-800: #707070;
     --color-secondary-900: #606060;
+}
+
+* {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif, serif;
 }

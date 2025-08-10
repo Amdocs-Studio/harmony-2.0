@@ -7,6 +7,7 @@ export type ShoppingCartContextType = {
 	messages: MessagesType;
 	config: ConfigType;
 	cartItems: CartItem[];
+	onClearCart: () => void
 }
 
 export type ShoppingCartProps = object
