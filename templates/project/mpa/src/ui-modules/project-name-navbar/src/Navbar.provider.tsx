@@ -1,11 +1,12 @@
-import { createContext, PropsWithChildren, useCallback, useContext, useMemo } from 'react';
+import { createContext, useCallback, useContext, useMemo } from 'react';
+import NavbarMain from './components/Navbar.main';
 import { NavbarContextType, NavbarProps } from './Navbar.types';
 import { useAppIntl, useAuth } from '@sdk';
 import { navigate, messages, getConfig } from './Navbar.i18n';
 
-const NavbarContext = createContext<NavbarContextType | undefined>(undefined);
+export const NavbarContext = createContext<NavbarContextType | undefined>(undefined);
 
-export function NavbarProvider({ children }: PropsWithChildren<NavbarProps>) {
+export function NavbarProvider(props: NavbarProps) {
 	const { formatMessage } = useAppIntl();
 	const { logout, userInfo } = useAuth();
 	const onLogoutClick = useCallback(() => {
@@ -17,6 +18,7 @@ export function NavbarProvider({ children }: PropsWithChildren<NavbarProps>) {
 	const onLoginClick = () => navigate('navigateToLogin');
 
 	const value = useMemo(() => ({
+		...props,
 		navigate,
 		formatMessage,
 		messages,
@@ -25,10 +27,13 @@ export function NavbarProvider({ children }: PropsWithChildren<NavbarProps>) {
 		onLoginClick,
 		userInfo,
 		onBackToHome: () => navigate('navigateToHome'),
-	}), [navigate, formatMessage]);
+	}), [navigate, formatMessage, props]);
 
-	return <NavbarContext.Provider value={value}>{children}</NavbarContext.Provider>;
-
+	return (
+		<NavbarContext.Provider value={value}>
+			<NavbarMain />
+		</NavbarContext.Provider>
+	);
 }
 
 export const useNavbarContext = () => useContext(NavbarContext) as NavbarContextType;

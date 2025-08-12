@@ -1,4 +1,4 @@
-import { store } from '../../store.ts';
+import { store } from '../../store';
 
 export const defaultSuccessCondition = async () => {
 	return Promise.resolve();

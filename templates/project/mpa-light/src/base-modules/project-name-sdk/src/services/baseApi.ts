@@ -5,17 +5,17 @@ import { RootState, config } from '@sdk';
 
 const { log } = console;
 type BaseQueryOptions = {
-	baseUrl?: string;
-	headers?: Record<string, string>;
+  baseUrl?: string;
+  headers?: Record<string, string>;
 }
 
 type ExtraOptionsType = {
-	ignoreSpinner?: boolean
+  ignoreSpinner?: boolean
 }
 type BaseQueryImplType = BaseQueryFn<
-	string | FetchArgs,
-	unknown,
-	FetchBaseQueryError
+  string | FetchArgs,
+  unknown,
+  FetchBaseQueryError
 >;
 
 const waitForMocks = async () => {
@@ -54,14 +54,5 @@ const baseQuery = (options?: BaseQueryOptions) => {
 export const baseQueryImpl = (baseQueryParams?: BaseQueryOptions): BaseQueryImplType  => async (args, api, extraOptions: ExtraOptionsType) => {
 	await waitForMocks();
 	log('baseQueryImpl', args, api, extraOptions);
-	if (!extraOptions?.ignoreSpinner) {
-		// start spinner
-		// api.dispatch(startSpinner(api.endpoint));
-	}
-	const result = await baseQuery(baseQueryParams)(args, api, extraOptions);
-	if (!extraOptions?.ignoreSpinner) {
-		// stop spinner
-		// api.dispatch(stopSpinner(api.endpoint));
-	}
-	return result;
+	return baseQuery(baseQueryParams)(args, api, extraOptions);
 };

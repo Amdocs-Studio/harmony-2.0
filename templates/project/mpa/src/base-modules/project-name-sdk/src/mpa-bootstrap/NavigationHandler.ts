@@ -67,7 +67,11 @@ class NavigationHandler implements NavigationHandlerType {
 		path = payload?.query ? `${path}?${new URLSearchParams(payload.query).toString()}` : path;
 		if (outcome.type === 'navigate') {
 			const redirectPath = outcome.value.startsWith('http') ? outcome.value : path;
-			window.location.href = redirectPath;
+			if (this.router) {
+				this.router.navigate(redirectPath, { replace: true });
+			} else {
+				window.location.href = redirectPath;
+			}
 		} else if (outcome.type === 'openinnewwindow') {
 			const redirectPath = outcome.value.startsWith('http') ? outcome.value : path;
 			window.open(redirectPath);

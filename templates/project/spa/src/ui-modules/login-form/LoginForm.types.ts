@@ -1,9 +1,9 @@
-import { User, NavigateFunction, useAuth } from '@sdk';
+import { User, NavigateFunction, LoginPayload } from '@sdk';
 
 export type LoginFormContextType = {
 	navigate: NavigateFunction
 	userInfo?: User;
-	login: ReturnType <typeof useAuth>['login']
+	login: (payload: LoginPayload) => void;
 }
 
 export type LoginFormProps = object
