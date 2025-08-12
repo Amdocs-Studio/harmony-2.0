@@ -17,7 +17,7 @@ const templatesDir = path.join(__dirname, '../templates');
 
 async function addMpaModule(argv, harmonyJsonContent, questions) {
 	const type = (argv.type || await inquirer.select(questions.selectType)).toLowerCase();
-	const module = argv.name || await inquirer.input(questions.moduleName);
+	const module = (argv.name || await inquirer.input(questions.moduleName)).replace(/ /g, '-').toLowerCase();
 	const projectName = harmonyJsonContent.projectName;
 	const ProjectName = dashToCamelCase(projectName)
 	const moduleNameTokens = getModuleNameTokens(module);

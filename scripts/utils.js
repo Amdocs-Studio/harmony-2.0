@@ -25,6 +25,22 @@ function getModuleNameTokens(moduleName) {
 	};
 }
 
+function getProjectNameTokens(projectName) {
+	const projectNameDash = projectName.replace(/ /g, '-').toLowerCase();
+	const camelCaseProjectName = projectNameDash.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+	const projectNameCamelCase = camelCaseProjectName.charAt(0).toLowerCase() + camelCaseProjectName.slice(1);
+	const projectNameWithSpaces = projectNameDash.replace(/-/g, ' ').toLowerCase();
+	const ProjectNameWithSpaces = projectNameWithSpaces.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+	return {
+		'project-name': projectNameDash,
+		'ProjectName': camelCaseProjectName,
+		'projectName': projectNameCamelCase,
+		'project name': projectNameWithSpaces,
+		'Project Name': ProjectNameWithSpaces,
+	};
+}
+
+
 async function copyAndReplaceTokens(from, to, tokens) {
 	fs.mkdirSync(to, {recursive: true});
 	copyDirSync(from, to);
@@ -152,5 +168,6 @@ module.exports = {
 	dashToCapitalized,
 	addModuleToModuleIndex,
 	addModuleIntl,
-	getModuleNameTokens
+	getModuleNameTokens,
+	getProjectNameTokens
 }

@@ -9,7 +9,7 @@ const {
     wait,
     dashToCamelCase,
     copyAndReplaceTokens,
-    copyFileAndReplaceTokens, dashToCapitalized
+    copyFileAndReplaceTokens, dashToCapitalized, getProjectNameTokens
 } = require('./utils');
 
 const templatesDir = path.join(__dirname, '../templates'); // Assuming templates are in a 'templates' folder in the same directory as the script
@@ -50,9 +50,9 @@ const questions = {
 }
 
 async function createProject(argv) {
-    const projectName = argv.name || await inquirer.input(questions.createProject);
+    const projectName = (argv.name || await inquirer.input(questions.createProject)).replace(/ /g, '-').toLowerCase();
     const template = argv.template || await inquirer.select(questions.selectTemplate);
-    const projectDir = argv.dir || projectName;
+    const projectDir = (argv.dir || projectName).replace(/ /g, '-').toLowerCase();
     let modulePrefix = '';
     // if (template === 'mpa') {
     //     modulePrefix = argv.prefix || await inquirer.input({message: 'Enter module prefix:', default: projectName});
@@ -65,12 +65,7 @@ async function createProject(argv) {
         console.error(`Directory '${projectDir}' already exists.`);
         process.exit(1);
     }
-    const tokens = {
-        'project-name': projectName,
-        'module-prefix': modulePrefix,
-        'ProjectName': dashToCamelCase(projectName),
-        'Project Name': dashToCapitalized(projectName)
-    }
+    const tokens = getProjectNameTokens(projectName);
     const harmonyJsonTokens = {
         '#project-name#': projectName,
         '#template#': template,
