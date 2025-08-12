@@ -17,7 +17,7 @@ const templatesDir = path.join(__dirname, '../templates'); // Assuming templates
 
 async function addSpaModule(argv, harmonyJsonContent, questions) {
 	const type = (argv.type || await inquirer.select(questions.selectType)).toLowerCase();
-	const module = argv.name || await inquirer.input(questions.moduleName);
+	const module = (argv.name || await inquirer.input(questions.moduleName)).replace(/ /g, '-').toLowerCase();
 	const tokens = getModuleNameTokens(module);
 	const moduleNameDash = tokens["module-name"];
 	const camelCaseModuleName = tokens["ModuleName"];

@@ -50,9 +50,9 @@ const questions = {
 }
 
 async function createProject(argv) {
-    const projectName = argv.name || await inquirer.input(questions.createProject);
+    const projectName = (argv.name || await inquirer.input(questions.createProject)).replace(/ /g, '-').toLowerCase();
     const template = argv.template || await inquirer.select(questions.selectTemplate);
-    const projectDir = argv.dir || projectName;
+    const projectDir = (argv.dir || projectName).replace(/ /g, '-').toLowerCase();
     let modulePrefix = '';
     // if (template === 'mpa') {
     //     modulePrefix = argv.prefix || await inquirer.input({message: 'Enter module prefix:', default: projectName});

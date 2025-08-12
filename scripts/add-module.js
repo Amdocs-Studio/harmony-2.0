@@ -21,8 +21,6 @@ async function addModule(argv) {
 			validate: input => {
 				if (!input || !input.trim()) {
 					return 'Module name cannot be empty.'
-				} else if (input.includes(' ')) {
-					return 'Module name cannot contain spaces.'
 				}
 				return true;
 			}
