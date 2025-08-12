@@ -90,7 +90,7 @@ async function createProject(argv) {
         }
 
         console.log(`Project '${chalk.blue(projectName)}' created ${chalk.green('successfully! ✓')}`);
-        console.log(`Go to the project directory: ${chalk.yellow(`cd ${argv.dir || projectName}`)}`);
+        console.log(`Go to the project directory: ${chalk.yellow(`cd ${projectDir}`)}`);
         if (!installDeps) {
             console.log(`Install dependencies: ${chalk.yellow('npm install')}`);
         }

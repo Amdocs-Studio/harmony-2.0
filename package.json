@@ -1,9 +1,9 @@
 {
   "name": "harmony2",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "type": "commonjs",
   "bin": {
-    "harmony": "./scripts/index.js"
+    "harmony2": "./scripts/index.js"
   },
   "repository": {
     "type": "git",
