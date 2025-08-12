@@ -12,13 +12,13 @@ export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProp
 	
 	const value = useMemo(() => {
 		const onMiniCartContinue = async () => {
-			moveToNextStep();
+			return moveToNextStep();
 		};
 		return {
+			...rest,
 			navigate,
 			cartItems,
 			onMiniCartContinue,
-			...rest
 		};
 	}, [navigate, children, cartItems, moveToNextStep, rest]);
 	

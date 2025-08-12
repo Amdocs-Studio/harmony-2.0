@@ -1,12 +1,12 @@
-import { User, NavigateFunction, useAppIntl, MessagesType, ConfigType, useAuth } from '@sdk';
+import { User, NavigateFunction, LoginPayload, useAppIntl, MessagesType, ConfigType } from '@sdk';
 
 export type LoginFormContextType = {
 	navigate: NavigateFunction
-	userInfo?: User
+	userInfo?: User;
+	login: (payload: LoginPayload) => void;
 	formatMessage: ReturnType<typeof useAppIntl>['formatMessage']
 	messages: MessagesType;
 	config: ConfigType;
-	login: ReturnType <typeof useAuth>['login']
 }
 
 export type LoginFormProps = object

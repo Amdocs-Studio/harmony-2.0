@@ -8,6 +8,15 @@ type BaseQueryOptions = {
   baseUrl?: string;
   headers?: Record<string, string>;
 }
+type ExtraOptionsType = {
+	ignoreSpinner?: boolean
+}
+type BaseQueryImplType = BaseQueryFn<
+	string | FetchArgs,
+	unknown,
+	FetchBaseQueryError
+>;
+
 const baseQuery = (options?: BaseQueryOptions) => {
 	const { baseUrl = '', headers: headersImpl = {} } = options || { baseUrl: '', headers: {} };
 	return fetchBaseQuery({
@@ -24,28 +33,10 @@ const baseQuery = (options?: BaseQueryOptions) => {
 			}
 			return headers;
 		},
-
 	});
 };
 
-type ExtraOptionsType = {
-  ignoreSpinner?: boolean
-}
-type BaseQueryImplType = BaseQueryFn<
-  string | FetchArgs,
-  unknown,
-  FetchBaseQueryError
->;
 export const baseQueryImpl = (baseQueryParams?: BaseQueryOptions): BaseQueryImplType  => async (args, api, extraOptions: ExtraOptionsType) => {
 	log('baseQueryImpl', args, api, extraOptions);
-	if (!extraOptions?.ignoreSpinner) {
-		// start spinner
-		// api.dispatch(startSpinner(api.endpoint));
-	}
-	const result = await baseQuery(baseQueryParams)(args, api, extraOptions);
-	if (!extraOptions?.ignoreSpinner) {
-		// stop spinner
-		// api.dispatch(stopSpinner(api.endpoint));
-	}
-	return result;
+	return baseQuery(baseQueryParams)(args, api, extraOptions);
 };

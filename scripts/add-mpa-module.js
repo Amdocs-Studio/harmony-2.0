@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
 const path = require('path');
 const inquirer = require('@inquirer/prompts');
 
@@ -10,8 +9,8 @@ const {
 	copyAndReplaceTokens,
 	addImportApi,
 	addModuleToStore,
-	addModuleIntl,
-	addModuleToModuleIndex
+	addModuleToModuleIndex,
+	getModuleNameTokens
 } = require('./utils');
 
 const templatesDir = path.join(__dirname, '../templates');
@@ -21,18 +20,15 @@ async function addMpaModule(argv, harmonyJsonContent, questions) {
 	const module = argv.name || await inquirer.input(questions.moduleName);
 	const projectName = harmonyJsonContent.projectName;
 	const ProjectName = dashToCamelCase(projectName)
-	const moduleNameDash = module;
-	const camelCaseModuleName = dashToCamelCase(module);
-	const moduleName = camelCaseModuleName.charAt(0).toLowerCase() + camelCaseModuleName.slice(1);
-	const moduleNameWithSpaces = moduleName.replace(/-/g, ' ').toLowerCase()
+	const moduleNameTokens = getModuleNameTokens(module);
 	const tokens = {
-		'module-name': moduleNameDash,
-		'ModuleName': camelCaseModuleName,
-		'moduleName': moduleName,
 		'project-name': projectName,
 		'ProjectName': ProjectName,
-		'module name': moduleNameWithSpaces
+		...moduleNameTokens,
 	};
+	const moduleNameDash = moduleNameTokens["module-name"];
+	const camelCaseModuleName = moduleNameTokens["ModuleName"];
+	const moduleName = moduleNameTokens["moduleName"];
 	const modulePath = type === 'ui' ?
 		path.join(process.cwd(), 'src/ui-modules', `${projectName}-${moduleNameDash}`)
 		:

@@ -1,11 +1,12 @@
-import { createContext, PropsWithChildren, useCallback, useContext, useMemo } from 'react';
+import { createContext, useCallback, useContext, useMemo } from 'react';
+import HomeHeroMain from './components/HomeHero.main';
 import { HomeHeroContextType, HomeHeroProps } from './HomeHero.types';
 import { useAuth, useAppNavigate, useFlowManagerApi } from '@sdk';
 import { flowsTypes, TypesConfig } from '@flow-manager-config';
 
 const HomeHeroContext = createContext<HomeHeroContextType | undefined>(undefined);
 
-export const HomeHeroProvider = ({ children }: PropsWithChildren<HomeHeroProps>) => {
+export const HomeHeroProvider = (props: HomeHeroProps) => {
 	const { logout, userInfo } = useAuth();
 	const navigate = useAppNavigate();
 	const { startFlow } = useFlowManagerApi(navigate);
@@ -17,17 +18,22 @@ export const HomeHeroProvider = ({ children }: PropsWithChildren<HomeHeroProps>)
 	}, [logout, navigate]);
 	
 	const onStartBuyFlow = async () => {
-		startFlow(flowsTypes.flowTypes.COP, (flowsTypes as TypesConfig).stepTypes.DEVICE_GALLERY.name, true);
+		return startFlow(flowsTypes.flowTypes.COP, (flowsTypes as TypesConfig).stepTypes.DEVICE_GALLERY.name, true);
 	};
 	
 	const value = useMemo(() => ({
+		...props,
 		navigate,
 		onLogout: onLogoutClick,
 		userInfo,
 		onStartBuyFlow
-	}), [navigate, onLogoutClick, userInfo]);
+	}), [navigate, onLogoutClick, userInfo, props]);
 	
-	return <HomeHeroContext.Provider value={value}>{children}</HomeHeroContext.Provider>;
+	return (
+		<HomeHeroContext.Provider value={value}>
+			<HomeHeroMain />
+		</HomeHeroContext.Provider>
+	);
 };
 
 export const useHomeHeroContext = () => useContext(HomeHeroContext) as HomeHeroContextType;

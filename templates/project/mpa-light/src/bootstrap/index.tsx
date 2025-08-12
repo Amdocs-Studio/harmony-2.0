@@ -1,12 +1,12 @@
 import { SdkProvider } from '@sdk';
-import Router from './router';
+import Router, { router } from './router';
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
-import { enableMocking } from '../base-modules/project-name-mocks/src';
+import { enableMocking } from '@mocks';
 
 function App() {
 	return (
-		<SdkProvider>
+		<SdkProvider router={router}>
 			<Router />
 		</SdkProvider>
 	);

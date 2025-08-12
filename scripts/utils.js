@@ -10,6 +10,21 @@ async function wait(ms) {
 	});
 }
 
+function getModuleNameTokens(moduleName) {
+	const moduleNameDash = moduleName.replace(/ /g, '-').toLowerCase();
+	const camelCaseModuleName = moduleNameDash.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+	const moduleNameCamelCase = camelCaseModuleName.charAt(0).toLowerCase() + camelCaseModuleName.slice(1);
+	const moduleNameWithSpaces = moduleNameDash.replace(/-/g, ' ').toLowerCase();
+	const ModuleNameWithSpaces = moduleNameWithSpaces.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+	return {
+		'module-name': moduleNameDash,
+		'ModuleName': camelCaseModuleName,
+		'moduleName': moduleNameCamelCase,
+		'module name': moduleNameWithSpaces,
+		'Module Name': ModuleNameWithSpaces,
+	};
+}
+
 async function copyAndReplaceTokens(from, to, tokens) {
 	fs.mkdirSync(to, {recursive: true});
 	copyDirSync(from, to);
@@ -136,5 +151,6 @@ module.exports = {
 	copyFileAndReplaceTokens,
 	dashToCapitalized,
 	addModuleToModuleIndex,
-	addModuleIntl
+	addModuleIntl,
+	getModuleNameTokens
 }

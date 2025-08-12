@@ -3,12 +3,12 @@ import { useLoginFormContext } from '../LoginForm.provider.tsx';
 import { useState, FormEvent } from 'react';
 
 export default function LoginFormMain() {
-	const { login, navigate } = useLoginFormContext();
+	const { login } = useLoginFormContext();
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const handleLogin = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		login({ username, password }).then(() => navigate('navigateToHome'));
+		login({ username, password });
 	};
 	return (
 		<section className="bg-gray-100 dark:bg-gray-900">

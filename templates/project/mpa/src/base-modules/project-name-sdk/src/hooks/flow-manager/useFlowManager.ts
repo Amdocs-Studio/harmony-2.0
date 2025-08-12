@@ -1,13 +1,18 @@
 import { flowManager } from '../../store.ts';
 import { flowsTypes, TypesConfig } from '@flow-manager-config';
-
-const navigate = (path: string) => {
-	if (typeof window !== 'undefined' && window.location) {
-		window.location.href = path;
-	}
-};
+import { getNavigationHandler } from '../../mpa-bootstrap/NavigationHandler';
 
 const useFlowManager = () =>  {
+	const navigate = (path: string) => {
+		const router = getNavigationHandler().router;
+		if (router) {
+			router.navigate(path);
+			return;
+		}
+		if (typeof window !== 'undefined' && window.location) {
+			window.location.href = path;
+		}
+	};
 	const getFlowInformation = () => {
 		return {
 			flowType: flowManager.getFlowType(),
