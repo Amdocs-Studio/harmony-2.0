@@ -32,6 +32,10 @@
       "@mocks": ["./src/base-modules/mocks"],
     }
   },
-  "include": ["./src", ".storybook"],
+  "include": [
+    "src",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
   "exclude": ["./src/**/*.test.tsx", "./node_modules"]
 }

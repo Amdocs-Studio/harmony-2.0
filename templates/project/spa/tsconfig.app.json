@@ -33,6 +33,10 @@
       "@flow-manager-config": ["./src/base-modules/flow-manager-config"]
     }
   },
-  "include": ["./src", ".storybook"],
+  "include": [
+    "src",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
   "exclude": ["./src/**/*.test.tsx", "./node_modules"]
 }
