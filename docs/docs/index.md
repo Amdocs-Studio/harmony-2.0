@@ -21,16 +21,17 @@ hide:
             <h2 class="title">Quick start 🚀</h2>
         </div>
         <div class="page-title">
-            Download The Harmony project
+            Run npx command or install harmony2 globally to create a new project.
         </div>
         <div class="quick-start">
             <div class="quick-start-part">
-                <h6 class="title">Install Harmony</h6>
-                <div class="code-block"><pre><code>npm install</code></pre></div>
+                <h6 class="title">Install Harmony globally</h6>
+                <div class="code-block"><pre><code>npm install -g harmony2@latest</code></pre></div>
+                <div class="code-block"><pre><code>harmony2 create</code></pre></div>
             </div>
             <div class="quick-start-part">
-                <h6 class="title">Start the Project</h6>
-                <div class="code-block"><pre><code>npm start</code></pre></div>
+                <h6 class="title">Run npx command</h6>
+                <div class="code-block"><pre><code>npx harmony2@latest create</code></pre></div>
             </div>
         </div>
     </div>
