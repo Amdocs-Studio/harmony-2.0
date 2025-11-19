@@ -10,7 +10,7 @@ The module types supported by Harmony are:
 ## Create Module by cli
 
 ``` sh
-harmony add [type] [name]    // Add a new module
+harmony2 add [type] [name]    // Add a new module
 ```
 ![Image](../../assets/images/harmony-add-module.png) ![Image](../../assets/images/harmony-add-module-generate.png)  
 
