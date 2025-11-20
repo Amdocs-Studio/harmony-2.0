@@ -11,6 +11,8 @@ The module types supported by Harmony are:
 
 ``` sh
 harmony2 add [type] [name]    // Add a new module
+harmony2 add api [name]     // Add a new API module
+harmony2 add ui [name]      // Add a new UI module
 ```
 ![Image](../../assets/images/harmony-add-module.png) ![Image](../../assets/images/harmony-add-module-generate.png)  
 
