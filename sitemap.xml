@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/develop-with-harmony/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/getting-started/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/license/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/tags/</loc>
-         <lastmod>2025-11-20</lastmod>
-    </url>
-    <url>
-         <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/api/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/client/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/development/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/error_handler/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/flow_manager/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/flow_manager_establishment/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/global_spinner/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/main_features/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/modules/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/multilingual/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/rba/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
+    </url>
+    <url>
+         <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/requests/</loc>
+         <lastmod>2025-11-24</lastmod>
     </url>
     <url>
          <loc>https://Amdocs-Studio.github.io/harmony-2.0/extensions/client/storybook/</loc>
-         <lastmod>2025-11-20</lastmod>
+         <lastmod>2025-11-24</lastmod>
     </url>
 </urlset>
