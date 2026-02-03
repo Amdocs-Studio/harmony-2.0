@@ -1,9 +1,19 @@
 import { Slice } from '@reduxjs/toolkit';
-import { createPersistedEndpointsTransform } from './utils';
+import { createPersistedEndpointsTransform } from '../utils';
 import { PersistConfig } from 'redux-persist';
 import { TypedUseSelectorHook } from 'react-redux';
 
-export type { NavigateFunction } from 'react-router';
+export type { NavigateFunction as ReactRouterNavigateFunction } from 'react-router';
+import type { NavigateOptions as ReactRouterNavigateOptions, To } from 'react-router';
+
+export type ExtendedNavigateOptions = ReactRouterNavigateOptions & {
+	query?: Record<string, string>;
+};
+
+export interface NavigateFunction {
+	(to: To, options?: ExtendedNavigateOptions): void | Promise<void>;
+	(delta: number): void | Promise<void>;
+}
 
 export type EndpointNames<Api> = Api extends { endpoints: infer Endpoints }
 	? keyof Endpoints

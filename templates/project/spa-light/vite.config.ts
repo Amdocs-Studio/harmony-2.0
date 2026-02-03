@@ -41,10 +41,9 @@ const manualChunks = (id: string) => {
     if (id.includes('/node_modules/@mswjs/')) {
       return 'mock';
     }
-    if (id.includes('/node_modules/react-dom/')) {
-      return 'vendors-react-dom';
-    }
-    if (id.toLowerCase().includes('/node_modules/react/')) {
+    // Bundle React and ReactDOM together to avoid "unstable_now" error
+    // React requires both to be in the same bundle to share internal state
+    if (id.includes('/node_modules/react-dom/') || id.toLowerCase().includes('/node_modules/react/')) {
       return 'vendors-react';
     }
     return 'vendors';
@@ -80,7 +79,7 @@ export default defineConfig(({ mode }) => {
         {find: '@feedback-handler', replacement: resolve(projectRootDir, 'src/base-modules/feedback-handler')},
         {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules')},
         {find: '@pages', replacement: resolve(projectRootDir, 'src/pages')},
-        {find: '@app-intl', replacement: resolve(projectRootDir, 'src/base-modules/app-intl')},
+        {find: '@msgs', replacement: resolve(projectRootDir, 'src/base-modules/app-intl')},
         {find: '@common-components', replacement: resolve('src/base-modules/common-components')},
         {find: '@mocks', replacement: resolve('src/base-modules/mocks')},
       ],
@@ -89,7 +88,7 @@ export default defineConfig(({ mode }) => {
       sourcemap: isDev,
       rollupOptions: {
         output: {
-          manualChunks,
+        //   manualChunks,
         },
       }
     },

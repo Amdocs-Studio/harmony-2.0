@@ -1,10 +1,9 @@
-import { createContext, useContext, useMemo } from 'react';
-import { MiniCartLayoutContextType, MiniCartLayoutProps } from './MiniCartLayout.types';
+import { useMemo } from 'react';
+import { MiniCartLayoutProps } from './MiniCartLayout.types';
 import { useAppIntl, useFlowManagerApi, useAppSelector } from '@sdk';
 import { navigate, messages, getConfig } from './MiniCartLayout.i18n';
 import MiniCartLayoutMain from './components/MiniCartLayout.main';
-
-const MiniCartLayoutContext = createContext<MiniCartLayoutContextType | undefined>(undefined);
+import { MiniCartLayoutContext } from './MiniCartLayout.context';
 
 export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProps) {
 	const { formatMessage } = useAppIntl();
@@ -33,5 +32,3 @@ export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProp
 	);
 
 }
-
-export const useMiniCartLayoutContext = () => useContext(MiniCartLayoutContext) as MiniCartLayoutContextType;

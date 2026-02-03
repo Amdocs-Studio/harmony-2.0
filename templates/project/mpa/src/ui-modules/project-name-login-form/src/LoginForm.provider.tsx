@@ -1,10 +1,9 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import LoginFormMain from './components/LoginForm.main';
-import { LoginFormContextType, LoginFormProps } from './LoginForm.types';
+import { LoginFormProps } from './LoginForm.types';
 import { useAppIntl, useAuth, LoginPayload } from '@sdk';
 import { navigate, messages, getConfig } from './LoginForm.i18n';
-
-const LoginFormContext = createContext<LoginFormContextType | undefined>(undefined);
+import { LoginFormContext } from './LoginForm.context';
 
 export function LoginFormProvider(props: LoginFormProps) {
 	const { formatMessage } = useAppIntl();
@@ -29,5 +28,3 @@ export function LoginFormProvider(props: LoginFormProps) {
 		</LoginFormContext.Provider>
 	);
 }
-
-export const useLoginFormContext = () => useContext(LoginFormContext) as LoginFormContextType;

@@ -1,5 +1,5 @@
 import { Button } from '@common-components';
-import { useModuleNameContext } from '../ModuleName.provider';
+import { useModuleNameContext } from '../ModuleName.context';
 
 export default function ModuleNameMain() {
 	const { navigate, formatMessage, messages } = useModuleNameContext();

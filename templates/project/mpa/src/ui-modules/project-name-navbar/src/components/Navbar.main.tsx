@@ -1,5 +1,5 @@
 import { Header } from '@common-components';
-import { useNavbarContext } from '../Navbar.provider';
+import { useNavbarContext } from '../Navbar.context';
 
 export default function NavbarMain() {
 	const { onLogout, userInfo, onBackToHome, onLoginClick } = useNavbarContext();

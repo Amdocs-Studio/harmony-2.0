@@ -1,9 +1,8 @@
-import { createContext, useCallback, useContext, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import HomeHeroMain from './components/HomeHero.main';
-import { HomeHeroContextType, HomeHeroProps } from './HomeHero.types';
+import { HomeHeroProps } from './HomeHero.types';
 import { useAuth, useAppNavigate } from '@sdk';
-
-const HomeHeroContext = createContext<HomeHeroContextType | undefined>(undefined);
+import { HomeHeroContext } from './HomeHero.context';
 
 export const HomeHeroProvider = (props: HomeHeroProps) => {
 	const { logout, userInfo } = useAuth();
@@ -28,5 +27,3 @@ export const HomeHeroProvider = (props: HomeHeroProps) => {
 		</HomeHeroContext.Provider>
 	);
 };
-
-export const useHomeHeroContext = () => useContext(HomeHeroContext) as HomeHeroContextType;

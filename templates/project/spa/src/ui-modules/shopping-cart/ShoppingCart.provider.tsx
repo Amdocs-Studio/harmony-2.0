@@ -1,9 +1,8 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import ShoppingCartMain from './components/ShoppingCart.main';
-import { ShoppingCartContextType, ShoppingCartProps } from './ShoppingCart.types';
+import { ShoppingCartProps } from './ShoppingCart.types';
 import { useAppNavigate, useAppSelector, useShoppingCart } from '@sdk';
-
-const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(undefined);
+import { ShoppingCartContext } from './ShoppingCart.context';
 
 export function ShoppingCartProvider(props: ShoppingCartProps) {
 	const navigate = useAppNavigate();
@@ -27,5 +26,3 @@ export function ShoppingCartProvider(props: ShoppingCartProps) {
 		</ShoppingCartContext.Provider>
 	);
 }
-
-export const useShoppingCartContext = () => useContext(ShoppingCartContext) as ShoppingCartContextType;

@@ -1,5 +1,5 @@
 import { Button } from '@common-components';
-import { useLoginFormContext } from '../LoginForm.provider.tsx';
+import { useLoginFormContext } from '../LoginForm.context';
 import { useState, FormEvent } from 'react';
 
 export default function LoginFormMain() {

@@ -8,7 +8,7 @@ import config from '../config.ts';
 export default function SdkProvider({ children }: Readonly<{ children: ReactNode }>) {
 	const [mockEnabled, setMockEnabled] = useState<boolean>(false);
 	useEffect(() => {
-		if (config.useMocks) {
+		if (config.useMocks && !mockEnabled) {
 			enableMocking().then(() => setMockEnabled(true));
 		} else {
 			setMockEnabled(true);

@@ -1,9 +1,8 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import ModuleNameMain from './components/ModuleName.main';
-import { ModuleNameContextType, ModuleNameProps } from './ModuleName.types';
+import { ModuleNameProps } from './ModuleName.types';
 import { useAppNavigate } from '@sdk';
-
-const ModuleNameContext = createContext<ModuleNameContextType | undefined>(undefined);
+import { ModuleNameContext } from './ModuleName.context';
 
 export function ModuleNameProvider(props: ModuleNameProps) {
 	const navigate = useAppNavigate();
@@ -20,5 +19,3 @@ export function ModuleNameProvider(props: ModuleNameProps) {
 	);
 
 }
-
-export const useModuleNameContext = () => useContext(ModuleNameContext) as ModuleNameContextType;

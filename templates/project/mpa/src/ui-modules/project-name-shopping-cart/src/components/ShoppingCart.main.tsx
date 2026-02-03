@@ -1,4 +1,4 @@
-import { useShoppingCartContext } from '../ShoppingCart.provider';
+import { useShoppingCartContext } from '../ShoppingCart.context';
 import { Grid2, Typography } from '@mui/material';
 import { Button } from '@common-components';
 

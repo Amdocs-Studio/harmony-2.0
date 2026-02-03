@@ -1,5 +1,5 @@
 import { Button } from '@common-components';
-import { useHomeHeroContext } from '../HomeHero.provider';
+import { useHomeHeroContext } from '../HomeHero.context';
 import RBATests from './RBATests';
 
 export default function HomeHeroMain() {

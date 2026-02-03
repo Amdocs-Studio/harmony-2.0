@@ -1,4 +1,4 @@
-import { useMiniCartLayoutContext } from '../MiniCartLayout.provider';
+import { useMiniCartLayoutContext } from '../MiniCartLayout.context';
 import { Grid2, Typography } from '@mui/material';
 import MiniCart from './MiniCart.tsx';
 import { Button } from '@common-components';

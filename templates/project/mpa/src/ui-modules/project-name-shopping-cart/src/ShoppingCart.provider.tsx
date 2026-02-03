@@ -1,9 +1,8 @@
-import { createContext, PropsWithChildren, useContext, useMemo } from 'react';
-import { ShoppingCartContextType, ShoppingCartProps } from './ShoppingCart.types';
+import { PropsWithChildren, useMemo } from 'react';
+import { ShoppingCartProps } from './ShoppingCart.types';
 import { useAppIntl, useAppSelector, useShoppingCart } from '@sdk';
 import { navigate, messages, getConfig } from './ShoppingCart.i18n';
-
-const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(undefined);
+import { ShoppingCartContext } from './ShoppingCart.context';
 
 export function ShoppingCartProvider({ children }: PropsWithChildren<ShoppingCartProps>) {
 	const { formatMessage } = useAppIntl();
@@ -27,5 +26,3 @@ export function ShoppingCartProvider({ children }: PropsWithChildren<ShoppingCar
 	return <ShoppingCartContext.Provider value={value}>{children}</ShoppingCartContext.Provider>;
 
 }
-
-export const useShoppingCartContext = () => useContext(ShoppingCartContext) as ShoppingCartContextType;

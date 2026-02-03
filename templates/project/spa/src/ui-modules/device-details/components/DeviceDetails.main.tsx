@@ -1,4 +1,4 @@
-import { useDeviceDetailsContext } from '../DeviceDetails.provider';
+import { useDeviceDetailsContext } from '../DeviceDetails.context';
 import { MiniCartLayout } from '@ui-modules';
 import { CartItem, shoppingCartApi } from '@sdk';
 import { DeviceCard } from '@common-components';

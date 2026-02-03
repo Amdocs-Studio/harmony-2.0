@@ -1,9 +1,8 @@
-import React, { createContext, useContext, useMemo } from 'react';
-import { MiniCartLayoutContextType, MiniCartLayoutProps } from './MiniCartLayout.types';
+import React, { useMemo } from 'react';
+import { MiniCartLayoutProps } from './MiniCartLayout.types';
 import MiniCartLayoutMain from './components/MiniCartLayout.main';
 import { useAppNavigate, useFlowManagerApi, useAppSelector } from '@sdk';
-
-const MiniCartLayoutContext = createContext<MiniCartLayoutContextType | undefined>(undefined);
+import { MiniCartLayoutContext } from './MiniCartLayout.context';
 
 export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProps) {
 	const navigate = useAppNavigate();
@@ -31,5 +30,3 @@ export function MiniCartLayoutProvider({ children, ...rest }: MiniCartLayoutProp
 	);
 	
 }
-
-export const useMiniCartLayoutContext = () => useContext(MiniCartLayoutContext) as MiniCartLayoutContextType;

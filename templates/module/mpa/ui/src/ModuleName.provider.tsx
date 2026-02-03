@@ -1,10 +1,9 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import ModuleNameMain from './components/ModuleName.main';
-import { ModuleNameContextType, ModuleNameProps } from './ModuleName.types';
+import { ModuleNameProps } from './ModuleName.types';
 import { useAppIntl } from '@sdk';
 import { navigate, messages, getConfig } from './ModuleName.i18n';
-
-const ModuleNameContext = createContext<ModuleNameContextType | undefined>(undefined);
+import { ModuleNameContext } from './ModuleName.context';
 
 export function ModuleNameProvider(props: ModuleNameProps) {
 	const { formatMessage } = useAppIntl();
@@ -23,5 +22,3 @@ export function ModuleNameProvider(props: ModuleNameProps) {
 		</ModuleNameContext.Provider>
 	);
 }
-
-export const useModuleNameContext = () => useContext(ModuleNameContext) as ModuleNameContextType;

@@ -26,10 +26,11 @@
       "@sdk": ["./src/base-modules/sdk"],
       "@common-components": ["./src/base-modules/common-components"],
       "@feedback-handler": ["./src/base-modules/feedback-handler"],
-      "@app-intl": ["./src/base-modules/app-intl"],
       "@pages": ["./src/pages"],
       "@ui-modules": ["./src/ui-modules"],
       "@mocks": ["./src/base-modules/mocks"],
+      "@msgs": ["./src/base-modules/app-intl"],
+      "@msgs/*": ["./src/base-modules/app-intl/*"]
     }
   },
   "include": [
