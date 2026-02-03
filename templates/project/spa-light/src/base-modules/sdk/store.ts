@@ -12,7 +12,7 @@ import {
 	REHYDRATE,
 	persistStore,
 } from 'redux-persist';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { PersistPartial } from 'redux-persist/es/persistReducer';
 
 const getDefaultMiddlewareOptions = {
@@ -78,5 +78,3 @@ export const { store, persistor } = storeInstance;
 type Store = typeof store;
 export type AppDispatch = Store['dispatch'];
 export const useAppDispatch = () => useDispatch<AppDispatch>();
-
-export const useAppSelector = useSelector.withTypes<RootState>();

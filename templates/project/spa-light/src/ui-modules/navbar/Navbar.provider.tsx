@@ -1,13 +1,14 @@
-import { createContext, useCallback, useContext, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import NavbarMain from './components/Navbar.main';
-import { NavbarContextType, NavbarProps } from './Navbar.types';
+import { NavbarProps } from './Navbar.types';
 import { useAuth, useAppNavigate } from '@sdk';
-
-export const NavbarContext = createContext<NavbarContextType | undefined>(undefined);
+import { useAppIntl } from '@msgs';
+import { NavbarContext } from './Navbar.context';
 
 export function NavbarProvider(props: NavbarProps) {
 	const { logout, userInfo } = useAuth();
 	const navigate = useAppNavigate();
+	const { formatMessage } = useAppIntl();
 	const onLogoutClick = useCallback(() => {
 		logout().then(() => {
 			navigate('/');
@@ -19,8 +20,9 @@ export function NavbarProvider(props: NavbarProps) {
 		navigate,
 		onLogout: onLogoutClick,
 		userInfo,
-		onBackToHome: () => navigate('/')
-	}), [navigate, onLogoutClick, userInfo, props]);
+		onBackToHome: () => navigate('/'),
+		formatMessage,
+	}), [navigate, onLogoutClick, userInfo, formatMessage, props]);
 
 	return (
 		<NavbarContext.Provider value={value}>
@@ -28,5 +30,3 @@ export function NavbarProvider(props: NavbarProps) {
 		</NavbarContext.Provider>
 	);
 }
-
-export const useNavbarContext = () => useContext(NavbarContext) as NavbarContextType;

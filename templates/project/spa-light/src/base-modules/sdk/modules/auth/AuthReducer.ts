@@ -22,6 +22,12 @@ export const authSlice = createSlice({
 				state.user = user;
 			},
 		);
+		builder.addMatcher(
+			authApi.endpoints.generateAnonymousToken.matchFulfilled,
+			(state, { payload: { token } }) => {
+				state.token = token;
+			},
+		);
 	},
 });
 

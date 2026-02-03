@@ -1,9 +1,8 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import DeviceDetailsMain from './components/DeviceDetails.main';
-import { DeviceDetailsContextType, DeviceDetailsProps } from './DeviceDetails.types';
+import { DeviceDetailsProps } from './DeviceDetails.types';
 import { useAppNavigate, useAppSelector } from '@sdk';
-
-const DeviceDetailsContext = createContext<DeviceDetailsContextType | undefined>(undefined);
+import { DeviceDetailsContext } from './DeviceDetails.context';
 
 export function DeviceDetailsProvider(props: DeviceDetailsProps) {
 	const navigate = useAppNavigate();
@@ -20,5 +19,3 @@ export function DeviceDetailsProvider(props: DeviceDetailsProps) {
 		</DeviceDetailsContext.Provider>
 	);
 }
-
-export const useDeviceDetailsContext = () => useContext(DeviceDetailsContext) as DeviceDetailsContextType;

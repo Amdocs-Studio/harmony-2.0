@@ -1,13 +1,14 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import LoginFormMain from './components/LoginForm.main';
-import { LoginFormContextType, LoginFormProps } from './LoginForm.types';
+import { LoginFormProps } from './LoginForm.types';
 import { useAppNavigate, useAuth, LoginPayload } from '@sdk';
-
-const LoginFormContext = createContext<LoginFormContextType | undefined>(undefined);
+import { useAppIntl } from '@msgs';
+import { LoginFormContext } from './LoginForm.context';
 
 export function LoginFormProvider(props: LoginFormProps) {
 	const navigate = useAppNavigate();
 	const { login } = useAuth();
+	const { formatMessage } = useAppIntl();
 	const onLogin = (payload: LoginPayload) => {
 		login(payload).then(() => navigate('/'));
 	};
@@ -16,7 +17,8 @@ export function LoginFormProvider(props: LoginFormProps) {
 		...props,
 		navigate,
 		login: onLogin,
-	}), [navigate, props]);
+		formatMessage,
+	}), [navigate, formatMessage, props]);
 	
 	return (
 		<LoginFormContext.Provider value={value}>
@@ -24,5 +26,3 @@ export function LoginFormProvider(props: LoginFormProps) {
 		</LoginFormContext.Provider>
 	);
 }
-
-export const useLoginFormContext = () => useContext(LoginFormContext) as LoginFormContextType;

@@ -1,10 +1,9 @@
-import { createContext, useCallback, useContext, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import NavbarMain from './components/Navbar.main';
-import { NavbarContextType, NavbarProps } from './Navbar.types';
+import { NavbarProps } from './Navbar.types';
 import { useAppIntl, useAuth } from '@sdk';
 import { navigate, messages, getConfig } from './Navbar.i18n';
-
-export const NavbarContext = createContext<NavbarContextType | undefined>(undefined);
+import { NavbarContext } from './Navbar.context';
 
 export function NavbarProvider(props: NavbarProps) {
 	const { formatMessage } = useAppIntl();
@@ -35,5 +34,3 @@ export function NavbarProvider(props: NavbarProps) {
 		</NavbarContext.Provider>
 	);
 }
-
-export const useNavbarContext = () => useContext(NavbarContext) as NavbarContextType;

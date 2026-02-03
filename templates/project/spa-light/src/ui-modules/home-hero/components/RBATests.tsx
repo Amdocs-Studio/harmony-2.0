@@ -1,4 +1,6 @@
 import { Button, RBAC } from '@common-components';
+import { Messages } from '@msgs';
+import { useHomeHeroContext } from '../HomeHero.context';
 import React from 'react';
 
 export function Badge({ children }: { children: React.ReactNode }) {
@@ -10,31 +12,33 @@ export function Badge({ children }: { children: React.ReactNode }) {
 }
 
 const RBAButtonWrapper = ({ disabled }: { disabled?: boolean }) => {
+	const { formatMessage } = useHomeHeroContext();
 	return (
 		<Button
 			onClick={() => {
 				alert('Should be enabled');
 			}}
-			label={`This is an RBA button - ${disabled ? 'disabled' : 'enabled'}`}
+			label={formatMessage(disabled ? Messages.HomeHero.rbaButtonDisabled : Messages.HomeHero.rbaButtonEnabled)}
 			disabled={disabled}
 		/>
 	);
 };
 
 export default function RBATests() {
+	const { formatMessage } = useHomeHeroContext();
 	return (
 		<div className="flex items-center flex-wrap justify-center gap-4 mt-[100px]">
 			<RBAC id="bill_history_module">
-				<Badge>This is an RBA test - visible for logged in user</Badge>
+				<Badge>{formatMessage(Messages.HomeHero.rbaTestVisibleLoggedIn)}</Badge>
 			</RBAC>
 			<RBAC id="shopping-blocked-message">
-				<Badge>This is an RBA test - visible for admin</Badge>
+				<Badge>{formatMessage(Messages.HomeHero.rbaTestVisibleAdmin)}</Badge>
 			</RBAC>
 			<RBAC id="add-new-line">
 				<RBAButtonWrapper />
 			</RBAC>
 			<RBAC id="asasa">
-				<Badge>This is an RBA test - Not exist - should be visible</Badge>
+				<Badge>{formatMessage(Messages.HomeHero.rbaTestNotExist)}</Badge>
 			</RBAC>
 		</div>
 	);

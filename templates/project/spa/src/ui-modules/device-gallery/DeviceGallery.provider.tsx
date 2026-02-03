@@ -1,9 +1,8 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import DeviceGalleryMain from './components/DeviceGallery.main';
-import { DeviceGalleryContextType, DeviceGalleryProps } from './DeviceGallery.types';
+import { DeviceGalleryProps } from './DeviceGallery.types';
 import { useAppNavigate, useShoppingCart, Device, shoppingCartApi } from '@sdk';
-
-const DeviceGalleryContext = createContext<DeviceGalleryContextType | undefined>(undefined);
+import { DeviceGalleryContext } from './DeviceGallery.context';
 
 export function DeviceGalleryProvider(props: DeviceGalleryProps) {
 	const navigate = useAppNavigate();
@@ -34,5 +33,3 @@ export function DeviceGalleryProvider(props: DeviceGalleryProps) {
 	);
 
 }
-
-export const useDeviceGalleryContext = () => useContext(DeviceGalleryContext) as DeviceGalleryContextType;

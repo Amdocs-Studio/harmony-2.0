@@ -1,8 +1,7 @@
 import { SdkProvider } from '@sdk';
 import Router from './router';
-import { AppIntlProvider } from '@app-intl';
+import { AppIntlProvider } from '@msgs';
 import { createRoot } from 'react-dom/client';
-import { StrictMode } from 'react';
 
 function App() {
 	return (
@@ -16,9 +15,7 @@ function App() {
 
 const render = () => {
 	createRoot(document.getElementById('root')!).render(
-		<StrictMode>
-			<App />
-		</StrictMode>,
+		<App />
 	);
 };
 

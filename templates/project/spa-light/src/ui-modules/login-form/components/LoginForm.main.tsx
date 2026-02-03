@@ -1,9 +1,10 @@
 import { Button } from '@common-components';
-import { useLoginFormContext } from '../LoginForm.provider.tsx';
+import { Messages } from '@msgs';
+import { useLoginFormContext } from '../LoginForm.context';
 import { useState, FormEvent } from 'react';
 
 export default function LoginFormMain() {
-	const { login } = useLoginFormContext();
+	const { login, formatMessage } = useLoginFormContext();
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const handleLogin = (e: FormEvent<HTMLFormElement>) => {
@@ -19,19 +20,20 @@ export default function LoginFormMain() {
 						<rect x="14" y="12" width="8" height="8" rx="4" fill="#131318"/>
 						<rect x="21.2539" y="2.54688" width="8" height="30" rx="4" transform="rotate(-15 21.2539 2.54688)" fill="#131318"/>
 					</svg>
-					<h2 className="ml-2">Harmony 2</h2>
+					<h2 className="ml-2">{formatMessage(Messages.LoginForm.brandName)}</h2>
 				</a>
 				<div
 					className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
 				>
 					<div className="p-6 space-y-4 md:space-y-6 sm:p-8">
 						<h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-							Sign in to your account
+							{formatMessage(Messages.LoginForm.signInTitle)}
 						</h1>
 						<form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
 							<div>
-								<label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-									email</label>
+								<label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+									{formatMessage(Messages.LoginForm.yourEmail)}
+								</label>
 								<input
 									type="email"
 									name="email"
@@ -39,7 +41,7 @@ export default function LoginFormMain() {
 									onChange={e => setUsername(e.target.value)}
 									/* eslint-disable-next-line max-len */
 									className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-									placeholder="admin@admin.com"
+									placeholder={formatMessage(Messages.LoginForm.emailPlaceholder)}
 									required={true}
 								/>
 							</div>
@@ -47,12 +49,12 @@ export default function LoginFormMain() {
 								<label
 									htmlFor="password"
 									className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-								>Password</label>
+								>{formatMessage(Messages.LoginForm.password)}</label>
 								<input
 									type="password"
 									name="password"
 									id="password"
-									placeholder="••••••••"
+									placeholder={formatMessage(Messages.LoginForm.passwordPlaceholder)}
 									onChange={e => setPassword(e.target.value)}
 									/* eslint-disable-next-line max-len */
 									className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -70,28 +72,31 @@ export default function LoginFormMain() {
 										/>
 									</div>
 									<div className="ml-3 text-sm">
-										<label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
+										<label htmlFor="remember" className="text-gray-500 dark:text-gray-300">
+											{formatMessage(Messages.LoginForm.rememberMe)}
+										</label>
 									</div>
 								</div>
-								<a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot
-									password?</a>
+								<a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
+									{formatMessage(Messages.LoginForm.forgotPassword)}
+								</a>
 								
 							</div>
 							<Button
 								type="submit"
 								className="w-full"
 							>
-								Sign in
+								{formatMessage(Messages.LoginForm.signIn)}
 							</Button>
 							<p className="text-sm font-light text-gray-500 dark:text-gray-400">
-								Don’t have an account yet? <a
+								{formatMessage(Messages.LoginForm.noAccountYet)} <a
 									href="#"
 									className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-								>Sign up
+								>{formatMessage(Messages.LoginForm.signUp)}
 								</a>
 							</p>
 							<p className="">
-								Fill admin@admin.com for test RBA
+								{formatMessage(Messages.LoginForm.testRbaHint)}
 							</p>
 						</form>
 					</div>

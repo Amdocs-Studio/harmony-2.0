@@ -3,6 +3,7 @@ import { DispatchActions, EndpointNames } from '@sdk';
 import { useAppDispatch, persistor, store } from '../store';
 import { Reducer, Slice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage/session';
+import storageLocal from 'redux-persist/lib/storage';
 
 // transform persisted endpoint responses before reaching the store
 export const createPersistedEndpointsTransform = <T>(persistedEndpoints: EndpointNames<T>[]) => {
@@ -45,10 +46,10 @@ export const persistApiReducer = (key: string, reducer: Reducer) => persistReduc
 	whitelist: ['queries', 'mutations']
 }, reducer);
 
-export const persistAppReducer = <T>(slice: Slice, whitelist: string[]) => {
+export const persistAppReducer = <T>(slice: Slice, whitelist: string[], storageType?: 'local' | 'session') => {
 	const config = {
 		key: slice.reducerPath,
-		storage,
+		storage: storageType === 'local' ? storageLocal : storage,
 		version: 1,
 		whitelist,
 	};

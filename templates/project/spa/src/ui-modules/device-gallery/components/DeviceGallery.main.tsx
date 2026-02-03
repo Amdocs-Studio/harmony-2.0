@@ -1,5 +1,5 @@
 import { MiniCartLayout } from '@ui-modules';
-import { useDeviceGalleryContext } from '../DeviceGallery.provider';
+import { useDeviceGalleryContext } from '../DeviceGallery.context';
 import { DeviceCard } from '@common-components';
 
 export default function DeviceGalleryMain() {

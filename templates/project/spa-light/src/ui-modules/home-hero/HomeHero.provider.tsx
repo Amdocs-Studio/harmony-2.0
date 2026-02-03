@@ -1,13 +1,14 @@
-import { createContext, useCallback, useContext, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import HomeHeroMain from './components/HomeHero.main';
-import { HomeHeroContextType, HomeHeroProps } from './HomeHero.types';
+import { HomeHeroProps } from './HomeHero.types';
 import { useAuth, useAppNavigate } from '@sdk';
-
-const HomeHeroContext = createContext<HomeHeroContextType | undefined>(undefined);
+import { useAppIntl } from '@msgs';
+import { HomeHeroContext } from './HomeHero.context';
 
 export const HomeHeroProvider = (props: HomeHeroProps) => {
 	const { logout, userInfo } = useAuth();
 	const navigate = useAppNavigate();
+	const { formatMessage } = useAppIntl();
 	
 	const onLogoutClick = useCallback(() => {
 		logout().then(() => {
@@ -20,7 +21,8 @@ export const HomeHeroProvider = (props: HomeHeroProps) => {
 		navigate,
 		onLogout: onLogoutClick,
 		userInfo,
-	}), [navigate, onLogoutClick, userInfo, props]);
+		formatMessage,
+	}), [navigate, onLogoutClick, userInfo, formatMessage, props]);
 	
 	return (
 		<HomeHeroContext.Provider value={value}>
@@ -28,5 +30,3 @@ export const HomeHeroProvider = (props: HomeHeroProps) => {
 		</HomeHeroContext.Provider>
 	);
 };
-
-export const useHomeHeroContext = () => useContext(HomeHeroContext) as HomeHeroContextType;

@@ -11,6 +11,7 @@ const {
 	addModuleIntl,
 	addModuleToModuleIndex,
 	getModuleNameTokens,
+	addPageConfig,
 } = require('./utils');
 
 const templatesDir = path.join(__dirname, '../templates'); // Assuming templates are in a 'templates' folder in the same directory as the script
@@ -35,11 +36,21 @@ async function addSpaModule(argv, harmonyJsonContent, questions) {
 			addImportApi(path.join(process.cwd(), 'src/base-modules/sdk/modules/index.ts'), moduleNameDash, camelCaseModuleName);
 			await wait(500);
 			addModuleToStore(path.join(process.cwd(), 'src/base-modules/sdk/store.ts'), moduleName, moduleNameDash);
-		} else {
-			await wait(500);
-			addModuleIntl(path.join(process.cwd(), 'src/base-modules/app-intl/intl.i18n.ts'), moduleName);
+		}
+
+		if (type === 'ui') {
 			await wait(500);
 			addModuleToModuleIndex(path.join(process.cwd(), 'src/ui-modules/index.ts'), moduleNameDash);
+			await wait(500);
+			const addPage = await inquirer.confirm({ message: 'Do you want to add a page (route) for this widget?', default: true });
+			if (addPage) {
+				const route = await inquirer.input({ message: 'Enter the route for this page (e.g., /my-page):' });
+				await wait(500);
+				const pagesConfigPath = path.join(process.cwd(), 'src/bootstrap/pages-config.tsx');
+				const routesPath = path.join(process.cwd(), 'src/base-modules/sdk/consts/routes.ts');
+				addPageConfig(pagesConfigPath, routesPath, moduleNameDash, camelCaseModuleName, route);
+				console.log(`Page added at route: ${route}`);
+			}
 		}
 
 	} catch (error) {
