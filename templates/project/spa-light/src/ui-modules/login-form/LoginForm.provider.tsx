@@ -2,11 +2,13 @@ import { useMemo } from 'react';
 import LoginFormMain from './components/LoginForm.main';
 import { LoginFormProps } from './LoginForm.types';
 import { useAppNavigate, useAuth, LoginPayload } from '@sdk';
+import { useAppIntl } from '@msgs';
 import { LoginFormContext } from './LoginForm.context';
 
 export function LoginFormProvider(props: LoginFormProps) {
 	const navigate = useAppNavigate();
 	const { login } = useAuth();
+	const { formatMessage } = useAppIntl();
 	const onLogin = (payload: LoginPayload) => {
 		login(payload).then(() => navigate('/'));
 	};
@@ -15,7 +17,8 @@ export function LoginFormProvider(props: LoginFormProps) {
 		...props,
 		navigate,
 		login: onLogin,
-	}), [navigate, props]);
+		formatMessage,
+	}), [navigate, formatMessage, props]);
 	
 	return (
 		<LoginFormContext.Provider value={value}>

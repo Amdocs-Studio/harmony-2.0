@@ -35,11 +35,6 @@ async function addSpaModule(argv, harmonyJsonContent, questions) {
 			addImportApi(path.join(process.cwd(), 'src/base-modules/sdk/modules/index.ts'), moduleNameDash, camelCaseModuleName);
 			await wait(500);
 			addModuleToStore(path.join(process.cwd(), 'src/base-modules/sdk/store.ts'), moduleName, moduleNameDash);
-		} else {
-			await wait(500);
-			addModuleIntl(path.join(process.cwd(), 'src/base-modules/app-intl/intl.i18n.ts'), moduleName);
-			await wait(500);
-			addModuleToModuleIndex(path.join(process.cwd(), 'src/ui-modules/index.ts'), moduleNameDash);
 		}
 
 	} catch (error) {
