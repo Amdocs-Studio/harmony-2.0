@@ -155,6 +155,34 @@ function addModuleToModuleIndex(filePath, moduleNameDash){
 	fs.writeFileSync(filePath, result, 'utf8');
 }
 
+function addPageConfig(pagesConfigPath, routesPath, moduleNameDash, camelCaseModuleName, route) {
+	// Generate route key from module name: my-widget -> MY_WIDGET
+	const routeKey = moduleNameDash.toUpperCase().replace(/-/g, '_');
+	
+	// Add route constant to routes.ts
+	const routesData = fs.readFileSync(routesPath, 'utf8');
+	const routesResult = routesData.replace(
+		/const pagesRoutes = \{/,
+		`const pagesRoutes = {\n\t${routeKey}: '${route}',`
+	);
+	fs.writeFileSync(routesPath, routesResult, 'utf8');
+	
+	// Add lazy import and page config to pages-config.tsx
+	const data = fs.readFileSync(pagesConfigPath, 'utf8');
+	const lazyImportLine = `\t${camelCaseModuleName}: () => import('../ui-modules/${moduleNameDash}').then(m => ({ default: m.${camelCaseModuleName} })),`;
+	const result = data
+		.replace(
+			/const lazyModules: Record<string, \(\) => Promise<\{ default: ComponentType \}>> = \{/,
+			`const lazyModules: Record<string, () => Promise<{ default: ComponentType }>> = {\n${lazyImportLine}`
+		)
+		.replace(
+			/(\s*)(\/\* Nested page example)/,
+			`$1...createPage(Routes.${routeKey}, ['${camelCaseModuleName}']),\n$1$2`
+		);
+	
+	fs.writeFileSync(pagesConfigPath, result, 'utf8');
+}
+
 
 
 module.exports = {
@@ -169,5 +197,6 @@ module.exports = {
 	addModuleToModuleIndex,
 	addModuleIntl,
 	getModuleNameTokens,
-	getProjectNameTokens
+	getProjectNameTokens,
+	addPageConfig
 }
