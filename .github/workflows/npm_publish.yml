@@ -17,8 +17,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.x' # Node 22 ensures a modern npm version
+          node-version: '22'
 
       - run: npm ci
-      # No 'env' block needed here anymore!
-      - run: npm publish --provenance --access public
+
+      # DEBUG STEP: This confirms if npm recognizes your GitHub OIDC identity
+      - name: Verify npm Identity
+        run: npx auth-header --registry https://registry.npmjs.org --token-type id-token
+        
+      - name: Publish
+        run: npm publish --provenance --access public
