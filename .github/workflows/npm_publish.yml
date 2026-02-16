@@ -1,4 +1,4 @@
-name: npm_publish.yml
+name: Publish to npm
 
 on:
   push:
@@ -18,16 +18,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          # No registry-url here
 
-      # Crucial: Trusted Publishing requires npm 11.5.1+
       - name: Update npm
         run: npm install -g npm@latest
 
       - run: npm ci
 
-      # This will show you exactly why it fails without breaking the actual publish
-      - name: Test Authentication
-        run: npm publish --dry-run --provenance --access public --loglevel verbose
-
-      - name: Actual Publish
-        run: npm publish --provenance --access public
+      - name: Publish to npm
+        # We removed --dry-run and added verbose to see the handshake
+        run: npm publish --provenance --access public --loglevel verbose
