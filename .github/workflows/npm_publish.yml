@@ -1,4 +1,4 @@
-name: npm_publish.yml
+name: Publish to npm
 
 on:
   push:
@@ -18,7 +18,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.x' # Node 22 ensures a modern npm version
-          registry-url: 'https://registry.npmjs.org'
 
       - run: npm ci
       # No 'env' block needed here anymore!
