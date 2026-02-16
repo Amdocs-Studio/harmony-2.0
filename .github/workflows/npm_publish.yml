@@ -1,4 +1,4 @@
-name: Publish to npm
+name: npm_publish.yml # Match your npm config filename
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write # Required for Trusted Publishing
+  id-token: write # Vital for OIDC
   contents: read
 
 jobs:
@@ -18,12 +18,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          # registry-url removed to prevent token conflicts
+
+      - name: Ensure latest npm
+        run: npm install -g npm@latest
 
       - run: npm ci
-
-      # DEBUG STEP: This confirms if npm recognizes your GitHub OIDC identity
-      - name: Verify npm Identity
-        run: npx auth-header --registry https://registry.npmjs.org --token-type id-token
-        
-      - name: Publish
-        run: npm publish --provenance --access public
+      - run: npm publish --provenance --access public
