@@ -44,7 +44,7 @@ export default function LandingHero() {
 					label="Amdocs Experience & Digital Engineering Studio"
 					variant="outlined"
 					size="small"
-					className="!mb-6"
+					className="mb-6!"
 				/>
 				<h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
 					<span

@@ -3,36 +3,85 @@
 
 @source "../../";
 
+/* Class-based dark mode (matches AppThemeProvider `documentElement.classList.toggle('dark')`) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Default tokens mirror palettes.indigo + themeTokens (light).
+ * AppThemeProvider updates these at runtime when palette / mode / radius change.
+ */
 @theme {
-    --color-primary: #46508d;
-    --color-primary-50: #f1f6fc;
-    --color-primary-100: #e6eef9;
-    --color-primary-200: #d1dff4;
-    --color-primary-300: #b5caec;
-    --color-primary-400: #98ace1;
-    --color-primary-500: #7e91d6;
-    --color-primary-600: #5c6ac4;
-    --color-primary-700: #545fae;
-    --color-primary-800: #46508d;
-    --color-primary-900: #3e4671;
-    --color-primary-950: #242842;
+    --font-sans: Montserrat, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 
+    --color-primary: #3730a3;
+    --color-primary-50: #eef2ff;
+    --color-primary-100: #e0e7ff;
+    --color-primary-200: #c7d2fe;
+    --color-primary-300: #a5b4fc;
+    --color-primary-400: #818cf8;
+    --color-primary-500: #6366f1;
+    --color-primary-600: #4f46e5;
+    --color-primary-700: #4338ca;
+    --color-primary-800: #3730a3;
+    --color-primary-900: #312e81;
+    --color-primary-950: #1e1b4b;
 
+    --color-background-default: #ffffff;
+    --color-background-paper: #ffffff;
 
-    --color-secondary: #f0f0f0;
-    --color-secondary-100: #e0e0e0;
-    --color-secondary-200: #d0d0d0;
-    --color-secondary-300: #c0c0c0;
-    --color-secondary-400: #b0b0b0;
-    --color-secondary-500: #a0a0a0;
-    --color-secondary-600: #909090;
-    --color-secondary-700: #808080;
-    --color-secondary-800: #707070;
-    --color-secondary-900: #606060;
+    --app-radius: 8px;
+    --radius-app: var(--app-radius);
+}
+
+/* Dark-mode fallbacks before JS hydrates (inverted indigo scale + MUI backgrounds) */
+@layer theme {
+    .dark {
+        --color-primary: #c7d2fe;
+        --color-primary-50: #1e1b4b;
+        --color-primary-100: #312e81;
+        --color-primary-200: #3730a3;
+        --color-primary-300: #4338ca;
+        --color-primary-400: #4f46e5;
+        --color-primary-500: #6366f1;
+        --color-primary-600: #818cf8;
+        --color-primary-700: #a5b4fc;
+        --color-primary-800: #c7d2fe;
+        --color-primary-900: #e0e7ff;
+        --color-primary-950: #eef2ff;
+
+        --color-background-default: #0b0d12;
+        --color-background-paper: #131722;
+    }
 }
 
 * {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif, serif;
+    font-family: var(--font-sans);
+}
+
+.docs-sidebar-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+}
+
+.docs-sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.docs-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.docs-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.22);
+    border-radius: 9999px;
+}
+
+.dark .docs-sidebar-scroll {
+    scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+}
+
+.dark .docs-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.28);
 }
 
 @media (prefers-reduced-motion: reduce) {

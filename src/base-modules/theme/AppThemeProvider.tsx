@@ -2,6 +2,12 @@ import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { useTheme, ThemeMode, PaletteName, ThemeDensity, ThemeRadius } from '@sdk';
 import { palettes, PaletteShades } from './palettes';
+import {
+	invertShades,
+	shadeKeys,
+	themeBackgrounds,
+	themeFontFamily,
+} from './themeTokens';
 
 const prefersDark = () => typeof window !== 'undefined'
 	&& window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -13,15 +19,22 @@ const resolveMode = (mode: ThemeMode, systemDark: boolean): 'light' | 'dark' => 
 	return mode;
 };
 
-const shadeKeys: (keyof PaletteShades)[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
-
-const applyCssVariables = (shades: PaletteShades, radius: number) => {
+const applyCssVariables = (
+	shades: PaletteShades,
+	radius: number,
+	mode: 'light' | 'dark',
+) => {
 	const root = document.documentElement;
+	const activeShades = mode === 'dark' ? invertShades(shades) : shades;
+	const backgrounds = themeBackgrounds[mode];
+
 	shadeKeys.forEach((key) => {
-		root.style.setProperty(`--color-primary-${key}`, shades[key]);
+		root.style.setProperty(`--color-primary-${key}`, activeShades[key]);
 	});
-	root.style.setProperty('--color-primary', shades[800]);
+	root.style.setProperty('--color-primary', activeShades[800]);
 	root.style.setProperty('--app-radius', `${radius}px`);
+	root.style.setProperty('--color-background-default', backgrounds.default);
+	root.style.setProperty('--color-background-paper', backgrounds.paper);
 };
 
 const buildTheme = (
@@ -40,13 +53,11 @@ const buildTheme = (
 				dark: shades[800],
 				contrastText: '#ffffff',
 			},
-			background: mode === 'dark'
-				? { default: '#0b0d12', paper: '#131722' }
-				: { default: '#ffffff', paper: '#ffffff' },
+			background: themeBackgrounds[mode],
 		},
 		shape: { borderRadius: radius },
 		typography: {
-			fontFamily: 'Montserrat, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+			fontFamily: themeFontFamily,
 			h1: { fontWeight: 700 },
 			h2: { fontWeight: 700 },
 			h3: { fontWeight: 600 },
@@ -80,7 +91,7 @@ export default function AppThemeProvider({ children }: Readonly<PropsWithChildre
 	useEffect(() => {
 		document.documentElement.dataset.theme = resolved;
 		document.documentElement.classList.toggle('dark', resolved === 'dark');
-		applyCssVariables(palettes[palette], radius);
+		applyCssVariables(palettes[palette], radius, resolved);
 	}, [resolved, palette, radius]);
 
 	const theme = useMemo(

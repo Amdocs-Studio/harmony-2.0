@@ -32,7 +32,7 @@ export default function DocsLayout() {
 					<DocsTopBar onOpenMobileSidebar={() => setMobileOpen(true)} />
 
 					<div className="flex flex-1 pt-12">
-						<aside className="w-72 shrink-0 border-r border-black/10 dark:border-white/10 hidden lg:block sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto">
+						<aside className="docs-sidebar-scroll w-72 shrink-0 border-r border-black/10 dark:border-white/10 hidden lg:block sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto">
 							<DocsSidebar />
 						</aside>
 
@@ -43,7 +43,7 @@ export default function DocsLayout() {
 							ModalProps={{ keepMounted: true }}
 							className="lg:!hidden"
 						>
-							<div className="pt-12">
+							<div className="docs-sidebar-scroll pt-12 h-full overflow-y-auto">
 								<DocsSidebar />
 							</div>
 						</Drawer>
