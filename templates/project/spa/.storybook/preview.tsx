@@ -12,7 +12,7 @@ const preview: Preview = {
 	},
 	// tags: ['autodocs'],
 	decorators: [
-		(Story, {title, name}) => (
+		(Story, { title, name }) => (
 			<StorybookLayout title={title} name={name} >
 				<Story />
 			</StorybookLayout>

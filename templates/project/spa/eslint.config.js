@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 import unusedImports from 'eslint-plugin-unused-imports';
-import reactCompiler from 'eslint-plugin-react-compiler';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +26,6 @@ export default [{
         '**/vite.config.*',
         '**/*.config.js',
         '**/dev-dist',
-        '**/.storybook/**',
         '**/public/**',
     ],
 }, ...fixupConfigRules(compat.extends(
@@ -35,12 +34,11 @@ export default [{
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'prettier',
-    'plugin:react-hooks/recommended',
 )), {
     plugins: {
         '@typescript-eslint': fixupPluginRules(typescriptEslint),
         'unused-imports': fixupPluginRules(unusedImports),
-	      'react-compiler': reactCompiler,
+        'react-hooks': reactHooks,
     },
 
     languageOptions: {
@@ -50,7 +48,7 @@ export default [{
 
         parserOptions: {
             projectService: true,
-            tsconfigRootDir: './',
+            tsconfigRootDir: __dirname,
         },
     },
 
@@ -61,7 +59,6 @@ export default [{
     },
 
     rules: {
-				'react-compiler/react-compiler': 'error',
         '@typescript-eslint/no-duplicate-enum-values': 'off',
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-types': 'off',
@@ -229,5 +226,10 @@ export default [{
         globals: {
             ...globals.jest,
         },
+    },
+}, {
+    files: ['**/mocks/**/*.{t,j}s', '**/mocks/**/*.{t,j}sx'],
+    rules: {
+        'max-lines': 'off',
     },
 }];

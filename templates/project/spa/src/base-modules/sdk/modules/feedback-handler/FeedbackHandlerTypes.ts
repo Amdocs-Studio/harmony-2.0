@@ -2,7 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 
 export type PushFeedbackPayloadType = {
   code: string;
-  values: { [x: string]: string };
+  values?: { [x: string]: string };
 };
 
 export type FeedbackConfigType = {
@@ -28,6 +28,42 @@ export interface DownloadFilesStatusesType {
 export type DownloadFilesStatusType = 'PENDING' | 'PROCESSING' | 'SUCCESS' | 'FAILURE';
 export type FeedbackHandlerConfigType = Record<string, FeedbackConfigType>;
 
+export interface DisplayedErrorType {
+  title: string;
+  description: string;
+  showMoveHomeButton: boolean;
+  navigationRoute?: string;
+  buttonText?: string;
+}
+
+export interface ApiErrorCharacteristic {
+  name: string;
+  value: string;
+}
+
+export interface ErrorResponse {
+  data: ApiErrorResponse;
+  status: number;
+}
+
+export interface ApiErrorResponse {
+  code: string;
+  message: string;
+  status: number;
+  traceId: string;
+  characteristics?: ApiErrorCharacteristic[];
+}
+
+export interface ErrorInfoType {
+  status: number;
+  code?: string;
+  message?: string;
+  traceId?: string;
+  endpointName?: string;
+  displayedError?: DisplayedErrorType;
+  characteristics?: ApiErrorCharacteristic[];
+}
+
 export interface FeedbackHandlerStateType {
   feedbacks: PushFeedbackPayloadType[];
   feedbacksConfig: FeedbackHandlerConfigType;
@@ -35,6 +71,7 @@ export interface FeedbackHandlerStateType {
   closedRequests: string[];
   spinnerActions: string[];
   errors: string[];
+  errorInfo: ErrorInfoType | null;
 }
 
 export interface RESTCallAction extends PayloadAction<any> {

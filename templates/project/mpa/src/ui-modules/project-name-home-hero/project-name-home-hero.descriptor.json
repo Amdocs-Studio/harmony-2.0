@@ -32,30 +32,6 @@
       "groupId": "",
       "actionType": "navigate",
       "defaultValue": "login"
-    },
-    {
-      "displayName": "Navigate to device gallery",
-      "description": "User will navigate to device gallery",
-      "actionId": "navigateToDeviceGallery",
-      "groupId": "",
-      "actionType": "navigate",
-      "defaultValue": "/shop/device-gallery"
-    },
-    {
-      "displayName": "Navigate to device details",
-      "description": "User will navigate to device details",
-      "actionId": "navigateToDeviceDetails",
-      "groupId": "",
-      "actionType": "navigate",
-      "defaultValue": "/shop/device-details"
-    },
-    {
-      "displayName": "Navigate to review basket",
-      "description": "User will navigate to review basket",
-      "actionId": "navigateToReviewBasket",
-      "groupId": "",
-      "actionType": "navigate",
-      "defaultValue": "/shop/review-basket"
     }
   ],
   "content": [

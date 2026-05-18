@@ -1,14 +1,14 @@
 import { useCallback, useMemo } from 'react';
 import HomeHeroMain from './components/HomeHero.main';
 import { HomeHeroProps } from './HomeHero.types';
-import { useAuth, useAppNavigate, useFlowManagerApi } from '@sdk';
-import { flowsTypes, TypesConfig } from '@flow-manager-config';
+import { useAuth, useAppNavigate } from '@sdk';
+import { useAppIntl } from '@msgs';
 import { HomeHeroContext } from './HomeHero.context';
 
 export const HomeHeroProvider = (props: HomeHeroProps) => {
 	const { logout, userInfo } = useAuth();
 	const navigate = useAppNavigate();
-	const { startFlow } = useFlowManagerApi(navigate);
+	const { formatMessage } = useAppIntl();
 	
 	const onLogoutClick = useCallback(() => {
 		logout().then(() => {
@@ -16,17 +16,13 @@ export const HomeHeroProvider = (props: HomeHeroProps) => {
 		});
 	}, [logout, navigate]);
 	
-	const onStartBuyFlow = async () => {
-		return startFlow(flowsTypes.flowTypes.COP, (flowsTypes as TypesConfig).stepTypes.DEVICE_GALLERY.name, true);
-	};
-	
 	const value = useMemo(() => ({
 		...props,
 		navigate,
 		onLogout: onLogoutClick,
 		userInfo,
-		onStartBuyFlow
-	}), [navigate, onLogoutClick, userInfo, props]);
+		formatMessage,
+	}), [navigate, onLogoutClick, userInfo, formatMessage, props]);
 	
 	return (
 		<HomeHeroContext.Provider value={value}>

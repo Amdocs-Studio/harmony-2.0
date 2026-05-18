@@ -3,14 +3,12 @@ import { handlers as postHandlers } from './postsMockHandler.ts';
 import { handlers as userHandlers } from './authMockHandler.ts';
 import { handlers as rbaHandlers } from './rbaMockHandler.ts';
 import { handlers as feedbackHandler } from './feedbackMockHandler.ts';
-import { shoppingCart } from './shoppingCartHandler';
 
 export const handlers: HttpHandler[] = [
 	...postHandlers,
 	...userHandlers,
 	...feedbackHandler,
 	...rbaHandlers,
-	...shoppingCart,
 ].map((handler) => {
 	const { url, method = 'GET', resolver, delay } = handler;
 	const delayedResponse = async (ctx: any) => {

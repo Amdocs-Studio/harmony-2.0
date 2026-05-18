@@ -1,5 +1,4 @@
 import { useFeedbackHandlerContext } from '../FeedbackHandler.provider';
-import { FormattedAppMessage } from '@app-intl';
 
 const { log } = console;
 export default function Modals() {
@@ -45,7 +44,7 @@ export default function Modals() {
             </ModalDialog>
              */
 			<div key={modal.id}>
-				<FormattedAppMessage id="feedbackHandler.some-message" />
+				some message
 				<button onClick={() => handleModalAction(modal.onPrimaryButtonClick)}>Primary</button>
 			</div>
 		);

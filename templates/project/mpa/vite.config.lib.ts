@@ -8,8 +8,6 @@ const projectRootDir = resolve(__dirname);
 
 const isExternal = (id: string) => {
   return !id.startsWith(".") &&
-    !id.includes('@flow-manager-config') &&
-    !id.includes('redux-flow-manager') &&
     !id.includes('@ui-modules') &&
     !id.includes('xstate') &&
     !path.isAbsolute(id);
@@ -62,7 +60,6 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
         alias: [
           {find: '@sdk', replacement: resolve(projectRootDir, 'src/base-modules/project-name-sdk/src/index.ts')},
           {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules/index.ts')},
-          {find: '@flow-manager-config', replacement: resolve(projectRootDir, 'src/base-modules/flow-manager-config/index.ts')},
         ],
       },
       build: name === 'BaseStyles' ? styleBuildConfig(entry, fileName) : {
@@ -103,7 +100,6 @@ export const getBaseConfig = ({ entry, fileName, name }: {entry: string; fileNam
                 "tailwind-merge": "ProjectNameVendors.TailwindMerge",
                 "recharts": "ProjectNameVendors.Recharts",
                 "@reduxjs/toolkit/query/react": "ProjectNameVendors.ReduxToolkitQueryReact",
-                "lodash": "ProjectNameVendors.Lodash",
 
                 "@common-components": "ProjectNameCommonComponents",
                 "@sdk": "ProjectNameSDK",

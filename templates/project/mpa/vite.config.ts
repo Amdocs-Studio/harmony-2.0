@@ -86,7 +86,6 @@ export default defineConfig(({ mode }) => {
         {find: '@pages', replacement: resolve(projectRootDir, 'src/pages/index.ts')},
         {find: '@ui-modules', replacement: resolve(projectRootDir, 'src/ui-modules/index.ts')},
         {find: '@mocks', replacement: resolve(projectRootDir, 'src/base-modules/project-name-mocks/src/index.ts')},
-        {find: '@flow-manager-config', replacement: resolve(projectRootDir, 'src/base-modules/flow-manager-config/index.ts')},
     ],
     },
     build: {

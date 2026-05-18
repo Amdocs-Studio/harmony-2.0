@@ -5,9 +5,18 @@ export const mockServer = setupWorker(...handlers);
 
 export const enableMocking = async () => {
 	const { log, error } = console;
-	if (window.harmony?.mocksEnabled) {
+
+	// Check if useMocks is disabled - skip entirely
+	if (!window.harmony?.useMocks) {
 		return;
 	}
+
+	// If mocks were previously enabled (e.g., before HMR), reset the flag
+	if (window.harmony?.mocksEnabled) {
+		log('HMR detected, restarting mock server...');
+		window.harmony.mocksEnabled = false;
+	}
+
 	log('Starting mock server...');
 	await mockServer.start({
 		onUnhandledRequest: 'bypass',

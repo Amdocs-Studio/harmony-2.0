@@ -1,4 +1,3 @@
-import { flowsTypes } from '@flow-manager-config';
 import { RouteObject, Outlet } from 'react-router';
 import * as uiModules from '@ui-modules';
 
@@ -35,18 +34,4 @@ export const pagesConfig: PageConfigType = {
 	'/login': {
 		widgets: ['LoginForm']
 	},
-	'/shop': {
-		widgets: ['Outlet'],
-		children: {
-			[flowsTypes.stepTypes.DEVICE_GALLERY.path]: {
-				widgets: ['DeviceGallery']
-			},
-			[flowsTypes.stepTypes.DEVICE_DETAILS.path]: {
-				widgets: ['DeviceDetails']
-			},
-			[flowsTypes.stepTypes.REVIEW_BASKET.path]: {
-				widgets: ['ShoppingCart']
-			}
-		}
-	}
 };

@@ -1,4 +1,3 @@
-import { shoppingCartApi, shoppingCartReducers, shoppingCartConfig } from './modules/shopping-cart';
 import { rbaApi, rbaReducers, rbaConfig } from './modules/rba';
 import { appApi, appReducers, appConfig } from './modules/app';
 import { authApi, authReducers, authConfig } from './modules/auth';
@@ -12,13 +11,9 @@ import {
 	REGISTER,
 	REHYDRATE,
 	persistStore,
-	persistReducer
 } from 'redux-persist';
 import { useDispatch, useSelector } from 'react-redux';
 import { PersistPartial } from 'redux-persist/es/persistReducer';
-import storage from 'redux-persist/lib/storage/session';
-import { flowManagerReducer } from 'redux-flow-manager';
-import { CreateFlowManager } from './utils';
 
 const getDefaultMiddlewareOptions = {
 	serializableCheck: {
@@ -29,23 +24,13 @@ const getDefaultMiddlewareOptions = {
 	immutableCheck: false
 };
 const reducers = {
-	...shoppingCartReducers,
 	...rbaReducers,
 	...appReducers,
 	...authReducers,
 	...feedbackHandlerReducers,
-	flowManagerFlows: persistReducer({
-		key: 'flowManagerFlows',
-		storage,
-		whitelist: ['flowType', 'subFlowTypes', 'currentStep', 'nextStep', 'steps', 'isActive'],
-		version: 1
-	}, flowManagerReducer)
 };
 
 const middlewares: Middleware[] = [];
-if (shoppingCartConfig.withApi) {
-	middlewares.push(shoppingCartApi.middleware);
-}
 if (rbaConfig.withApi) {
 	middlewares.push(rbaApi.middleware);
 }
@@ -85,7 +70,6 @@ const createStoreInstance = () => {
 };
 const storeInstance = createStoreInstance();
 export const { store, persistor } = storeInstance;
-export const flowManager = CreateFlowManager(store);
 
 type Store = typeof store;
 export type AppDispatch = Store['dispatch'];

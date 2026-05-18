@@ -1,9 +1,8 @@
-import { Button } from '@common-components';
 import { useHomeHeroContext } from '../HomeHero.context';
 import RBATests from './RBATests';
 
 export default function HomeHeroMain() {
-	const { navigate, onStartBuyFlow } = useHomeHeroContext();
+	const { navigate } = useHomeHeroContext();
 	return (
 		<div
 			className="relative h-[calc(100vh-63px)] w-full flex flex-col items-center justify-center overflow-hidden"
@@ -26,7 +25,6 @@ export default function HomeHeroMain() {
 						>
 							Get started
 						</button>
-						<Button onClick={onStartBuyFlow}>Start Shopping</Button>
 					</div>
 				</div>
 			</div>

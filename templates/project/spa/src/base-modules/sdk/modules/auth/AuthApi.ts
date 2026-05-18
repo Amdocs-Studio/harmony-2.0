@@ -7,14 +7,11 @@ import { persistApiReducer } from '../../utils';
 export const authApi = createApi({
 	reducerPath: config.apiSliceName,
 	baseQuery: baseQueryImpl({
-		baseUrl: 'v1/auth'
+		baseUrl: 'auth/v1'
 	}),
 	tagTypes: Object.keys(AUTH_TAG_TYPES),
 	endpoints: (build) => ({
 		login: build.mutation<User & { token: string }, LoginPayload>({
-			extraOptions: {
-				ignoreSpinner: true,
-			},
 			query(body) {
 				return {
 					url: 'login',
@@ -23,11 +20,26 @@ export const authApi = createApi({
 				};
 			},
 			transformResponse(baseQueryReturnValue: User, meta: FetchBaseQueryMeta) {
-				const token = meta?.response?.headers.get('X-token') || '';
+				const token = meta?.response?.headers.get('x-amdocs-token') || '';
 				return {
 					...baseQueryReturnValue,
 					token,
 				};
+			},
+		}),
+		generateAnonymousToken: build.mutation<{ token: string }, void>({
+			extraOptions: {
+				ignoreSpinner: true,
+			},
+			query() {
+				return {
+					url: 'generateAnonymousToken',
+					method: 'POST',
+				};
+			},
+			transformResponse(_baseQueryReturnValue: unknown, meta: FetchBaseQueryMeta) {
+				const token = meta?.response?.headers.get('x-amdocs-token') || '';
+				return { token };
 			},
 		}),
 		logout: build.query<void, void>({

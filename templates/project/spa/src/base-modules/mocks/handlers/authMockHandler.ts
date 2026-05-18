@@ -29,7 +29,7 @@ const getMockUser = (username: string): User => {
 
 export const handlers: MockHandlerType[] = [
 	{
-		url: `${config.apiBaseUrl}/v1/auth/login`,
+		url: `${config.apiBaseUrl}/auth/v1/login`,
 		method: 'POST',
 		resolver: async ({ request }) => {
 			const body = await request.json();
@@ -37,13 +37,28 @@ export const handlers: MockHandlerType[] = [
 			log('login with params: ', body);
 			const mockUser = getMockUser(username);
 			const headers = new Headers();
+			const mockToken = 'T3heTaj24j4m58ajlAA';
 			headers.append('Content-Type', 'application/json');
-			headers.append('X-token', username === 'admin@admin.com' ? 'T3heTaj24j4m58ajlAA' : 'T3heTaj24j4m58ajlakf1');
+			headers.append('x-amdocs-token', mockToken);
+			headers.append('set-cookie', `x-amdocs-token=${mockToken}; Path=/; Max-Age=1800; Expires=Thu, 30 Oct 2025 13:19:14 GMT; Secure; HttpOnly; SameSite=Strict`);
 			return HttpResponse.json(mockUser, { headers });
 		}
 	},
 	{
-		url: `${config.apiBaseUrl}/v1/auth/logout`,
+		url: `${config.apiBaseUrl}/auth/v1/generateAnonymousToken`,
+		method: 'POST',
+		resolver: async () => {
+			const headers = new Headers();
+			headers.append('Content-Type', 'application/json');
+			// Mirror BE: return token in header and set-cookie
+			const mockToken = 'ODYyMzI0W...mocked-anon-token...eQy6oXUOjAA';
+			headers.append('x-amdocs-token', mockToken);
+			headers.append('set-cookie', `x-amdocs-token=${mockToken}; Path=/; Max-Age=1800; Expires=Thu, 30 Oct 2025 13:19:14 GMT; Secure; HttpOnly; SameSite=Strict`);
+			return HttpResponse.json({}, { headers });
+		}
+	},
+	{
+		url: `${config.apiBaseUrl}/auth/v1/logout`,
 		resolver: () => HttpResponse.json({})
 	},
 ];

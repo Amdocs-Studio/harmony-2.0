@@ -28,22 +28,17 @@ const questions = {
             {
                 name: 'Single Page Application (SPA)',
                 value: 'spa',
-                description: 'SPA template with React, Vite, and TypeScript, Flow manager and example pages',
+                description: 'SPA template with React, Vite, and TypeScript',
             },
             {
                 name: 'Multi Page Application (MPA)',
                 value: 'mpa',
-                description: 'MPA template with Lerna, Vite, React, and TypeScript, Flow manager and example pages',
+                description: 'MPA template with Lerna, Vite, React, and TypeScript',
             },
             {
-                name: 'Single Page Application - Light (SPA-Light)',
-                value: 'spa-light',
-                description: 'SPA template with React, Vite, and TypeScript minimal setup',
-            },
-            {
-                name: 'Multi Page Application - Light (MPA-Light)',
-                value: 'mpa-light',
-                description: 'MPA template with Lerna, Vite, React, and TypeScript minimal setup',
+                name: 'Library (Lib)',
+                value: 'lib',
+                description: 'Library template with Vite lib mode, React, and TypeScript',
             },
         ],
     }
@@ -94,10 +89,13 @@ async function createProject(argv) {
         if (!installDeps) {
             console.log(`Install dependencies: ${chalk.yellow('npm install')}`);
         }
-        if (template === 'mpa' || template === 'mpa-light') {
+        if (template === 'mpa') {
             console.log(`Run the build command (mandatory for mpa tester): ${chalk.yellow('npm run build')}`);
             console.log(`Run the MPA tester: ${chalk.yellow('npm start')}`);
             console.log(`Run the development server (spa mode): ${chalk.yellow('npm run dev')}`);
+        } else if (template === 'lib') {
+            console.log(`Build the library: ${chalk.yellow('npm run build')}`);
+            console.log(`Run Storybook for development: ${chalk.yellow('npm run storybook')}`);
         } else {
             console.log(`Start the development server: ${chalk.yellow('npm start')}`);
         }

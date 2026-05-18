@@ -29,7 +29,6 @@
       "@pages": ["./src/pages/index.ts"],
       "@ui-modules": ["./src/ui-modules/index.ts"],
       "@mocks": ["./src/base-modules/project-name-mocks/src/index.ts"],
-      "@flow-manager-config": ["./src/base-modules/flow-manager-config/index.ts"],
     }
   },
   "include": [

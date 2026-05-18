@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { SdkProvider } from '@sdk';
-import { AppIntlProvider } from '@app-intl';
+import { AppIntlProvider } from '@msgs';
 import { MemoryRouter } from 'react-router';
 import { FeedbackHandler } from '@feedback-handler';
 
