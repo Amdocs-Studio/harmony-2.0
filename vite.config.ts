@@ -60,6 +60,7 @@ export default defineConfig(({ mode }) => {
 	const isWatch = process.env.npm_lifecycle_event === 'watch';
 	console.log(`start build with mode: ${mode} and NODE_ENV: ${process.env.NODE_ENV}`);
   return {
+    base: '/harmony-2.0/',
     plugins: [
       tailwindcss(),
       react({

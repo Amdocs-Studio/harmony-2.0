@@ -58,8 +58,8 @@ export default function DocsTopBar({ onOpenMobileSidebar }: Props) {
 					</IconButton>
 				)}
 				<Link to={Routes.LANDING} className="flex items-center gap-2 no-underline text-inherit">
-					<img src="/assets/harmony-logo-black-small.svg" alt="Harmony" className="h-6 w-auto dark:hidden" />
-					<img src="/assets/harmony-logo-white-small.svg" alt="Harmony" className="h-6 w-auto hidden dark:block" />
+					<img src={`${import.meta.env.BASE_URL}assets/harmony-logo-black-small.svg`} alt="Harmony" className="h-6 w-auto dark:hidden" />
+					<img src={`${import.meta.env.BASE_URL}assets/harmony-logo-white-small.svg`} alt="Harmony" className="h-6 w-auto hidden dark:block" />
 					<Typography variant="subtitle1" className="font-bold! tracking-tight!">
 						Harmony <span className="opacity-60">2.0</span>
 					</Typography>

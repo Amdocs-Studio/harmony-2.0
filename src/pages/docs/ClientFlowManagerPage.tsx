@@ -58,7 +58,7 @@ export default function ClientFlowManagerPage() {
 					flow. Flow Manager helps you decide where you are and where you need to go next.
 				</P>
 				<img
-					src="/assets/flow-manager-diagram.png"
+					src={`${import.meta.env.BASE_URL}assets/flow-manager-diagram.png`}
 					alt="Flow manager diagram"
 					className="w-full rounded-lg border border-black/10 dark:border-white/10"
 				/>

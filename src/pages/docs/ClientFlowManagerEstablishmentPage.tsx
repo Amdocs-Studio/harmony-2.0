@@ -301,7 +301,7 @@ const XStateSection = () => (
 			</ExtLink>
 		</P>
 		<img
-			src="/assets/state-machine.png"
+			src={`${import.meta.env.BASE_URL}assets/state-machine.png`}
 			alt="XState generated state machine"
 			className="w-full rounded-lg border border-black/10 dark:border-white/10"
 		/>

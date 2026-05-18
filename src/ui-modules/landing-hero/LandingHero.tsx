@@ -4,13 +4,15 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { Link } from 'react-router';
 import { Routes } from '@sdk';
 
+const BASE = import.meta.env.BASE_URL;
+
 const techStack = [
-	{ name: 'React', icon: '/assets/icon-react.svg' },
-	{ name: 'Redux Toolkit', icon: '/assets/icon-redux.svg' },
-	{ name: 'TypeScript', icon: '/assets/icon-ts.svg' },
-	{ name: 'Tailwind CSS', icon: '/assets/icon-tailwind.svg' },
-	{ name: 'Vite', icon: '/assets/icon-vite.svg' },
-	{ name: 'Node.js', icon: '/assets/icon-node.svg' },
+	{ name: 'React', icon: `${BASE}assets/icon-react.svg` },
+	{ name: 'Redux Toolkit', icon: `${BASE}assets/icon-redux.svg` },
+	{ name: 'TypeScript', icon: `${BASE}assets/icon-ts.svg` },
+	{ name: 'Tailwind CSS', icon: `${BASE}assets/icon-tailwind.svg` },
+	{ name: 'Vite', icon: `${BASE}assets/icon-vite.svg` },
+	{ name: 'Node.js', icon: `${BASE}assets/icon-node.svg` },
 ];
 
 const GITHUB_URL = 'https://github.com/harmony-framework/harmony-boilerplate';
@@ -21,7 +23,7 @@ export default function LandingHero() {
 			<div
 				className="absolute inset-0 opacity-40 dark:opacity-20 pointer-events-none"
 				style={{
-					backgroundImage: 'url(/assets/top-bg-grid.svg)',
+					backgroundImage: `url(${BASE}assets/top-bg-grid.svg)`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'top',
 				}}

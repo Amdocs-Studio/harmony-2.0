@@ -5,36 +5,38 @@ import { Link } from 'react-router';
 import { Routes } from '@sdk';
 import { LandingHero } from '@ui-modules';
 
+const BASE = import.meta.env.BASE_URL;
+
 const features = [
 	{
 		title: 'Best Practice',
 		description: 'Predefined scripts that let you deliver your app as fast as you can.',
-		icon: '/assets/best-practice.svg',
+		icon: `${BASE}assets/best-practice.svg`,
 	},
 	{
 		title: 'Static Typing',
 		description: 'TypeScript built-in with a pre-defined rule-set for safer code.',
-		icon: '/assets/typing.svg',
+		icon: `${BASE}assets/typing.svg`,
 	},
 	{
 		title: 'Real-Time Dispatching',
 		description: 'Dispatch Redux actions across clients via WebSockets out of the box.',
-		icon: '/assets/real-time.svg',
+		icon: `${BASE}assets/real-time.svg`,
 	},
 	{
 		title: 'Multilingual',
 		description: 'Easy to add and support multiple languages with react-intl.',
-		icon: '/assets/multi-lang.svg',
+		icon: `${BASE}assets/multi-lang.svg`,
 	},
 	{
 		title: 'Authentication',
 		description: 'Ready-to-use auth mechanism wired into the SDK.',
-		icon: '/assets/user.svg',
+		icon: `${BASE}assets/user.svg`,
 	},
 	{
 		title: 'Modular Architecture',
 		description: 'Opinionated ui-modules structure with Storybook and MSW ready.',
-		icon: '/assets/best-practice.svg',
+		icon: `${BASE}assets/best-practice.svg`,
 	},
 ];
 

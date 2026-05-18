@@ -13,15 +13,17 @@ const toc: TocEntry[] = [
 	{ id: 'in-this-section', label: 'In this section' },
 ];
 
+const BASE = import.meta.env.BASE_URL;
+
 const technologies = [
-	{ name: 'React', href: 'https://react.dev', icon: '/assets/icon-react.svg' },
-	{ name: 'Redux', href: 'https://redux.js.org', icon: '/assets/icon-redux.svg' },
-	{ name: 'Redux Toolkit', href: 'https://redux-toolkit.js.org', icon: '/assets/icon-redux.svg' },
-	{ name: 'TypeScript', href: 'https://www.typescriptlang.org', icon: '/assets/icon-ts.svg' },
-	{ name: 'Tailwind CSS', href: 'https://tailwindcss.com', icon: '/assets/icon-tailwind.svg' },
-	{ name: 'Vite', href: 'https://vite.dev', icon: '/assets/icon-vite.svg' },
-	{ name: 'Node.js', href: 'https://nodejs.org', icon: '/assets/icon-node.svg' },
-	{ name: 'MongoDB', href: 'https://www.mongodb.com', icon: '/assets/icon-mongo.svg' },
+	{ name: 'React', href: 'https://react.dev', icon: `${BASE}assets/icon-react.svg` },
+	{ name: 'Redux', href: 'https://redux.js.org', icon: `${BASE}assets/icon-redux.svg` },
+	{ name: 'Redux Toolkit', href: 'https://redux-toolkit.js.org', icon: `${BASE}assets/icon-redux.svg` },
+	{ name: 'TypeScript', href: 'https://www.typescriptlang.org', icon: `${BASE}assets/icon-ts.svg` },
+	{ name: 'Tailwind CSS', href: 'https://tailwindcss.com', icon: `${BASE}assets/icon-tailwind.svg` },
+	{ name: 'Vite', href: 'https://vite.dev', icon: `${BASE}assets/icon-vite.svg` },
+	{ name: 'Node.js', href: 'https://nodejs.org', icon: `${BASE}assets/icon-node.svg` },
+	{ name: 'MongoDB', href: 'https://www.mongodb.com', icon: `${BASE}assets/icon-mongo.svg` },
 ];
 
 const folderTree = `src
