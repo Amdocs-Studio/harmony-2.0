@@ -20,7 +20,7 @@ type Props = {
 	onOpenMobileSidebar?: () => void;
 };
 
-const GITHUB_URL = 'https://github.com/harmony-framework/harmony-boilerplate';
+const GITHUB_URL = 'https://github.com/Amdocs-Studio/harmony-2.0';
 
 export default function DocsTopBar({ onOpenMobileSidebar }: Props) {
 	const { mode, setMode } = useTheme();

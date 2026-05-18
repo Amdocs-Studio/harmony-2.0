@@ -15,7 +15,7 @@ const techStack = [
 	{ name: 'Node.js', icon: `${BASE}assets/icon-node.svg` },
 ];
 
-const GITHUB_URL = 'https://github.com/harmony-framework/harmony-boilerplate';
+const GITHUB_URL = 'https://github.com/Amdocs-Studio/harmony-2.0';
 
 export default function LandingHero() {
 	return (

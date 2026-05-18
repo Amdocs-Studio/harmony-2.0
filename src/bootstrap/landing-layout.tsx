@@ -3,6 +3,7 @@ import { FeedbackHandler } from '@feedback-handler';
 import { ThemeCustomizer, ThemeCustomizerProvider } from '@ui-modules';
 import { DocsTopBar } from '@ui-modules';
 import { DocsPageRegistryProvider } from '@ui-modules';
+import { BuiltWithHarmony } from '@ui-modules';
 import '../base-modules/base-styles/style.css';
 
 export default function LandingLayout() {
@@ -16,6 +17,7 @@ export default function LandingLayout() {
 					</main>
 					<FeedbackHandler />
 					<ThemeCustomizer />
+					<BuiltWithHarmony />
 				</div>
 			</DocsPageRegistryProvider>
 		</ThemeCustomizerProvider>

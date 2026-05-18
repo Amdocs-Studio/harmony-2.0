@@ -9,6 +9,7 @@ import {
 	DocsPageRegistryProvider,
 	ThemeCustomizer,
 	ThemeCustomizerProvider,
+	BuiltWithHarmony,
 } from '@ui-modules';
 import '../base-modules/base-styles/style.css';
 
@@ -58,6 +59,7 @@ export default function DocsLayout() {
 
 					<FeedbackHandler />
 					<ThemeCustomizer />
+					<BuiltWithHarmony />
 				</div>
 			</DocsPageRegistryProvider>
 		</ThemeCustomizerProvider>

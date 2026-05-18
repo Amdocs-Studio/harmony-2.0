@@ -34,3 +34,10 @@
 * {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif, serif;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    [aria-label="Built with Harmony 2.0"],
+    [aria-label="Built with Harmony 2.0"] * {
+        transition: none !important;
+    }
+}
