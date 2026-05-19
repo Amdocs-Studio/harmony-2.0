@@ -1,5 +1,5 @@
 import { lazy, Suspense, ComponentType } from 'react';
-import { RouteObject } from 'react-router';
+import { Navigate, RouteObject } from 'react-router';
 import { Routes } from '@sdk';
 
 type LazyLoader = () => Promise<{ default: ComponentType }>;
@@ -15,7 +15,7 @@ const pageLoaders: Record<string, LazyLoader> = {
 	ClientDevelopmentPage: () => import('@pages/docs').then(m => ({ default: m.ClientDevelopmentPage })),
 	ClientFlowManagerPage: () => import('@pages/docs').then(m => ({ default: m.ClientFlowManagerPage })),
 	ClientFlowManagerEstablishmentPage: () => import('@pages/docs').then(m => ({ default: m.ClientFlowManagerEstablishmentPage })),
-	ClientErrorHandlerPage: () => import('@pages/docs').then(m => ({ default: m.ClientErrorHandlerPage })),
+	ClientFeedbackHandlerPage: () => import('@pages/docs').then(m => ({ default: m.ClientFeedbackHandlerPage })),
 	ClientGlobalSpinnerPage: () => import('@pages/docs').then(m => ({ default: m.ClientGlobalSpinnerPage })),
 	ClientMultilingualPage: () => import('@pages/docs').then(m => ({ default: m.ClientMultilingualPage })),
 	ClientRbaPage: () => import('@pages/docs').then(m => ({ default: m.ClientRbaPage })),
@@ -51,7 +51,8 @@ export const docsRoutes: RouteObject[] = [
 			{ path: 'development', element: lazyElement('ClientDevelopmentPage') },
 			{ path: 'flow-manager', element: lazyElement('ClientFlowManagerPage') },
 			{ path: 'flow-manager-establishment', element: lazyElement('ClientFlowManagerEstablishmentPage') },
-			{ path: 'error-handler', element: lazyElement('ClientErrorHandlerPage') },
+			{ path: 'feedback-handler', element: lazyElement('ClientFeedbackHandlerPage') },
+			{ path: 'error-handler', element: <Navigate to={Routes.DOCS_CLIENT_FEEDBACK_HANDLER} replace /> },
 			{ path: 'global-spinner', element: lazyElement('ClientGlobalSpinnerPage') },
 			{ path: 'multilingual', element: lazyElement('ClientMultilingualPage') },
 			{ path: 'rba', element: lazyElement('ClientRbaPage') },

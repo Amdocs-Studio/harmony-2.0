@@ -34,7 +34,7 @@ export const docsNav: NavGroup[] = [
 			{ label: 'Development', path: Routes.DOCS_CLIENT_DEVELOPMENT, description: 'Code guards and ESLint configuration' },
 			{ label: 'Flow Manager', path: Routes.DOCS_CLIENT_FLOW_MANAGER, description: 'Drive multi-step flows with a state machine' },
 			{ label: 'Flow Manager Establishment', path: Routes.DOCS_CLIENT_FLOW_MANAGER_ESTABLISHMENT, description: 'Install and wire the flow manager from scratch' },
-			{ label: 'Error Handler', path: Routes.DOCS_CLIENT_ERROR_HANDLER, description: 'Handle API errors from a single configuration file' },
+			{ label: 'Feedback Handler', path: Routes.DOCS_CLIENT_FEEDBACK_HANDLER, description: 'Spinner, snackbars, modals and API error mapping from one module' },
 			{ label: 'Global Spinner', path: Routes.DOCS_CLIENT_GLOBAL_SPINNER, description: 'Automatic loading state for pending requests' },
 			{ label: 'Multilingual', path: Routes.DOCS_CLIENT_MULTILINGUAL, description: 'Translate your app with react-intl' },
 			{ label: 'RBA', path: Routes.DOCS_CLIENT_RBA, description: 'Role-based access control and the RBAC component' },

@@ -7,7 +7,7 @@ export { default as ClientModulesPage } from './ClientModulesPage';
 export { default as ClientDevelopmentPage } from './ClientDevelopmentPage';
 export { default as ClientFlowManagerPage } from './ClientFlowManagerPage';
 export { default as ClientFlowManagerEstablishmentPage } from './ClientFlowManagerEstablishmentPage';
-export { default as ClientErrorHandlerPage } from './ClientErrorHandlerPage';
+export { default as ClientFeedbackHandlerPage } from './ClientFeedbackHandlerPage';
 export { default as ClientGlobalSpinnerPage } from './ClientGlobalSpinnerPage';
 export { default as ClientMultilingualPage } from './ClientMultilingualPage';
 export { default as ClientRbaPage } from './ClientRbaPage';

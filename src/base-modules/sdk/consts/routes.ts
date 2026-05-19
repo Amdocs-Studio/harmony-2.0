@@ -11,7 +11,7 @@ const pagesRoutes = {
 	DOCS_CLIENT_DEVELOPMENT: '/docs/extensions/client/development',
 	DOCS_CLIENT_FLOW_MANAGER: '/docs/extensions/client/flow-manager',
 	DOCS_CLIENT_FLOW_MANAGER_ESTABLISHMENT: '/docs/extensions/client/flow-manager-establishment',
-	DOCS_CLIENT_ERROR_HANDLER: '/docs/extensions/client/error-handler',
+	DOCS_CLIENT_FEEDBACK_HANDLER: '/docs/extensions/client/feedback-handler',
 	DOCS_CLIENT_GLOBAL_SPINNER: '/docs/extensions/client/global-spinner',
 	DOCS_CLIENT_MULTILINGUAL: '/docs/extensions/client/multilingual',
 	DOCS_CLIENT_RBA: '/docs/extensions/client/rba',

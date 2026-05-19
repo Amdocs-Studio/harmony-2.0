@@ -1,6 +1,6 @@
-import {
-	DocsPage, H2, H3, P, Lead, UL, Pre, Callout, DocsTable, InlineCode, ExtLink, TocEntry,
-} from '@ui-modules';
+import { Link } from 'react-router';
+import { Routes } from '@sdk';
+import { DocsPage, H2, H3, P, Lead, UL, Pre, Callout, DocsTable, InlineCode, ExtLink, TocEntry } from '@ui-modules';
 
 const toc: TocEntry[] = [
 	{ id: 'overview', label: 'Overview' },
@@ -285,9 +285,10 @@ const BaseQuerySection = () => (
 		<P>
 			When a request returns a non-2xx status, the base query dispatches{' '}
 			<InlineCode>feedbackHandlerSlice.actions.handleError</InlineCode> with the error
-			payload. The feedback handler maps it to a toaster, modal or page, based on{' '}
-			<InlineCode>ErrorMappings.ts</InlineCode>. Opt out per endpoint with{' '}
-			<InlineCode>extraOptions.ignoreErrors</InlineCode>.
+			payload. It is mapped to a toaster, modal or page based on{' '}
+			<InlineCode>ErrorMappings.ts</InlineCode>; opt out per endpoint with{' '}
+			<InlineCode>extraOptions.ignoreErrors</InlineCode>. See the{' '}
+			<Link to={Routes.DOCS_CLIENT_FEEDBACK_HANDLER}>Feedback Handler</Link> page for the full flow.
 		</P>
 
 		<H3 id="spinner">Global spinner</H3>
