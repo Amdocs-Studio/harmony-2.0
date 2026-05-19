@@ -15,7 +15,7 @@ export function SpinnerWidget() {
 		return <div />;
 	}
 	return (
-		<div className="fixed left-0 right-0 top-0 bottom-0 z-[1000] flex items-center justify-center bg-[#0000006b]">
+		<div className="fixed left-0 right-0 top-0 bottom-0 z-1000 flex items-center justify-center bg-[#0000006b]">
 			<Loading />
 		</div>
 	);
