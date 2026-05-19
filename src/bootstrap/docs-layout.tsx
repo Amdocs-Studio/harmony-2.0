@@ -41,7 +41,7 @@ export default function DocsLayout() {
 							onClose={() => setMobileOpen(false)}
 							PaperProps={{ sx: { width: 288 } }}
 							ModalProps={{ keepMounted: true }}
-							className="lg:!hidden"
+							className="lg:hidden!"
 						>
 							<div className="docs-sidebar-scroll pt-12 h-full overflow-y-auto">
 								<DocsSidebar />

@@ -58,6 +58,24 @@
     font-family: var(--font-sans);
 }
 
+/*
+ * Vertical rhythm for docs page content.
+ * `DocsPage.tsx` already lays out top-level <section> children with `gap-6`;
+ * this rule applies the same idea *inside* each section so paragraphs,
+ * headings, lists, callouts, and code blocks never collide.
+ */
+.docs-prose section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Give H3 sub-sections a bit more breathing room from the preceding block,
+ * but keep the first heading flush with the top of its section. */
+.docs-prose section > h3:not(:first-child) {
+    margin-top: 0.5rem;
+}
+
 .docs-sidebar-scroll {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.22) transparent;

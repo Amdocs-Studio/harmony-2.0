@@ -130,14 +130,14 @@ export default function ClientPage() {
 					{clientGroup?.items
 						.filter((i) => !i.path.endsWith('/client'))
 						.map((item) => (
-							<Card key={item.path} variant="outlined" className="hover:!shadow-md !transition-shadow">
+							<Card key={item.path} variant="outlined" className="hover:shadow-md! transition-shadow!">
 								<CardContent>
 									<Link to={item.path} className="no-underline text-inherit">
-										<Typography variant="subtitle1" className="!font-semibold">
+										<Typography variant="subtitle1" className="font-semibold!">
 											{item.label}
 										</Typography>
 										{item.description && (
-											<Typography variant="body2" color="text.secondary" className="!mt-1">
+											<Typography variant="body2" color="text.secondary" className="mt-1!">
 												{item.description}
 											</Typography>
 										)}

@@ -37,7 +37,7 @@ export default function ThemeCustomizer() {
 			PaperProps={{ sx: { width: 340 } }}
 		>
 			<Box className="flex items-center justify-between px-4 py-3">
-				<Typography variant="h6" className="!font-semibold">Customize</Typography>
+				<Typography variant="h6" className="font-semibold!">Customize</Typography>
 				<IconButton size="small" onClick={() => setOpen(false)} aria-label="Close customizer">
 					<CloseIcon fontSize="small" />
 				</IconButton>
@@ -45,7 +45,7 @@ export default function ThemeCustomizer() {
 			<Divider />
 			<Box className="flex flex-col gap-6 px-4 py-5">
 				<section>
-					<Typography variant="overline" className="!block !mb-2 opacity-70">Mode</Typography>
+					<Typography variant="overline" className="block! mb-2! opacity-70">Mode</Typography>
 					<ToggleButtonGroup
 						exclusive
 						fullWidth
@@ -60,7 +60,7 @@ export default function ThemeCustomizer() {
 				</section>
 
 				<section>
-					<Typography variant="overline" className="!block !mb-2 opacity-70">Primary color</Typography>
+					<Typography variant="overline" className="block! mb-2! opacity-70">Primary color</Typography>
 					<div className="flex items-center gap-3">
 						{paletteOrder.map((name) => {
 							const selected = palette === name;
@@ -85,7 +85,7 @@ export default function ThemeCustomizer() {
 				</section>
 
 				<section>
-					<Typography variant="overline" className="!block !mb-2 opacity-70">
+					<Typography variant="overline" className="block! mb-2! opacity-70">
 						Border radius ({radius}px)
 					</Typography>
 					<Slider
@@ -99,7 +99,7 @@ export default function ThemeCustomizer() {
 				</section>
 
 				<section>
-					<Typography variant="overline" className="!block !mb-2 opacity-70">Density</Typography>
+					<Typography variant="overline" className="block! mb-2! opacity-70">Density</Typography>
 					<ToggleButtonGroup
 						exclusive
 						fullWidth

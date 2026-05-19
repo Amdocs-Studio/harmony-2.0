@@ -32,7 +32,7 @@ export default function BuiltWithHarmony() {
 			onFocus={handleEnter}
 			onBlur={handleLeave}
 			className="
-				fixed bottom-5 right-5 z-[1200]
+				fixed bottom-5 right-5 z-1200
 				h-12 rounded-full
 				bg-white dark:bg-neutral-900
 				ring-1 ring-black/10 dark:ring-white/15

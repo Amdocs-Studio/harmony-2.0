@@ -12,7 +12,7 @@ export default function DocsSidebar() {
 				<div key={group.title} className="mb-6">
 					<Typography
 						variant="overline"
-						className="!block !px-3 !mb-2 !text-xs !tracking-widest opacity-60"
+						className="block! px-3! mb-2! text-xs! tracking-widest! opacity-60"
 					>
 						{group.title}
 					</Typography>
@@ -25,12 +25,12 @@ export default function DocsSidebar() {
 									component={Link}
 									to={item.path}
 									selected={active}
-									className={clsx('!rounded-md !mb-0.5', active && '!font-semibold')}
+									className={clsx('rounded-md! mb-0.5!', active && 'font-semibold!')}
 								>
 									<ListItemText
 										primary={item.label}
 										primaryTypographyProps={{
-											className: active ? '!font-semibold' : undefined,
+											className: active ? 'font-semibold!' : undefined,
 										}}
 									/>
 								</ListItemButton>

@@ -234,7 +234,7 @@ const ToolCards = () => (
 			<Card
 				key={t.id}
 				variant="outlined"
-				className="hover:!shadow-md !transition-shadow"
+				className="hover:shadow-md! transition-shadow!"
 			>
 				<CardContent className="flex flex-col gap-2">
 					<div className="flex items-center gap-2">
@@ -244,7 +244,7 @@ const ToolCards = () => (
 							label={t.chip}
 							variant="outlined"
 						/>
-						<Typography variant="subtitle2" className="!font-mono !font-semibold">
+						<Typography variant="subtitle2" className="font-mono! font-semibold!">
 							{t.name}
 						</Typography>
 					</div>

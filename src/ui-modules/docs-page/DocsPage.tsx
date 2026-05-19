@@ -17,7 +17,7 @@ export default function DocsPage({ title, description, toc = [], children }: Doc
 		<article className="docs-page">
 			<DocsBreadcrumbs />
 			<header className="mb-8">
-				<Typography variant="h3" component="h1" className="!font-bold !mb-2">
+				<Typography variant="h3" component="h1" className="font-bold! mb-2!">
 					{title}
 				</Typography>
 				{description && (

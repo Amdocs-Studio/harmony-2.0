@@ -65,7 +65,7 @@ export default function DocsToc() {
 		<nav aria-label="On this page" className="text-sm">
 			<Typography
 				variant="overline"
-				className="!block !mb-3 !text-xs !tracking-widest opacity-60"
+				className="block! mb-3! text-xs! tracking-widest! opacity-60"
 			>
 				On this page
 			</Typography>

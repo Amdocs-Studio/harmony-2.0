@@ -48,20 +48,20 @@ export default function LandingPage() {
 
 			<section className="max-w-6xl mx-auto px-6 py-20">
 				<div className="text-center mb-12">
-					<Typography variant="overline" className="!tracking-widest opacity-70">
+					<Typography variant="overline" className="tracking-widest! opacity-70">
 						What&apos;s inside
 					</Typography>
-					<Typography variant="h4" component="h2" className="!font-bold !mt-2">
+					<Typography variant="h4" component="h2" className="font-bold! mt-2!">
 						Everything you need, nothing you don&apos;t
 					</Typography>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{features.map((f) => (
-						<Card key={f.title} variant="outlined" className="!transition-shadow hover:!shadow-md">
+						<Card key={f.title} variant="outlined" className="transition-shadow! hover:shadow-md!">
 							<CardContent className="flex flex-col gap-3">
 								<img src={f.icon} alt="" className="h-10 w-10" aria-hidden />
-								<Typography variant="h6" className="!font-semibold">
+								<Typography variant="h6" className="font-semibold!">
 									{f.title}
 								</Typography>
 								<Typography variant="body2" color="text.secondary">
@@ -76,14 +76,14 @@ export default function LandingPage() {
 			<section className="max-w-4xl mx-auto px-6 py-16">
 				<Card
 					variant="outlined"
-					className="!rounded-2xl"
+					className="rounded-2xl!"
 					sx={{ backgroundColor: 'var(--color-primary-50, #eef2ff)' }}
 				>
-					<CardContent className="flex flex-col items-center text-center gap-4 !p-10">
-						<Typography variant="overline" className="!tracking-widest opacity-70">
+					<CardContent className="flex flex-col items-center text-center gap-4 p-10!">
+						<Typography variant="overline" className="tracking-widest! opacity-70">
 							Quick start
 						</Typography>
-						<Typography variant="h5" className="!font-bold">
+						<Typography variant="h5" className="font-bold!">
 							Create a new Harmony project in one command
 						</Typography>
 						<code
@@ -109,7 +109,7 @@ export default function LandingPage() {
 							variant="contained"
 							size="large"
 							endIcon={<ArrowForwardIcon />}
-							className="!mt-2"
+							className="mt-2!"
 						>
 							Get started in 5 minutes
 						</Button>

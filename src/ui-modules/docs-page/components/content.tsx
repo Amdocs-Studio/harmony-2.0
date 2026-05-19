@@ -22,7 +22,7 @@ const AnchorLink = ({ id }: { id: string }) => {
 				onClick={onClick}
 				size="small"
 				aria-label={`Link to ${id}`}
-				className="!ml-2 !p-1 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity"
+				className="ml-2! p-1! opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity"
 				sx={{
 					color: 'primary.main',
 					backgroundColor: 'action.hover',
@@ -41,7 +41,7 @@ export const H2 = ({ id, children, className }: WithId) => (
 		variant="h5"
 		component="h2"
 		className={clsx(
-			'group !font-semibold !mt-2 !mb-3 scroll-mt-16 flex items-center',
+			'group font-semibold! scroll-mt-16 flex items-center',
 			className,
 		)}
 	>
@@ -56,7 +56,7 @@ export const H3 = ({ id, children, className }: WithId) => (
 		variant="h6"
 		component="h3"
 		className={clsx(
-			'group !font-semibold !mt-1 !mb-2 scroll-mt-16 flex items-center',
+			'group font-semibold! scroll-mt-16 flex items-center',
 			className,
 		)}
 	>
@@ -136,7 +136,7 @@ export const Pre = ({ children, lang, label }: PreProps) => {
 					<pre
 						className={clsx(
 							className,
-							'!m-0 px-4 py-3 font-mono text-sm overflow-auto leading-relaxed',
+							'm-0! px-4 py-3 font-mono text-sm overflow-auto leading-relaxed',
 						)}
 						style={style}
 					>
@@ -154,7 +154,7 @@ export const Pre = ({ children, lang, label }: PreProps) => {
 				<IconButton
 					size="small"
 					onClick={copy}
-					className="!absolute !top-1.5 !right-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
+					className="absolute! top-1.5! right-1.5! opacity-0 group-hover:opacity-100 transition-opacity"
 					aria-label="Copy code"
 				>
 					<ContentCopyIcon fontSize="inherit" />
@@ -178,8 +178,8 @@ const calloutSeverity = {
 } as const;
 
 export const Callout = ({ type = 'note', title, children }: CalloutProps) => (
-	<Alert severity={calloutSeverity[type]} variant="outlined" className="!rounded-lg">
-		{title && <AlertTitle className="!font-semibold">{title}</AlertTitle>}
+	<Alert severity={calloutSeverity[type]} variant="outlined" className="rounded-lg!">
+		{title && <AlertTitle className="font-semibold!">{title}</AlertTitle>}
 		{children}
 	</Alert>
 );

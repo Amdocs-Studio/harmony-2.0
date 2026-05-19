@@ -11,7 +11,7 @@ export default function LicensePage() {
 			toc={toc}
 		>
 			<section>
-				<Typography variant="h5" component="h2" id="mit" className="!font-semibold !mb-2">
+				<Typography variant="h5" component="h2" id="mit" className="font-semibold! mb-2!">
 					MIT License
 				</Typography>
 				<Typography variant="body2" color="text.secondary" component="div" className="flex flex-col gap-3">

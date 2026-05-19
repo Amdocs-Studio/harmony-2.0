@@ -17,7 +17,7 @@ export default function OverviewPage() {
 			toc={toc}
 		>
 			<section>
-				<Typography variant="h5" component="h2" id="what-is-harmony" className="!font-semibold !mb-2">
+				<Typography variant="h5" component="h2" id="what-is-harmony" className="font-semibold! mb-2!">
 					What is Harmony 2.0?
 				</Typography>
 				<Typography variant="body1">
@@ -29,23 +29,23 @@ export default function OverviewPage() {
 			</section>
 
 			<section>
-				<Typography variant="h5" component="h2" id="explore" className="!font-semibold !mb-4">
+				<Typography variant="h5" component="h2" id="explore" className="font-semibold! mb-4!">
 					Explore the docs
 				</Typography>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{browseGroups.flatMap((group) =>
 						group.items.map((item) => (
-							<Card key={item.path} variant="outlined" className="hover:!shadow-md !transition-shadow">
+							<Card key={item.path} variant="outlined" className="hover:shadow-md! transition-shadow!">
 								<CardContent>
 									<Link to={item.path} className="no-underline text-inherit">
 										<Typography variant="overline" className="opacity-60">
 											{group.title}
 										</Typography>
-										<Typography variant="subtitle1" className="!font-semibold">
+										<Typography variant="subtitle1" className="font-semibold!">
 											{item.label}
 										</Typography>
 										{item.description && (
-											<Typography variant="body2" color="text.secondary" className="!mt-1">
+											<Typography variant="body2" color="text.secondary" className="mt-1!">
 												{item.description}
 											</Typography>
 										)}
@@ -55,7 +55,7 @@ export default function OverviewPage() {
 						)),
 					)}
 				</div>
-				<Typography variant="body2" className="!mt-6 opacity-70">
+				<Typography variant="body2" className="mt-6! opacity-70">
 					Or jump straight to <Link to={Routes.DOCS_GETTING_STARTED}>Getting Started</Link>.
 				</Typography>
 			</section>
