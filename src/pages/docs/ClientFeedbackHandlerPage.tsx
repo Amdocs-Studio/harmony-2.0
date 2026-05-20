@@ -12,7 +12,6 @@ const toc: TocEntry[] = [
 	{ id: 'user-feedback', label: 'User feedback (snackbars & modals)' },
 	{ id: 'opt-out', label: 'Per-endpoint opt-out' },
 	{ id: 'customization', label: 'Customization' },
-	{ id: 'migration', label: 'Migrating from Harmony 1.x' },
 ];
 
 const mountSnippet = `// src/bootstrap/docs-layout.tsx
@@ -295,43 +294,6 @@ const CustomizationSection = () => (
 	</section>
 );
 
-const MigrationSection = () => (
-	<section>
-		<H2 id="migration">Migrating from Harmony 1.x</H2>
-		<P>
-			Earlier Harmony versions shipped an <InlineCode>error.config.json</InlineCode> file
-			and a <InlineCode>@withErrorHandler</InlineCode> decorator under{' '}
-			<InlineCode>src/containers/ErrorHandler/</InlineCode>. None of these exist in
-			Harmony 2.0. The replacements are:
-		</P>
-		<UL>
-			<li>
-				<InlineCode>error.config.json</InlineCode> →{' '}
-				<InlineCode>ErrorMappings.ts</InlineCode>. Move each{' '}
-				<InlineCode>&lt;errorCode&gt;_&lt;statusCode&gt;</InlineCode> entry to an{' '}
-				<InlineCode>ErrorMapping</InlineCode> with <InlineCode>error.status</InlineCode>{' '}
-				and <InlineCode>error.code</InlineCode>.
-			</li>
-			<li>
-				<InlineCode>component: &quot;ignore&quot;</InlineCode> →{' '}
-				<InlineCode>extraOptions.ignoreErrors</InlineCode> on the RTK Query endpoint.
-				Per-endpoint silencing replaces the per-handler opt-out.
-			</li>
-			<li>
-				<InlineCode>@withErrorHandler</InlineCode> → read{' '}
-				<InlineCode>errorInfo</InlineCode> with{' '}
-				<InlineCode>useAppSelector(s =&gt; s.feedbackHandler.errorInfo)</InlineCode> from
-				the component that needs to react. There is no class decorator in 2.0.
-			</li>
-			<li>
-				<InlineCode>STRICT_CONSOLE_ERROR</InlineCode> in{' '}
-				<InlineCode>src/config.ts</InlineCode> → no longer a flag. Keep the console
-				clean; the feedback handler does not gate on it.
-			</li>
-		</UL>
-	</section>
-);
-
 export default function ClientFeedbackHandlerPage() {
 	return (
 		<DocsPage
@@ -345,7 +307,6 @@ export default function ClientFeedbackHandlerPage() {
 			<UserFeedbackSection />
 			<OptOutSection />
 			<CustomizationSection />
-			<MigrationSection />
 		</DocsPage>
 	);
 }

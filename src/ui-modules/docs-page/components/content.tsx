@@ -123,12 +123,32 @@ export const Pre = ({ children, lang, label }: PreProps) => {
 	const copy = () => navigator.clipboard?.writeText(code);
 	const prismTheme = palette.mode === 'dark' ? themes.vsDark : themes.vsLight;
 	const language = resolveLanguage(lang);
+	const hasHeader = Boolean(label || lang);
+
+	const copyButton = (
+		<Tooltip title="Copy">
+			<IconButton
+				size="small"
+				onClick={copy}
+				aria-label="Copy code"
+				className={clsx(
+					'opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity',
+					hasHeader
+						? 'p-1!'
+						: 'absolute! top-1.5! right-1.5!',
+				)}
+			>
+				<ContentCopyIcon fontSize="inherit" />
+			</IconButton>
+		</Tooltip>
+	);
 
 	return (
 		<div className="relative group rounded-lg overflow-hidden border border-black/10 dark:border-white/10">
-			{(label || lang) && (
-				<div className="flex items-center justify-between px-4 py-1.5 text-xs font-mono border-b border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+			{hasHeader && (
+				<div className="flex items-center justify-between gap-2 pl-4 pr-1.5 py-1 text-xs font-mono border-b border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
 					<span className="opacity-70">{label ?? lang}</span>
+					{copyButton}
 				</div>
 			)}
 			<Highlight theme={prismTheme} code={code} language={language}>
@@ -150,16 +170,7 @@ export const Pre = ({ children, lang, label }: PreProps) => {
 					</pre>
 				)}
 			</Highlight>
-			<Tooltip title="Copy">
-				<IconButton
-					size="small"
-					onClick={copy}
-					className="absolute! top-1.5! right-1.5! opacity-0 group-hover:opacity-100 transition-opacity"
-					aria-label="Copy code"
-				>
-					<ContentCopyIcon fontSize="inherit" />
-				</IconButton>
-			</Tooltip>
+			{!hasHeader && copyButton}
 		</div>
 	);
 };
