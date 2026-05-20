@@ -1,0 +1,30 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          # No registry-url here
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - run: npm ci
+
+      - name: Publish to npm
+        # We removed --dry-run and added verbose to see the handshake
+        run: npm publish --provenance --access public --loglevel verbose
